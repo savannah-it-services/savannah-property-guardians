@@ -2,6 +2,13 @@
   "name": "Savannah Property Guardians",
   "url": "https://savannah-it-services.github.io/savannah-property-guardians",
   "description": "Professional handyman, commercial property maintenance, warehouse management, and plumbing services.",
+  "contact_form_action": "https://formsubmit.co/jamesvweston@gmail.com",
   "phone": "(912) 665-3584",
-  "phoneHref": "+19126653584"
+  "phoneHref": "+19126653584",
+  "business_address": {
+    "street1": "55 Deerwood Rd.",
+    "city": "Savannah",
+    "state": "GA",
+    "zip": "31410"
+  }
 }

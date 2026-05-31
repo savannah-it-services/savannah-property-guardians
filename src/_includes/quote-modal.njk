@@ -1,12 +1,11 @@
 <!-- Request a Quote Modal -->
 <div id="quote-modal" class="hidden fixed inset-0 z-[70] items-center justify-center bg-black/70 p-5">
   <div id="modal-backdrop" class="absolute inset-0"></div>
-  
+
   <div class="modal relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden">
     <div class="flex items-center justify-between px-7 pt-6 pb-4 border-b">
       <div>
         <div class="font-semibold text-2xl tracking-tight">Request a Quote</div>
-        <div class="text-sm text-spg-text-light">We’ll get back to you within 2 hours</div>
       </div>
       <button id="modal-close" class="text-spg-text-light hover:text-spg-text p-1" aria-label="Close modal">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -15,32 +14,32 @@
       </button>
     </div>
 
-    <form id="quote-form" class="px-7 py-7 space-y-5">
+    <form id="quote-form" action="{{ site.contact_form_action }}" method="POST" class="px-7 py-7 space-y-5">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label for="quote-name" class="text-sm font-medium block mb-1.5">Full Name *</label>
-          <input id="quote-name" required type="text" name="name" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Jane Cooper">
+          <label for="name" class="text-sm font-medium block mb-1.5">Full Name *</label>
+          <input id="name" required type="text" name="name" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Jane Cooper">
         </div>
         <div>
-          <label for="quote-company" class="text-sm font-medium block mb-1.5">Company / Property</label>
-          <input id="quote-company" type="text" name="company" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Acme Distribution LLC">
+          <label for="company" class="text-sm font-medium block mb-1.5">Company / Property</label>
+          <input id="company" type="text" name="company" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Acme Distribution LLC">
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label for="quote-phone" class="text-sm font-medium block mb-1.5">Phone Number *</label>
-          <input id="quote-phone" required type="tel" name="phone" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="(555) 123-4567">
+          <label for="phone" class="text-sm font-medium block mb-1.5">Phone Number *</label>
+          <input id="phone" required type="tel" name="phone" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="(555) 123-4567">
         </div>
         <div>
-          <label for="quote-email" class="text-sm font-medium block mb-1.5">Email Address *</label>
-          <input id="quote-email" required type="email" name="email" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="you@company.com">
+          <label for="email" class="text-sm font-medium block mb-1.5">Email Address *</label>
+          <input id="email" required type="email" name="email" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="you@company.com">
         </div>
       </div>
 
       <div>
-        <label for="quote-service" class="text-sm font-medium block mb-1.5">Service Needed *</label>
-        <select id="quote-service" required name="service" class="form-input w-full rounded-2xl px-4 py-3 text-sm bg-white">
+        <label for="service" class="text-sm font-medium block mb-1.5">Service Needed *</label>
+        <select id="service" required name="service" class="form-input w-full rounded-2xl px-4 py-3 text-sm bg-white">
           <option value="">Please select a service</option>
           <option value="Handyman Services">Handyman Services</option>
           <option value="Warehouse Management">Commercial Warehouse Management</option>
@@ -51,15 +50,14 @@
       </div>
 
       <div>
-        <label for="quote-details" class="text-sm font-medium block mb-1.5">Tell us about the project *</label>
-        <textarea id="quote-details" required name="details" rows="3" class="form-input w-full rounded-3xl px-4 py-3 text-sm resize-y" placeholder="Please describe the scope, timeline, and any special requirements..."></textarea>
+        <label for="details" class="text-sm font-medium block mb-1.5">Tell us about the project *</label>
+        <textarea id="details" required name="details" rows="3" class="form-input w-full rounded-3xl px-4 py-3 text-sm resize-y" placeholder="Please describe the scope, timeline, and any special requirements..."></textarea>
       </div>
 
       <div class="pt-3">
         <button type="submit" class="btn-primary w-full text-white py-[17px] font-semibold rounded-2xl text-base tracking-wider">
           SUBMIT REQUEST
         </button>
-        <p class="text-center text-xs text-spg-text-light mt-4">We respect your time. Your information is never shared.</p>
       </div>
     </form>
 
