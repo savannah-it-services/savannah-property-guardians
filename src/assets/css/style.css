@@ -646,6 +646,11 @@
   .gap-y-12 {
     row-gap: calc(var(--spacing) * 12);
   }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .overflow-hidden {
     overflow: hidden;
   }
