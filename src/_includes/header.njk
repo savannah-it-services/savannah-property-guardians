@@ -2,7 +2,7 @@
   <nav class="max-w-7xl mx-auto px-6">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-x-3 group">
+      <a href="{{ '/' | url }}" class="flex items-center gap-x-3 group">
         <svg class="nav-logo logo-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M22 3.5 L38 9.5 V21.5 C38 30.5 31.5 38.5 22 41.5 C12.5 38.5 6 30.5 6 21.5 V9.5 L22 3.5Z" fill="#1B4332"/>
           <path d="M22 3.5 L38 9.5 V21.5 C38 30.5 31.5 38.5 22 41.5 C12.5 38.5 6 30.5 6 21.5 V9.5 L22 3.5Z" stroke="#C9A227" stroke-width="2.5"/>
@@ -19,11 +19,11 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-        <a href="/handyman/" class="nav-link text-spg-text hover:text-spg-green">Handyman</a>
-        <a href="/warehouse/" class="nav-link text-spg-text hover:text-spg-green">Warehouse</a>
-        <a href="/maintenance/" class="nav-link text-spg-text hover:text-spg-green">Maintenance</a>
-        <a href="/plumbing/" class="nav-link text-spg-text hover:text-spg-green">Plumbing</a>
-        <a href="/about" class="nav-link text-spg-text hover:text-spg-green">About</a>
+        <a href="{{ '/handyman/' | url }}" class="nav-link text-spg-text hover:text-spg-green">Handyman</a>
+        <a href="{{ '/warehouse/' | url }}" class="nav-link text-spg-text hover:text-spg-green">Warehouse</a>
+        <a href="{{ '/maintenance/' | url }}" class="nav-link text-spg-text hover:text-spg-green">Maintenance</a>
+        <a href="{{ '/plumbing/' | url }}" class="nav-link text-spg-text hover:text-spg-green">Plumbing</a>
+        <a href="{{ '/about' | url }}" class="nav-link text-spg-text hover:text-spg-green">About</a>
       </div>
 
       <div class="hidden md:flex items-center gap-x-4">
@@ -56,11 +56,11 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-[#EDE4D4]">
     <div class="px-6 py-8 flex flex-col gap-y-5 text-base font-medium">
-      <a href="/handyman/" class="nav-link text-spg-text py-1">Handyman Services</a>
-      <a href="/warehouse/" class="nav-link text-spg-text py-1">Warehouse Management</a>
-      <a href="/maintenance/" class="nav-link text-spg-text py-1">Property Maintenance</a>
-      <a href="/plumbing/" class="nav-link text-spg-text py-1">Commercial Plumbing</a>
-      <a href="/about" class="nav-link text-spg-text py-1">About Us</a>
+      <a href="{{ '/handyman/' | url }}" class="nav-link text-spg-text py-1">Handyman Services</a>
+      <a href="{{ '/warehouse/' | url }}" class="nav-link text-spg-text py-1">Warehouse Management</a>
+      <a href="{{ '/maintenance/' | url }}" class="nav-link text-spg-text py-1">Property Maintenance</a>
+      <a href="{{ '/plumbing/' | url }}" class="nav-link text-spg-text py-1">Commercial Plumbing</a>
+      <a href="{{ '/about' | url }}" class="nav-link text-spg-text py-1">About Us</a>
       
       <div class="pt-4 border-t border-[#EDE4D4] flex flex-col gap-y-3">
         <a href="tel:{{ site.phoneHref }}" class="text-spg-green font-semibold">{{ site.phone }}</a>

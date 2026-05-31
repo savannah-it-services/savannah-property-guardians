@@ -490,9 +490,6 @@
   .max-w-md {
     max-width: var(--container-md);
   }
-  .max-w-prose {
-    max-width: 65ch;
-  }
   .max-w-sm {
     max-width: var(--container-sm);
   }
@@ -624,9 +621,6 @@
   .gap-x-12 {
     column-gap: calc(var(--spacing) * 12);
   }
-  .gap-x-14 {
-    column-gap: calc(var(--spacing) * 14);
-  }
   .-space-x-2 {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
@@ -645,11 +639,6 @@
   }
   .gap-y-12 {
     row-gap: calc(var(--spacing) * 12);
-  }
-  .truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -963,10 +952,6 @@
   .tracking-\[-6px\] {
     --tw-tracking: -6px;
     letter-spacing: -6px;
-  }
-  .tracking-\[1\.5px\] {
-    --tw-tracking: 1.5px;
-    letter-spacing: 1.5px;
   }
   .tracking-\[1px\] {
     --tw-tracking: 1px;
