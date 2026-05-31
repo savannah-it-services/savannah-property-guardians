@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description or 'Savannah Property Guardians - Professional handyman, commercial property maintenance, warehouse management, and plumbing services.' }}">
+  <title>{{ title or 'Savannah Property Guardians' }}</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231B4332'/%3E%3Cpath d='M50 22 L62 36 L56 36 L56 52 L44 52 L44 36 L38 36 Z' fill='%23C9A227'/%3E%3Ccircle cx='50' cy='62' r='6' fill='%23C9A227'/%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body class="antialiased">
+  {% include "header.njk" %}
+
+  {{ content | safe }}
+
+  {% include "footer.njk" %}
+
+  {% include "quote-modal.njk" %}
+
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>

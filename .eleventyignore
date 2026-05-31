@@ -1,0 +1,30 @@
+# Output directories
+docs/
+dist/
+
+# Dependencies
+node_modules/
+
+# Config files (Eleventy doesn't need to process these)
+package*.json
+eleventy.config.js
+tailwind.config.js
+postcss.config.js
+
+# IDE / OS files
+.idea/
+.DS_Store
+Thumbs.db
+
+# GitHub specific
+.github/
+
+# Documentation
+README.md
+
+# Source CSS input (we compile it separately)
+src/assets/css/input.css
+
+# Other
+.env*
+*.log

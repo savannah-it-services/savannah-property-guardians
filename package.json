@@ -1,0 +1,38 @@
+{
+  "name": "savannah-property-guardians",
+  "version": "1.0.0",
+  "description": "Savannah Property Guardians website - Built with Eleventy + Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "concurrently -n \"CSS,ELEVENTY\" -c \"magenta,blue\" \"npm:watch:css\" \"npx @11ty/eleventy --serve\"",
+    "build:css": "npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/style.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/style.css --watch",
+    "build": "npm run build:css && npx @11ty/eleventy",
+    "build:gh-pages": "npm run build:css && npx @11ty/eleventy --output=docs",
+    "lint": "npm run lint:js && npm run lint:css && npm run format:check",
+    "lint:js": "eslint src/**/*.js",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix && npm run format",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@tailwindcss/cli": "4.0.12",
+    "@tailwindcss/postcss": "4.0.12",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^9.2.1",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.5.15",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.17.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-prettier": "^5.0.0",
+    "tailwindcss": "4.0.12"
+  }
+}

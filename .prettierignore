@@ -1,0 +1,16 @@
+# Build outputs
+dist/
+docs/
+
+# Dependencies
+node_modules/
+
+# Generated CSS (do not format the Tailwind output)
+src/assets/css/style.css
+
+# Lockfiles and large generated files
+package-lock.json
+
+# Nunjucks templates (Prettier has poor native support)
+**/*.njk
+**/*.html

@@ -1,0 +1,454 @@
+@import 'tailwindcss';
+
+/* Tell Tailwind where to look for class usage (Nunjucks templates + JS) */
+@source "../../**/*.{njk,html,js}";
+
+/* ============================================
+   Custom Theme (Tailwind v4)
+   ============================================ */
+@theme {
+  --color-spg-green: #1b4332;
+  --color-spg-green-dark: #0f2c23;
+  --color-spg-green-light: #2d5a3d;
+  --color-spg-gold: #c9a227;
+  --color-spg-gold-light: #d4b46b;
+  --color-spg-gold-dark: #a67c00;
+  --color-spg-terra: #9c6644;
+  --color-spg-terra-light: #b87d5b;
+  --color-spg-sand: #f8f4e9;
+  --color-spg-sand-dark: #ede4d4;
+  --color-spg-brown: #3d2914;
+  --color-spg-brown-light: #5c4033;
+  --color-spg-text: #1a2421;
+  --color-spg-text-light: #4a554f;
+}
+
+/* Add any additional custom CSS below this line */
+
+/* ============================================
+   Savannah Property Guardians - Custom Styles
+   ============================================ */
+
+/* CSS Custom Properties - Brand Colors */
+:root {
+  --spg-green: #1b4332;
+  --spg-green-dark: #0f2c23;
+  --spg-green-light: #2d5a3d;
+  --spg-gold: #c9a227;
+  --spg-gold-light: #d4b46b;
+  --spg-gold-dark: #a67c00;
+  --spg-terra: #9c6644;
+  --spg-terra-light: #b87d5b;
+  --spg-sand: #f8f4e9;
+  --spg-sand-dark: #ede4d4;
+  --spg-brown: #3d2914;
+  --spg-brown-light: #5c4033;
+  --spg-text: #1a2421;
+  --spg-text-light: #4a554f;
+}
+
+/* Base Typography & Body */
+body {
+  font-family:
+    Inter,
+    'system_ui',
+    -apple-system,
+    sans-serif;
+  color: var(--spg-text);
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family:
+    Inter,
+    'system_ui',
+    -apple-system,
+    sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Logo Styling */
+.logo-svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-svg:hover {
+  transform: scale(1.02);
+}
+
+.nav-logo {
+  height: 42px;
+  width: auto;
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--spg-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--spg-green);
+  font-weight: 600;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+}
+
+/* Hero Section */
+.hero-bg {
+  background: linear-gradient(135deg, var(--spg-green-dark) 0%, var(--spg-green) 45%, #2d5a3d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(156, 102, 68, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-10V8h-2v16h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 6v-4H4v4H0v2h4v4h2V8h4V6H6z' fill='%23C9A227' fill-opacity='0.06'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 65px 65px;
+}
+
+/* Service Cards */
+.service-card {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.2s ease;
+  border: 1px solid #e5e0d5;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: var(--spg-gold);
+}
+
+.service-icon {
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(3deg);
+  background-color: var(--spg-gold);
+  color: white;
+}
+
+/* Feature / Benefit Cards */
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Process Steps */
+.process-step {
+  position: relative;
+}
+
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 2.25rem;
+  top: 4rem;
+  bottom: -1.5rem;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--spg-gold), var(--spg-sand-dark));
+  z-index: 0;
+}
+
+.process-number {
+  z-index: 1;
+  background: linear-gradient(135deg, var(--spg-green), var(--spg-green-light));
+  color: white;
+  box-shadow: 0 10px 15px -3px rgb(27 67 50 / 0.3);
+}
+
+/* Testimonials */
+.testimonial-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.01);
+}
+
+/* Quote Modal */
+.modal {
+  animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-backdrop {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Quote Modal - Close Animation (bouncy exit) */
+.modal.closing {
+  animation: modalPopOut 0.22s cubic-bezier(0.4, 0, 0.9, 0.6) forwards;
+}
+
+.modal-backdrop.closing {
+  animation: fadeOut 0.18s ease forwards;
+}
+
+@keyframes modalPopOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(25px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Form Styles */
+.form-input {
+  transition: all 0.2s ease;
+  background-color: #fff;
+  border: 1px solid #d1cabd;
+}
+
+.form-input:focus {
+  border-color: var(--spg-gold);
+  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.1);
+  outline: none;
+}
+
+.form-input.error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+}
+
+/* FAQ Accordion */
+.faq-question {
+  transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+  color: var(--spg-green);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-answer.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-answer.open + .faq-question .faq-icon,
+.faq-question[aria-expanded='true'] .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--spg-green), var(--spg-green-light));
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 15px -3px rgb(27 67 50 / 0.3),
+    0 4px 6px -4px rgb(27 67 50 / 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--spg-gold), var(--spg-gold-light));
+  color: var(--spg-brown);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(201 162 39 / 0.3);
+  background: linear-gradient(135deg, var(--spg-gold-light), var(--spg-gold));
+}
+
+.btn-outline {
+  border: 2px solid var(--spg-green);
+  color: var(--spg-green);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--spg-green);
+  color: white;
+}
+
+/* Section Headers */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--spg-gold), var(--spg-terra));
+  border-radius: 3px;
+}
+
+/* Service Page Hero */
+.service-hero {
+  background: linear-gradient(145deg, var(--spg-green-dark) 0%, var(--spg-green) 100%);
+}
+
+/* Trust Badges / Stats */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--spg-green-dark);
+  color: #c5c2b8;
+}
+
+.footer a {
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--spg-gold);
+}
+
+/* Utility: Gold accent underline */
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 42px;
+  height: 3px;
+  background: var(--spg-gold);
+  border-radius: 999px;
+}
+
+/* Responsive adjustments */
+@media (width <= 640px) {
+  .hero-bg h1 {
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+
+  .nav-logo {
+    height: 36px;
+  }
+}
+
+/* Print styles (for completeness) */
+@media print {
+  .navbar,
+  .footer,
+  .btn-primary,
+  .btn-gold {
+    display: none !important;
+  }
+}
