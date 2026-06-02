@@ -11,14 +11,21 @@ module.exports = {
 
     // Filter pages we want in the sitemap
     const pages = data.collections.all.filter((page) => {
-      return page.url && !page.data.eleventyExcludeFromCollections && page.url !== '/404/';
+      return page.url &&
+        !page.data.eleventyExcludeFromCollections &&
+        !page.url.match(/404(\.html)?\/?$/) &&
+        !page.url.endsWith('/sitemap.xml') &&
+        !page.url.endsWith('/robots.txt');
     });
 
     let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
     pages.forEach((page) => {
-      const fullUrl = `${siteUrl}${page.url}`;
+      // Produce clean URLs without .html or trailing slash to match our link style
+      let cleanPath = page.url.replace(/\.html$/, '').replace(/\/$/, '');
+      if (!cleanPath || cleanPath === '') cleanPath = '/';
+      const fullUrl = `${siteUrl}${cleanPath}`;
 
       // Get last modified date from the source file
       let lastmod = new Date().toISOString().split('T')[0]; // fallback

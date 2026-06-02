@@ -13,10 +13,10 @@ A modern, professional static website for **Savannah Property Guardians** — a 
 - **Fully responsive** — optimized for desktop, tablet, and mobile
 - **Clean URLs and modern structure** using Eleventy:
   - Home (`/`)
-  - Handyman Services (`/handyman/`)
-  - Warehouse Management (`/warehouse/`)
-  - Commercial Property Maintenance (`/maintenance/`)
-  - Commercial Plumbing (`/plumbing/`)
+  - Handyman Services (`/handyman`)
+  - Warehouse Management (`/warehouse`)
+  - Commercial Property Maintenance (`/maintenance`)
+  - Commercial Plumbing (`/plumbing`)
   - Custom 404 page
 - **Interactive elements** (all in `script.js`):
   - Mobile hamburger navigation
@@ -152,7 +152,7 @@ For project repositories where you want the site served under a subpath (without
 
 ## Notes on Navigation & Paths
 
-This site uses **root-relative paths** (e.g. `/handyman/`, `/`) via Eleventy's `url` filter in templates. No `pathPrefix` is configured, so the site is built to run at the root of its domain.
+This site uses **root-relative paths** (e.g. `/handyman`, `/`) via Eleventy's `url` filter in templates (with permalinks using `.html` extension on disk for clean extensionless/no-trailing-slash URLs). No `pathPrefix` is configured, so the site is built to run at the root of its domain.
 
 - Ideal for custom domains, user/org sites, or hosting at root.
 - For standard GitHub project sites (served under `/repo-name/`), either:
