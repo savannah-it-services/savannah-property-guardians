@@ -6,9 +6,40 @@
   <meta name="description" content="{{ description or 'Savannah Property Guardians - Professional handyman, commercial property maintenance, warehouse management, and plumbing services.' }}">
   <title>{{ title or 'Savannah Property Guardians' }}</title>
   
+  <!-- Open Graph / Social Previews -->
+  {% set ogTitle = title or site.name %}
+  {% set ogDescription = description or site.description %}
+  {% set ogImagePath = ogImage or site.ogImage %}
+  {% set ogImageUrl = site.url ~ ogImagePath %}
+  {% set cleanPath = (page.url or '/') | replace('.html', '') %}
+  {% if not cleanPath or cleanPath == '' %}{% set cleanPath = '/' %}{% endif %}
+  {% set ogUrl = site.url ~ cleanPath %}
+  <meta property="og:title" content="{{ ogTitle }}">
+  <meta property="og:description" content="{{ ogDescription }}">
+  <meta property="og:url" content="{{ ogUrl }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:image" content="{{ ogImageUrl }}">
+  <meta property="og:image:alt" content="{{ site.ogImageAlt or ogTitle }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogTitle }}">
+  <meta name="twitter:description" content="{{ ogDescription }}">
+  <meta name="twitter:image" content="{{ ogImageUrl }}">
+  <meta name="twitter:image:alt" content="{{ site.ogImageAlt or ogTitle }}">
+
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ '/sitemap.xml' | url }}">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Fallback SVG favicon for modern browsers -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231B4332'/%3E%3Cpath d='M50 22 L62 36 L56 36 L56 52 L44 52 L44 36 L38 36 Z' fill='%23C9A227'/%3E%3Ccircle cx='50' cy='62' r='6' fill='%23C9A227'/%3E%3C/svg%3E" type="image/svg+xml">
 </head>
 <body class="antialiased">

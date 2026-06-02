@@ -5,6 +5,9 @@ module.exports = function (eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy('src/assets');
   eleventyConfig.addPassthroughCopy('src/images');
+  // Copy favicon assets to output root (for /favicon-*.png etc.)
+  eleventyConfig.addPassthroughCopy({ 'src/apple-touch-icon.png': '.' });
+  eleventyConfig.addPassthroughCopy({ 'src/favicon-*.png': '.' });
   // robots.txt is now handled as a template in src/robots.txt
 
   // Sitemap is now generated via src/sitemap.11ty.js (with proper file modification dates)
