@@ -119,13 +119,29 @@ h4 {
 
 /* Mobile Menu */
 .mobile-menu {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu.open {
-  max-height: 500px;
+  max-height: 100vh;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Hero Section */

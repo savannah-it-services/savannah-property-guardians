@@ -11,8 +11,15 @@ function initMobileNav() {
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
   if (!menuBtn || !mobileMenu) return;
+
+  // Move the overlay to body so it escapes the header's stacking context (z-50)
+  // and can properly grey out the entire page content below the top nav bar.
+  if (mobileMenuOverlay && mobileMenuOverlay.parentElement !== document.body) {
+    document.body.appendChild(mobileMenuOverlay);
+  }
 
   let isOpen = false;
 
@@ -21,18 +28,29 @@ function initMobileNav() {
 
     if (isOpen) {
       mobileMenu.classList.add('open');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.add('open');
       menuIcon.classList.add('hidden');
       closeIcon.classList.remove('hidden');
       menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     } else {
       mobileMenu.classList.remove('open');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('open');
       menuIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
       menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
   }
 
   menuBtn.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking the overlay
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', () => {
+      if (isOpen) toggleMenu();
+    });
+  }
 
   // Close menu when clicking a nav link
   const mobileLinks = mobileMenu.querySelectorAll('a');
