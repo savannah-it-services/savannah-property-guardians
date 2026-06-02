@@ -144,26 +144,23 @@ npm run build:gh-pages
 
 5. Wait 30–60 seconds and refresh.
 
-### Option B — Using `/docs` folder (Recommended for Project Repos)
+### Using `/docs` folder for GitHub Pages
 
-If your repository is a **project site** (e.g. `yourname.github.io/savannah-property-guardians`):
-
-1. Move everything into a `/docs` folder at the root of the repo
-2. In Settings → Pages, select Source: `main` branch and folder: `/docs`
-3. Commit and push
-
-This avoids issues with root-relative paths.
+For project repositories where you want the site served under a subpath (without re-adding pathPrefix), you can point GitHub Pages to a `/docs` folder. However, since this site builds without a `pathPrefix`, root-relative URLs expect the site content to be at the domain root. For subpath serving without prefix, consider adding a `<base href="/your-repo/">` or reintroducing `pathPrefix` in the Eleventy config.
 
 ---
 
 ## Notes on Navigation & Paths
 
-This site uses **root-relative paths** (e.g. `/handyman.html`, `/index.html`) in the shared header and footer for reliable navigation.
+This site uses **root-relative paths** (e.g. `/handyman/`, `/`) via Eleventy's `url` filter in templates. No `pathPrefix` is configured, so the site is built to run at the root of its domain.
 
-- Works perfectly for user/org sites (`yourname.github.io`)
-- For project sites, use the `/docs` folder method above (recommended)
+- Ideal for custom domains, user/org sites, or hosting at root.
+- For standard GitHub project sites (served under `/repo-name/`), either:
+  - Re-add `pathPrefix: "/repo-name/"` in `eleventy.config.js`, or
+  - Use a custom domain on the Pages site, or
+  - Serve via the `/docs` folder with appropriate base configuration.
 
-The JavaScript loads the shared header and footer from the `components/` folder.
+The navigation logic (in `script.js`) extracts the current page from `window.location.pathname` by taking the last path segment and works independently of any subfolder prefix.
 
 ---
 

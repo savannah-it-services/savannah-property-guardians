@@ -10,13 +10,12 @@ module.exports = function (eleventyConfig) {
   // Sitemap is now generated via src/sitemap.11ty.js (with proper file modification dates)
 
   return {
-    pathPrefix: "/savannah-property-guardians/",
     dir: {
       input: 'src',
       output: 'dist',
       includes: '_includes',
     },
-    templateFormats: ['njk', 'md', 'html'],
+    templateFormats: ['njk', 'md', 'html', '11ty.js'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };
