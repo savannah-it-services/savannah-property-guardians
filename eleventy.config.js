@@ -1,13 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-
 module.exports = function (eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy('src/assets');
-  eleventyConfig.addPassthroughCopy('src/images');
   // Copy favicon assets to output root (for /favicon-*.png etc.)
-  eleventyConfig.addPassthroughCopy({ 'src/apple-touch-icon.png': '.' });
-  eleventyConfig.addPassthroughCopy({ 'src/favicon-*.png': '.' });
+  eleventyConfig.addPassthroughCopy({
+    'src/apple-touch-icon.png': 'apple-touch-icon.png',
+    'src/favicon-16x16.png': 'favicon-16x16.png',
+    'src/favicon-32x32.png': 'favicon-32x32.png'
+  });
   // robots.txt is now handled as a template in src/robots.txt
 
   // Sitemap is now generated via src/sitemap.11ty.js (with proper file modification dates)
