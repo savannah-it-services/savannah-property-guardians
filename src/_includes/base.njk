@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ description or 'Savannah Property Guardians - Professional handyman, commercial property maintenance, warehouse management, and plumbing services.' }}">
   <title>{{ title or 'Savannah Property Guardians' }}</title>
-  
+
+  <!-- Google Analytics (GA4) -->
+  {%- if site.google_measurement_id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_measurement_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_measurement_id }}');
+  </script>
+  {%- endif %}
   <!-- Open Graph / Social Previews -->
   {% set ogTitle = title or site.name %}
   {% set ogDescription = description or site.description %}
