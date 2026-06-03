@@ -18,7 +18,7 @@
           data-hubspot-portal-id="{{ site.hubspot_portal_id }}"
           data-hubspot-form-guid="{{ site.hubspot_quote_form_guid }}">
       <div class="px-7 py-7 space-y-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="grid grid-cols-2 gap-5">
           <div>
             <label for="firstname" class="text-sm font-medium block mb-1.5">First Name *</label>
             <input id="firstname" required type="text" name="firstname" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Jane">
@@ -29,20 +29,20 @@
           </div>
         </div>
 
-        <div>
-          <label for="company" class="text-sm font-medium block mb-1.5">Company / Property</label>
-          <input id="company" type="text" name="company" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Acme Distribution LLC">
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="grid grid-cols-2 gap-5">
           <div>
             <label for="phone" class="text-sm font-medium block mb-1.5">Phone Number *</label>
             <input id="phone" required type="tel" name="phone" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="(555) 123-4567">
           </div>
           <div>
-            <label for="email" class="text-sm font-medium block mb-1.5">Email Address *</label>
-            <input id="email" required type="email" name="email" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="you@company.com">
+            <label for="company" class="text-sm font-medium block mb-1.5">Company</label>
+            <input id="company" type="text" name="company" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Acme Distribution LLC">
           </div>
+        </div>
+
+        <div>
+          <label for="email" class="text-sm font-medium block mb-1.5">Email Address *</label>
+          <input id="email" required type="email" name="email" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="you@company.com">
         </div>
 
         <div>
