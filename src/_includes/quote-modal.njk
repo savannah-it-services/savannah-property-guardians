@@ -14,50 +14,59 @@
       </button>
     </div>
 
-    <form id="quote-form" action="{{ site.contact_form_action }}" method="POST" class="px-7 py-7 space-y-5">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label for="name" class="text-sm font-medium block mb-1.5">Full Name *</label>
-          <input id="name" required type="text" name="name" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Jane Cooper">
+    <form id="quote-form" name="quote-request-form" method="POST"
+          data-hubspot-portal-id="{{ site.hubspot_portal_id }}"
+          data-hubspot-form-guid="{{ site.hubspot_quote_form_guid }}">
+      <div class="px-7 py-7 space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="firstname" class="text-sm font-medium block mb-1.5">First Name *</label>
+            <input id="firstname" required type="text" name="firstname" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Jane">
+          </div>
+          <div>
+            <label for="lastname" class="text-sm font-medium block mb-1.5">Last Name *</label>
+            <input id="lastname" required type="text" name="lastname" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Cooper">
+          </div>
         </div>
+
         <div>
           <label for="company" class="text-sm font-medium block mb-1.5">Company / Property</label>
           <input id="company" type="text" name="company" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Acme Distribution LLC">
         </div>
-      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label for="phone" class="text-sm font-medium block mb-1.5">Phone Number *</label>
-          <input id="phone" required type="tel" name="phone" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="(555) 123-4567">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="phone" class="text-sm font-medium block mb-1.5">Phone Number *</label>
+            <input id="phone" required type="tel" name="phone" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="(555) 123-4567">
+          </div>
+          <div>
+            <label for="email" class="text-sm font-medium block mb-1.5">Email Address *</label>
+            <input id="email" required type="email" name="email" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="you@company.com">
+          </div>
         </div>
+
         <div>
-          <label for="email" class="text-sm font-medium block mb-1.5">Email Address *</label>
-          <input id="email" required type="email" name="email" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="you@company.com">
+          <label for="service" class="text-sm font-medium block mb-1.5">Service Needed *</label>
+          <select id="service" required name="service" class="form-input w-full rounded-2xl px-4 py-3 text-sm bg-white">
+            <option value="">Please select a service</option>
+            <option value="Handyman Services">Handyman Services</option>
+            <option value="Warehouse Management">Commercial Warehouse Management</option>
+            <option value="Property Maintenance">Commercial Property Maintenance</option>
+            <option value="Commercial Plumbing">Commercial Plumbing</option>
+            <option value="Multiple / Other">Multiple Services or Other</option>
+          </select>
         </div>
-      </div>
 
-      <div>
-        <label for="service" class="text-sm font-medium block mb-1.5">Service Needed *</label>
-        <select id="service" required name="service" class="form-input w-full rounded-2xl px-4 py-3 text-sm bg-white">
-          <option value="">Please select a service</option>
-          <option value="Handyman Services">Handyman Services</option>
-          <option value="Warehouse Management">Commercial Warehouse Management</option>
-          <option value="Property Maintenance">Commercial Property Maintenance</option>
-          <option value="Commercial Plumbing">Commercial Plumbing</option>
-          <option value="Multiple / Other">Multiple Services or Other</option>
-        </select>
-      </div>
+        <div>
+          <label for="details" class="text-sm font-medium block mb-1.5">Tell us about the project *</label>
+          <textarea id="details" required name="details" rows="3" class="form-input w-full rounded-3xl px-4 py-3 text-sm resize-y" placeholder="Please describe the scope, timeline, and any special requirements..."></textarea>
+        </div>
 
-      <div>
-        <label for="details" class="text-sm font-medium block mb-1.5">Tell us about the project *</label>
-        <textarea id="details" required name="details" rows="3" class="form-input w-full rounded-3xl px-4 py-3 text-sm resize-y" placeholder="Please describe the scope, timeline, and any special requirements..."></textarea>
-      </div>
-
-      <div class="pt-3">
-        <button type="submit" class="btn-primary w-full text-white py-[17px] font-semibold rounded-2xl text-base tracking-wider">
-          SUBMIT REQUEST
-        </button>
+        <div class="pt-3">
+          <button type="submit" class="btn-primary w-full text-white py-[17px] font-semibold rounded-2xl text-base tracking-wider">
+            SUBMIT REQUEST
+          </button>
+        </div>
       </div>
     </form>
 

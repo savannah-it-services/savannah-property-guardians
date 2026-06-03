@@ -293,10 +293,10 @@ function initQuoteModal() {
         return;
       }
 
-      // Simulate submission (no backend)
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn ? submitBtn.innerHTML : '';
 
+      // Show loading state
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
@@ -307,24 +307,118 @@ function initQuoteModal() {
         `;
       }
 
-      setTimeout(() => {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        }
+      // Submit to HubSpot via Forms API (replaces simulation)
+      submitToHubSpot(form)
+        .then((success) => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
 
-        // Show success state
-        form.classList.add('hidden');
-        if (successMsg) {
-          successMsg.classList.remove('hidden');
-        }
+          if (success) {
+            // Show success state
+            form.classList.add('hidden');
+            if (successMsg) {
+              successMsg.classList.remove('hidden');
+            }
 
-        // Auto close after success display
-        setTimeout(() => {
-          closeModal();
-        }, 2800);
-      }, 1250);
+            // Auto close after success display
+            setTimeout(() => {
+              closeModal();
+            }, 2800);
+          } else {
+            // Error - user can try again or contact directly
+            alert('Sorry, there was a problem submitting your request. Please try again or email us directly at ' + (window.location.hostname.includes('localhost') ? 'info@savannahpropertyguardians.com' : ''));
+          }
+        })
+        .catch(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+          alert('Sorry, there was a problem submitting your request. Please try again or email us directly.');
+        });
     });
+  }
+}
+
+/**
+ * Submits the quote form data to HubSpot using the Forms API v3.
+ * Uses data attributes on the form for portal ID and form GUID (configured in site.json).
+ */
+async function submitToHubSpot(form) {
+  const portalId = form.dataset.hubspotPortalId;
+  const formGuid = form.dataset.hubspotFormGuid;
+
+  // If no HubSpot IDs configured yet, fall back to simulation (for development)
+  if (!portalId || !formGuid) {
+    console.warn('[HubSpot] No portalId or formGuid found on form. Using simulation mode.');
+    await new Promise((r) => setTimeout(r, 800));
+    return true; // pretend success
+  }
+
+  // Collect values
+  // Note: The form now uses separate First Name / Last Name fields (no more full name splitting logic).
+  const getVal = (sel) => (form.querySelector(sel)?.value || '').trim();
+
+  const firstname = getVal('#firstname');
+  const lastname = getVal('#lastname');
+  const email = getVal('#email');
+  const phone = getVal('#phone');
+  const company = getVal('#company');
+  const service = getVal('#service');
+  const details = getVal('#details');
+
+  // Build HubSpot fields array (use internal property names)
+  const fields = [
+    { name: 'email', value: email },
+    { name: 'firstname', value: firstname },
+    { name: 'lastname', value: lastname },
+    { name: 'phone', value: phone },
+    { name: 'company', value: company },
+    { name: 'service_needed', value: service },
+    { name: 'project_details', value: details },
+    // Optional: add a source
+    { name: 'lead_source', value: 'Website Quote Request' }
+  ].filter((f) => f.value); // drop empty if desired
+
+  // Context for better attribution (page, etc.)
+  const hutkMatch = document.cookie.match(/hubspotutk=([^;]+)/);
+  const context = {
+    pageUri: window.location.href,
+    pageName: document.title
+  };
+  if (hutkMatch) {
+    context.hutk = hutkMatch[1];
+  }
+
+  const payload = {
+    fields,
+    context
+    // Add legalConsentOptions here if you add a consent checkbox to the form
+  };
+
+  const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
+
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      // Success - HubSpot received it (contact created/updated)
+      return true;
+    } else {
+      console.error('[HubSpot] Submission failed', await res.text());
+      return false;
+    }
+  } catch (err) {
+    console.error('[HubSpot] Network error submitting form', err);
+    return false;
   }
 }
 
