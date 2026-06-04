@@ -1,6 +1,7 @@
 <footer class="footer pt-16 pb-9">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-12">
-    <div class="md:col-span-5">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-12 md:gap-x-8">
+    <!-- Brand -->
+    <div class="md:col-span-4">
       <div class="flex items-center gap-x-3 mb-5">
         <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M22 3.5 L38 9.5 V21.5 C38 30.5 31.5 38.5 22 41.5 C12.5 38.5 6 30.5 6 21.5 V9.5 L22 3.5Z" fill="#C9A227"/>
@@ -13,20 +14,12 @@
       <p class="text-[#C5C2B8] max-w-xs">Professional property guardianship and maintenance throughout Georgia, South Carolina, and North Carolina.</p>
     </div>
 
-    <div class="md:col-span-3 md:col-start-7">
-      <div class="grid grid-cols-2 gap-x-4 text-sm">
-        <div>
-          <div class="font-semibold text-white mb-4 tracking-wider text-xs">COMPANY</div>
-          <div class="space-y-[13px]">
-            <a href="{{ '/about' | url }}" class="block hover:text-white">About Us</a>
-            <a href="#" class="block hover:text-white">Our Team</a>
-            <a href="#" class="block hover:text-white">Careers</a>
-            <a href="#" class="block hover:text-white">Sustainability</a>
-          </div>
-        </div>
+    <!-- Services -->
+    <div class="md:col-span-4">
+      <div class="text-sm md:pl-2">
         <div>
           <div class="font-semibold text-white mb-4 tracking-wider text-xs">SERVICES</div>
-          <div class="space-y-[13px]">
+          <div class="space-y-2">
             <a href="{{ '/handyman' | url }}" class="block hover:text-white">Handyman</a>
             <a href="{{ '/warehouse' | url }}" class="block hover:text-white">Warehouse Management</a>
             <a href="{{ '/maintenance' | url }}" class="block hover:text-white">Property Maintenance</a>
@@ -35,14 +28,31 @@
         </div>
       </div>
     </div>
+
+    <!-- Contact -->
+    <div class="md:col-span-4">
+      <div class="text-sm md:pl-2">
+        <div>
+          <div class="font-semibold text-white mb-4 tracking-wider text-xs">CONTACT</div>
+          <div class="space-y-2 text-[#C5C2B8]">
+            <div>
+              <a href="tel:{{ site.phoneHref }}" class="block hover:text-white font-medium">{{ site.phone }}</a>
+              <div class="text-[10px] tracking-wider -mt-0.5">24/7 EMERGENCY</div>
+            </div>
+
+            <a href="mailto:{{ site.email }}" class="block hover:text-white">{{ site.email }}</a>
+
+            <div class="leading-snug">
+              {{ site.business_address.street1 }}<br>
+              {{ site.business_address.city }}, {{ site.business_address.state }} {{ site.business_address.zip }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-y-3 items-center justify-between text-xs text-[#A19E94]">
-    <div>© <span id="current-year"></span> Savannah Property Guardians, LLC. All rights reserved.</div>
-    <div class="flex gap-x-5">
-      <a href="#" class="hover:text-white">Privacy</a>
-      <a href="#" class="hover:text-white">Terms</a>
-      <a href="#" class="hover:text-white">Licenses</a>
-    </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-xs text-[#A19E94]">
+    <div class="text-center">© <span id="current-year"></span> Savannah Property Guardians, LLC. All rights reserved.</div>
   </div>
 </footer>
