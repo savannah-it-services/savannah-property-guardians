@@ -9,7 +9,7 @@ A modern, professional static website for **Savannah Property Guardians** — a 
 ## Features
 
 - **Beautiful, modern design** with a cohesive savanna-inspired color palette (deep forest green + rich gold + warm earth tones)
-- **Custom SVG logo** featuring a stylized acacia tree inside a protective shield
+- **Custom logo** featuring a detailed shield emblem with tree, house, and flag elements (PNG assets for favicons, OG images, and UI)
 - **Fully responsive** — optimized for desktop, tablet, and mobile
 - **Clean URLs and modern structure** using Eleventy:
   - Home (`/`)
@@ -166,7 +166,7 @@ The navigation logic (in `script.js`) extracts the current page from `window.loc
 
 ## Customization Tips
 
-- **Logo**: The SVG logo appears in `index.html` and all service pages. Edit the `<svg>` elements to change colors or shape.
+- **Logo**: Logo assets (logo.png, logo-icon.png, og-*.png) live in `src/assets/images/logo/`. The header/footer use `<img>` tags pointing to `/assets/images/logo/logo-icon.png`. Replace the PNGs in that folder to update all branding (favicons, OG images, UI logo). The root `favicon-*.png` and `apple-touch-icon.png` (in `src/`) are also generated from the master logo.
 - **Phone Number**: Search and replace `(555) 123-9876` throughout the files.
 - **Contact Form**: The form is front-end only (simulated). To connect to a real backend:
   - Use [Formspree](https://formspree.io), [Netlify Forms](https://www.netlify.com/products/forms/), or
