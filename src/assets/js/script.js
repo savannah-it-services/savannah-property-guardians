@@ -183,8 +183,6 @@ function initQuoteModal() {
   const modal = document.getElementById('quote-modal');
   const backdrop = document.getElementById('modal-backdrop');
   const closeBtn = document.getElementById('modal-close');
-  const form = document.getElementById('quote-form');
-  const successMsg = document.getElementById('quote-success');
 
   if (!modal) return;
 
@@ -264,13 +262,17 @@ function initQuoteModal() {
     }
   });
 
-  // Form submission
-  if (form) {
-    form.addEventListener('submit', (e) => {
+  // Quote form submission (supports embedded use on /contact + the modal instance)
+  document.querySelectorAll('#quote-form').forEach((formEl) => {
+    // Scope success lookup to the form's parent subtree (works even with duplicate IDs from modal + page embed)
+    const container = formEl.parentElement;
+    const successMsgEl = container ? container.querySelector('#quote-success') : null;
+
+    formEl.addEventListener('submit', (e) => {
       e.preventDefault();
 
       // Basic client-side validation
-      const requiredFields = form.querySelectorAll('[required]');
+      const requiredFields = formEl.querySelectorAll('[required]');
       let isValid = true;
 
       requiredFields.forEach((field) => {
@@ -293,7 +295,7 @@ function initQuoteModal() {
         return;
       }
 
-      const submitBtn = form.querySelector('button[type="submit"]');
+      const submitBtn = formEl.querySelector('button[type="submit"]');
       const originalText = submitBtn ? submitBtn.innerHTML : '';
 
       // Show loading state
@@ -308,7 +310,7 @@ function initQuoteModal() {
       }
 
       // Submit to HubSpot via Forms API (replaces simulation)
-      submitToHubSpot(form)
+      submitToHubSpot(formEl)
         .then((success) => {
           if (submitBtn) {
             submitBtn.disabled = false;
@@ -317,15 +319,18 @@ function initQuoteModal() {
 
           if (success) {
             // Show success state
-            form.classList.add('hidden');
-            if (successMsg) {
-              successMsg.classList.remove('hidden');
+            formEl.classList.add('hidden');
+            if (successMsgEl) {
+              successMsgEl.classList.remove('hidden');
             }
 
-            // Auto close after success display
-            setTimeout(() => {
-              closeModal();
-            }, 2800);
+            // Only auto-close the modal if this form instance lives inside the modal
+            if (formEl.closest('#quote-modal')) {
+              setTimeout(() => {
+                closeModal();
+              }, 2800);
+            }
+            // (standalone embeds like on /contact just leave the success message visible)
           } else {
             // Error - user can try again or contact directly
             alert('Sorry, there was a problem submitting your request. Please try again or email us directly at ' + (window.location.hostname.includes('localhost') ? 'info@savannahpropertyguardians.com' : ''));
@@ -339,7 +344,7 @@ function initQuoteModal() {
           alert('Sorry, there was a problem submitting your request. Please try again or email us directly.');
         });
     });
-  }
+  });
 }
 
 /**
@@ -614,40 +619,6 @@ function initTestimonialSlider() {
 }
 
 // ============================================
-// Form Enhancements (Contact page if present)
-// ============================================
-function initContactForm() {
-  const contactForm = document.getElementById('contact-page-form');
-  if (!contactForm) return;
-
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending message...';
-    }
-
-    // Simulate API call
-    setTimeout(() => {
-      contactForm.innerHTML = `
-        <div class="text-center py-12 px-6 bg-spg-sand rounded-2xl">
-          <div class="mx-auto w-16 h-16 bg-spg-gold text-spg-brown rounded-full flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold text-spg-green mb-3">Thank you!</h3>
-          <p class="text-spg-text-light max-w-sm mx-auto">Your message has been received. A member of our team will contact you within 4 business hours.</p>
-        </div>
-      `;
-    }, 1100);
-  });
-}
-
-// ============================================
 // Service Page Specific: Tabbed content (if used)
 // ============================================
 function initServiceTabs() {
@@ -725,7 +696,6 @@ function initializeSite() {
   initSmoothScroll();
   initStatsCounters();
   initTestimonialSlider();
-  initContactForm();
   initServiceTabs();
   initCopyToClipboard();
 
