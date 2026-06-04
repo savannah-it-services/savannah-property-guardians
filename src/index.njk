@@ -7,24 +7,24 @@ description: Professional handyman, commercial property maintenance, warehouse m
 <!-- HERO -->
 <header class="hero-bg pt-20 min-h-[100dvh] flex items-center relative">
   <div class="hero-pattern absolute inset-0"></div>
-  
+
   <div class="max-w-5xl mx-auto px-6 pt-12 pb-16 relative z-10">
     <div class="max-w-4xl">
       <h1 class="text-white text-[52px] sm:text-[64px] leading-[1.05] font-semibold tracking-[-2.4px] mb-6">
         Guardians of your<br>property. <span class="text-spg-gold">Always.</span>
       </h1>
-      
+
       <p class="max-w-[560px] text-xl text-white/80 mb-10">
-        Professional handyman, commercial maintenance, warehouse management, 
+        Professional handyman, commercial maintenance, warehouse management,
         and plumbing services delivered with integrity and craftsmanship.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4">
-        <button data-open-quote 
+        <button data-open-quote
                 class="btn-gold inline-flex justify-center items-center px-9 py-4 rounded-2xl text-lg font-semibold tracking-wide">
           Get a Free Quote
         </button>
-        <a href="#services" 
+        <a href="#services"
            class="inline-flex justify-center items-center px-9 py-4 rounded-2xl text-lg font-semibold text-white border-2 border-white/70 hover:bg-white/10 transition-all">
           Explore Our Services
         </a>
@@ -135,12 +135,12 @@ description: Professional handyman, commercial property maintenance, warehouse m
         <div class="uppercase text-xs tracking-[3px] font-semibold text-spg-gold mb-3">ABOUT US</div>
         <h2 class="text-spg-green text-4xl tracking-[-1.2px] font-semibold mb-4">100% Veteran Owned.<br>Built on integrity.</h2>
         <p class="text-spg-text-light max-w-xl">Savannah Property Guardians was founded on the belief that every property deserves a dedicated protector. Our veteran-led team delivers reliable, transparent service across the Southeast.</p>
-        
+
         <a href="{{ '/about' | url }}" class="inline-flex items-center mt-6 text-sm font-medium text-spg-green hover:underline">
           Learn more about our story →
         </a>
       </div>
-      
+
       <div class="lg:col-span-5 mt-8 lg:mt-0">
         <div class="inline-flex items-center gap-x-2.5 px-5 py-2 rounded-full bg-spg-green text-white text-sm font-semibold">
           <span class="text-lg">🇺🇸</span>
@@ -159,60 +159,22 @@ description: Professional handyman, commercial property maintenance, warehouse m
   </div>
 
   <div id="testimonial-slider" class="max-w-4xl mx-auto">
-    <div class="testimonial-slide testimonial-card bg-white border border-[#EDE4D4] rounded-3xl px-9 py-8">
-      <div class="flex gap-1 text-spg-gold mb-5">★★★★★</div>
+    {% for review in reviews %}
+    <div class="testimonial-slide testimonial-card bg-white border border-[#EDE4D4] rounded-3xl px-9 py-8{% if not loop.first %} hidden{% endif %}">
+      <div class="flex gap-1 text-spg-gold mb-5">
+        {% for i in [0,1,2,3,4] %}{% if i < review.stars %}★{% endif %}{% endfor %}
+      </div>
       <blockquote class="text-[21px] leading-tight tracking-[-0.3px] text-spg-text">
-        “Savannah Property Guardians has maintained our 87,000 sq ft distribution center for six years. Their team is proactive, professional, and incredibly responsive. They’ve saved us thousands in avoided downtime.”
+        {{ review.quote }}
       </blockquote>
       <div class="mt-8 flex items-center gap-x-4">
         <div class="w-12 h-12 bg-spg-sand rounded-2xl flex-shrink-0"></div>
         <div>
-          <div class="font-semibold">Marcus Delaney</div>
-          <div class="text-sm text-spg-text-light">Director of Operations, Apex Logistics</div>
+          <div class="font-semibold">{{ review.name }}</div>
+          <div class="text-sm text-spg-text-light">{{ review.title }}</div>
         </div>
       </div>
     </div>
-
-    <div class="testimonial-slide testimonial-card bg-white border border-[#EDE4D4] rounded-3xl px-9 py-8 hidden">
-      <div class="flex gap-1 text-spg-gold mb-5">★★★★★</div>
-      <blockquote class="text-[21px] leading-tight tracking-[-0.3px] text-spg-text">
-        “The handyman team installed new fixtures and repaired the entire front facade of our retail plaza in two days. They left the space spotless. I recommend them without hesitation.”
-      </blockquote>
-      <div class="mt-8 flex items-center gap-x-4">
-        <div class="w-12 h-12 bg-spg-sand rounded-2xl flex-shrink-0"></div>
-        <div>
-          <div class="font-semibold">Elena Vasquez</div>
-          <div class="text-sm text-spg-text-light">Property Manager, Riverbend Plaza</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testimonial-slide testimonial-card bg-white border border-[#EDE4D4] rounded-3xl px-9 py-8 hidden">
-      <div class="flex gap-1 text-spg-gold mb-5">★★★★★</div>
-      <blockquote class="text-[21px] leading-tight tracking-[-0.3px] text-spg-text">
-        “After a major pipe burst on a Sunday, their plumbing crew had water restored to our medical office building before our Monday morning patients arrived. Lifesavers.”
-      </blockquote>
-      <div class="mt-8 flex items-center gap-x-4">
-        <div class="w-12 h-12 bg-spg-sand rounded-2xl flex-shrink-0"></div>
-        <div>
-          <div class="font-semibold">Dr. Samuel Okoro</div>
-          <div class="text-sm text-spg-text-light">Owner, Okoro Medical Group</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="bg-spg-green-dark text-white">
-  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
-    <h2 class="text-5xl tracking-[-1.2px] font-semibold mb-4">Ready to protect your property?</h2>
-    <p class="text-xl text-white/70 mb-9">Speak with a property guardian today. Quotes are always free.</p>
-    
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <button data-open-quote class="btn-gold px-9 py-4 text-lg rounded-2xl font-semibold">Request Your Quote</button>
-      <a href="tel:{{ site.phoneHref }}" class="inline-flex items-center justify-center px-9 py-4 rounded-2xl border border-white/30 hover:bg-white/5 text-lg font-medium transition">Call {{ site.phone }}</a>
-    </div>
-    <p class="text-white/50 text-sm mt-6">Available 7 days a week • Emergency dispatch 24/7</p>
+    {% endfor %}
   </div>
 </section>

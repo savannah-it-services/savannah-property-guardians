@@ -177,94 +177,11 @@ function setActiveNavLink() {
 // ============================================
 // Quote Request Modal
 // ============================================
-let modalOpen = false;
-
-function initQuoteModal() {
-  const modal = document.getElementById('quote-modal');
-  const backdrop = document.getElementById('modal-backdrop');
-  const closeBtn = document.getElementById('modal-close');
-
-  if (!modal) return;
-
-  // Open modal triggers
-  const openTriggers = document.querySelectorAll('[data-open-quote]');
-  openTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal();
-    });
-  });
-
-  // Close handlers
-  function closeModal() {
-    if (!modalOpen) return;
-
-    const modalCard = modal.querySelector('.modal');
-    const backdropEl = document.getElementById('modal-backdrop');
-
-    // Trigger exit animations
-    if (modalCard) modalCard.classList.add('closing');
-    if (backdropEl) backdropEl.classList.add('closing');
-
-    const finishClose = () => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.style.overflow = '';
-      modalOpen = false;
-
-      // Clean up animation classes
-      if (modalCard) modalCard.classList.remove('closing');
-      if (backdropEl) backdropEl.classList.remove('closing');
-
-      // Reset form state
-      if (form && successMsg) {
-        form.classList.remove('hidden');
-        successMsg.classList.add('hidden');
-        form.reset();
-      }
-    };
-
-    // Wait for the modal card animation to finish before hiding
-    if (modalCard) {
-      modalCard.addEventListener('animationend', finishClose, { once: true });
-    } else {
-      // Fallback if no card found
-      finishClose();
-    }
-  }
-
-  function openModal() {
-    const modalCard = modal.querySelector('.modal');
-    const backdropEl = document.getElementById('modal-backdrop');
-
-    // Clean up any previous closing state
-    if (modalCard) modalCard.classList.remove('closing');
-    if (backdropEl) backdropEl.classList.remove('closing');
-
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
-    modalOpen = true;
-
-    // Focus first input
-    setTimeout(() => {
-      const firstInput = modal.querySelector('input, select, textarea');
-      if (firstInput) firstInput.focus();
-    }, 150);
-  }
-
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  if (backdrop) backdrop.addEventListener('click', closeModal);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalOpen) {
-      closeModal();
-    }
-  });
-
-  // Quote form submission (supports embedded use on /contact + the modal instance)
+// ============================================
+// Quote Form (global on every page, no modal)
+// ============================================
+function initQuoteForm() {
   document.querySelectorAll('#quote-form').forEach((formEl) => {
-    // Scope success lookup to the form's parent subtree (works even with duplicate IDs from modal + page embed)
     const container = formEl.parentElement;
     const successMsgEl = container ? container.querySelector('#quote-success') : null;
 
@@ -323,14 +240,7 @@ function initQuoteModal() {
             if (successMsgEl) {
               successMsgEl.classList.remove('hidden');
             }
-
-            // Only auto-close the modal if this form instance lives inside the modal
-            if (formEl.closest('#quote-modal')) {
-              setTimeout(() => {
-                closeModal();
-              }, 2800);
-            }
-            // (standalone embeds like on /contact just leave the success message visible)
+            // (no modal close; just leave success visible)
           } else {
             // Error - user can try again or contact directly
             alert('Sorry, there was a problem submitting your request. Please try again or email us directly at ' + (window.location.hostname.includes('localhost') ? 'info@savannahpropertyguardians.com' : ''));
@@ -343,6 +253,18 @@ function initQuoteModal() {
           }
           alert('Sorry, there was a problem submitting your request. Please try again or email us directly.');
         });
+    });
+  });
+}
+
+function initQuoteButtons() {
+  document.querySelectorAll('[data-open-quote]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('contact-form');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
 }
@@ -691,7 +613,8 @@ function initCopyToClipboard() {
 function initializeSite() {
   initMobileNav();
   setActiveNavLink();
-  initQuoteModal();
+  initQuoteForm();
+  initQuoteButtons();
   initFAQ();
   initSmoothScroll();
   initStatsCounters();
