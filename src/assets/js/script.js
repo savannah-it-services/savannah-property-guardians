@@ -617,7 +617,7 @@ function initTestimonialSlider() {
 // Form Enhancements (Contact page if present)
 // ============================================
 function initContactForm() {
-  const contactForm = document.getElementById('contact-form');
+  const contactForm = document.getElementById('contact-page-form');
   if (!contactForm) return;
 
   contactForm.addEventListener('submit', function (e) {

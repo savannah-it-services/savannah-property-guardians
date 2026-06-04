@@ -4,12 +4,27 @@ title: Contact Us | Savannah Property Guardians
 description: Get in touch with Savannah Property Guardians for professional handyman, warehouse, maintenance, plumbing, and security services across the Southeast. Free quotes and 24/7 emergency response.
 ---
 
+{% set addr = site.business_address %}
+{% set addrLine1 = addr.street1 %}
+{% set addrLine2 = addr.street2 %}
+{% set addrCityStateZip = addr.city + ', ' + addr.state + ' ' + addr.zip %}
+{% set addrFullInline = addrLine1 %}
+{% if addrLine2 %}
+{% set addrFullInline = addrFullInline + ', ' + addrLine2 %}
+{% endif %}
+{% set addrFullInline = addrFullInline + ', ' + addrCityStateZip %}
+{% set addrQueryBase = addrLine1 | replace(' ', '+') %}
+{% if addrLine2 %}
+{% set addrQueryBase = addrQueryBase + '+' + (addrLine2 | replace(' ', '+')) %}
+{% endif %}
+{% set addrQuery = addrQueryBase + ',+' + (addr.city | replace(' ', '+')) + ',+' + addr.state + '+' + addr.zip %}
+
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
     <div class="inline-block px-4 py-1 rounded-full bg-white/10 text-spg-gold text-xs tracking-[2px] font-semibold mb-4">WE'RE HERE TO HELP</div>
     <h1 class="text-white text-6xl md:text-7xl tracking-[-2.6px] font-semibold">Contact Us</h1>
     <p class="max-w-lg mx-auto mt-5 text-xl text-white/75">Reach out for a free quote, emergency service, or to learn more about how we can protect your property.</p>
-    
+
     <div class="flex justify-center gap-3 mt-8">
       <button data-open-quote class="btn-gold px-8 py-3.5 rounded-2xl font-semibold">Request a Free Quote</button>
       <a href="#contact-form" class="inline-flex items-center px-8 py-3.5 rounded-2xl text-white border-2 border-white/40 hover:bg-white/10 transition">Send a Message</a>
@@ -42,7 +57,7 @@ description: Get in touch with Savannah Property Guardians for professional hand
           </svg>
         </div>
         <h3 class="font-semibold text-xl text-spg-green mb-2">Email Us</h3>
-        <a href="mailto:{{ site.email }}" class="text-xl font-semibold text-spg-green hover:underline break-all">{{ site.email }}</a>
+        <a href="mailto:{{ site.email }}" class="text-lg font-semibold text-spg-green hover:underline break-all">{{ site.email }}</a>
         <p class="mt-auto pt-6 text-sm text-spg-text-light">We typically respond within 1 business hour during regular business hours.</p>
       </div>
 
@@ -56,11 +71,11 @@ description: Get in touch with Savannah Property Guardians for professional hand
         </div>
         <h3 class="font-semibold text-xl text-spg-green mb-2">Visit Us</h3>
         <div class="text-spg-text-light leading-snug">
-          {{ site.business_address.street1 }}<br>
-          {% if site.business_address.street2 %}{{ site.business_address.street2 }}<br>{% endif %}
-          {{ site.business_address.city }}, {{ site.business_address.state }} {{ site.business_address.zip }}
+          {{ addrLine1 }}<br>
+          {% if addrLine2 %}{{ addrLine2 }}<br>{% endif %}
+          {{ addrCityStateZip }}
         </div>
-        <a href="https://maps.google.com/?q=1016+US+Highway+80+Ste+B,+Tybee+Island,+GA+31328" target="_blank" class="mt-auto pt-6 inline-flex items-center text-sm font-medium text-spg-green hover:underline">
+        <a href="https://maps.google.com/?q={{ addrQuery }}" target="_blank" class="mt-auto pt-6 inline-flex items-center text-sm font-medium text-spg-green hover:underline">
           Get Directions →
         </a>
       </div>
@@ -70,18 +85,18 @@ description: Get in touch with Savannah Property Guardians for professional hand
   <!-- Map -->
   <section class="max-w-6xl mx-auto px-6 pb-16">
     <div class="rounded-3xl overflow-hidden border border-[#EDE4D4] shadow-sm">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3375.123!2d-80.845!3d31.999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDAwJzAwLjAiTiA4MMKwNTAnNDIuMCJX!5e0!3m2!1sen!2sus!4v1720000000000" 
-        width="100%" 
-        height="420" 
-        style="border:0; border-radius: 1.5rem;" 
-        allowfullscreen="" 
-        loading="lazy" 
+      <iframe
+        src="https://www.google.com/maps?q={{ addrQuery }}&z=17&output=embed"
+        width="100%"
+        height="420"
+        style="border:0; border-radius: 1.5rem;"
+        allowfullscreen
+        loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Savannah Property Guardians - 1016 US Highway 80, Tybee Island, GA">
+        title="Savannah Property Guardians - {{ addrFullInline }}">
       </iframe>
     </div>
-    <p class="text-center text-xs text-spg-text-light mt-3">1016 US Highway 80, Ste B, Tybee Island, GA 31328</p>
+    <p class="text-center text-xs text-spg-text-light mt-3">{{ addrFullInline }}</p>
   </section>
 
   <!-- Contact Form -->
@@ -93,7 +108,7 @@ description: Get in touch with Savannah Property Guardians for professional hand
         <p class="mt-3 text-spg-text-light max-w-md mx-auto">Whether you have a quick question or a complex project, we're here to help. Fill out the form and we'll get back to you promptly.</p>
       </div>
 
-      <form id="contact-form" class="bg-spg-sand border border-[#EDE4D4] rounded-3xl p-8 md:p-10 space-y-6">
+      <form id="contact-page-form" class="bg-spg-sand border border-[#EDE4D4] rounded-3xl p-8 md:p-10 space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label for="contact-firstname" class="text-sm font-medium block mb-1.5">First Name *</label>
