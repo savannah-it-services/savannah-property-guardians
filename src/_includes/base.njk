@@ -28,6 +28,9 @@
   {% set ogImagePath = ogImage or site.ogImage %}
   {% set ogImageUrl = site.url ~ ogImagePath %}
   {% set cleanPath = (page.url or '/') | replace('.html', '') %}
+  {% if cleanPath.length > 1 and cleanPath.endsWith('/') %}
+    {% set cleanPath = cleanPath.slice(0, -1) %}
+  {% endif %}
   {% if not cleanPath or cleanPath == '' %}{% set cleanPath = '/' %}{% endif %}
   {% set ogUrl = site.url ~ cleanPath %}
   <meta property="og:title" content="{{ ogTitle }}">
