@@ -4,6 +4,35 @@ title: About Us | Savannah Property Guardians
 description: Savannah Property Guardians is a 100% veteran owned company dedicated to protecting properties across the Southeast with integrity, craftsmanship, and modern systems.
 ---
 
+{% block additional_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Us",
+  "description": "Savannah Property Guardians is a 100% veteran owned company dedicated to protecting properties across the Southeast with integrity, craftsmanship, and modern systems.",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "description": "Savannah Property Guardians was founded on the belief that every property deserves a dedicated protector. Our veteran-led team delivers reliable, transparent service across the Southeast.",
+    "foundingDate": "2014",
+    "knowsAbout": [
+      "Handyman Services",
+      "Warehouse Management",
+      "Property Maintenance",
+      "Commercial Plumbing"
+    ],
+    "employee": {
+      "@type": "Person",
+      "name": "Veteran Team",
+      "description": "100% Veteran Owned and Operated"
+    }
+  }
+}
+</script>
+{% endblock %}
+
 <header class="service-hero pt-20">
   <div class="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
     <div class="inline-block px-4 py-1 rounded-full bg-white/10 text-spg-gold text-xs tracking-[2px] font-semibold mb-4">EST. 2013 • SOUTHEAST USA</div>

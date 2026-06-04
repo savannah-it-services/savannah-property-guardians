@@ -5,6 +5,93 @@ description: Expert handyman services from Savannah Property Guardians. Door and
 ogImage: /assets/images/logo/og-handyman.png
 ---
 
+{% block additional_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Handyman Services",
+  "description": "Expert handyman services from Savannah Property Guardians. Door and window installation, flooring, painting & waterproofing, fencing, drywall, carpentry, electrical, and home security — all from one trusted team.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  },
+  "serviceType": "Handyman Services",
+  "areaServed": "Southeast United States",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Handyman Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Door & Window Installation & Repairs"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Flooring & Tile Installation & Repairs"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gutter Installation & Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Professional Painting & Waterproofing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Expert Fencing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Drywall Repair & Installation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Quality Carpentry Work"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Lighting & Electrical"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Home Security"
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
     <div class="inline-block px-4 py-1 rounded-full bg-white/10 text-spg-gold text-xs tracking-[2px] font-semibold mb-4">RESIDENTIAL &amp; LIGHT COMMERCIAL</div>

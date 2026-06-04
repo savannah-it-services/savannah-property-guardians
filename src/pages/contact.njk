@@ -4,6 +4,39 @@ title: Contact Us | Savannah Property Guardians
 description: Get in touch with Savannah Property Guardians for professional handyman, warehouse, maintenance, plumbing, and security services across the Southeast. Free quotes and 24/7 emergency response.
 ---
 
+{% block additional_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Us",
+  "description": "Get in touch with Savannah Property Guardians for professional handyman, warehouse, maintenance, plumbing, and security services across the Southeast. Free quotes and 24/7 emergency response.",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.business_address.street1 }}{% if site.business_address.street2 %}, {{ site.business_address.street2 }}{% endif %}",
+      "addressLocality": "{{ site.business_address.city }}",
+      "addressRegion": "{{ site.business_address.state }}",
+      "postalCode": "{{ site.business_address.zip }}",
+      "addressCountry": "US"
+    },
+    "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "{{ site.phone }}",
+      "email": "{{ site.email }}",
+      "availableLanguage": "English"
+    }
+  }
+}
+</script>
+{% endblock %}
+
 {% set addr = site.business_address %}
 {% set addrLine1 = addr.street1 %}
 {% set addrLine2 = addr.street2 %}

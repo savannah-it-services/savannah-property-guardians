@@ -5,6 +5,72 @@ description: Licensed commercial plumbing services including drain cleaning, pip
 ogImage: /assets/images/logo/og-plumbing.png
 ---
 
+{% block additional_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Commercial Plumbing",
+  "description": "Licensed commercial plumbing services including drain cleaning, pipe repair, backflow testing, water heaters, and 24/7 emergency response.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  },
+  "serviceType": "Commercial Plumbing",
+  "areaServed": "Southeast United States",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Plumbing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Plumbing Emergencies"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Leaks and Drains"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "New Construction"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Water Heaters"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Water Pressure"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Waste Removal"
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
     <div class="inline-block px-4 py-1 rounded-full bg-white/10 text-spg-gold text-xs tracking-[2px] font-semibold mb-4">LICENSED • INSURED • 24/7</div>

@@ -5,6 +5,79 @@ description: End-to-end commercial warehouse operations, inventory support, dock
 ogImage: /assets/images/logo/og-warehouse.png
 ---
 
+{% block additional_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Warehouse Management",
+  "description": "End-to-end commercial warehouse operations, inventory support, dock maintenance, and facility optimization.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  },
+  "serviceType": "Warehouse Management",
+  "areaServed": "Southeast United States",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Warehouse Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Exterior Warehouse Maintenance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Rack & Shelving Installation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Industrial Lighting and Electrical"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Floor Maintenance and Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "HVAC and Climate Control"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Warehouse Security"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Interior Office Maintenance"
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
     <div class="inline-block px-4 py-1 rounded-full bg-white/10 text-spg-gold text-xs tracking-[2px] font-semibold mb-4">INDUSTRIAL &amp; LOGISTICS</div>

@@ -4,6 +4,44 @@ title: Savannah Property Guardians | Property Care & Maintenance Experts
 description: Professional handyman, commercial property maintenance, warehouse management, and plumbing services across the Southeast. Trusted since 2014.
 ---
 
+{% block additional_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "{{ site.name }}",
+      "url": "{{ site.url }}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.97",
+        "reviewCount": "{{ reviews | length }}"
+      }
+    }
+    {% for review in reviews %},
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review.name }}"
+      },
+      "reviewBody": "{{ review.quote | replace('"', '\\"') }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "{{ site.name }}"
+      }
+    }
+    {% endfor %}
+  ]
+}
+</script>
+{% endblock %}
+
 <!-- HERO -->
 <header class="hero-bg pt-20 min-h-[100dvh] flex items-center relative">
   <div class="hero-pattern absolute inset-0"></div>
