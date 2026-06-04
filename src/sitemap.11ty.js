@@ -22,8 +22,8 @@ module.exports = {
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
     pages.forEach((page) => {
-      // Produce clean URLs without .html or trailing slash to match our link style
-      let cleanPath = page.url.replace(/\.html$/, '').replace(/\/$/, '');
+      // Strip .html only; preserve trailing slash for directory-style pages (e.g. handyman-services subpages)
+      let cleanPath = page.url.replace(/\.html$/, '');
       if (!cleanPath || cleanPath === '') cleanPath = '/';
       const fullUrl = `${siteUrl}${cleanPath}`;
 

@@ -189,7 +189,7 @@ h4 {
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.1) rotate(3deg);
+  transform: scale(1.1);
   background-color: var(--spg-gold);
   color: white;
 }
