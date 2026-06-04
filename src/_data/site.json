@@ -8,10 +8,11 @@
   "phone": "(912) 376-9765",
   "phoneHref": "+19123769765",
   "business_address": {
-    "street1": "55 Deerwood Rd.",
-    "city": "Savannah",
+    "street1": "1016 US Highway 80",
+    "street2": "Ste B",
+    "city": "Tybee Island",
     "state": "GA",
-    "zip": "31410"
+    "zip": "31328"
   },
   "google_measurement_id": "G-T3V5MV72X8",
   "google_tag_manager_id": "GTM-KJ83XNGM",

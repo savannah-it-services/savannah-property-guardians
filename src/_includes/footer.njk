@@ -39,6 +39,7 @@
 
             <div class="leading-snug">
               {{ site.business_address.street1 }}<br>
+              {% if site.business_address.street2 %}{{ site.business_address.street2 }}<br>{% endif %}
               {{ site.business_address.city }}, {{ site.business_address.state }} {{ site.business_address.zip }}
             </div>
           </div>
