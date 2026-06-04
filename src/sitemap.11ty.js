@@ -22,7 +22,7 @@ module.exports = {
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
     pages.forEach((page) => {
-      // Produce clean extensionless URLs without trailing slashes (e.g. /handyman, /warehouse-services/rack-and-shelving-installation)
+      // Produce clean extensionless URLs without trailing slashes (e.g. /handyman, /warehouse-services/exterior-warehouse-maintenance)
       let cleanPath = page.url
         .replace(/\.html$/, '')
         .replace(/\/$/, '');
