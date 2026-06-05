@@ -6,16 +6,15 @@
   <meta name="description" content="{{ description or 'Savannah handyman services, commercial plumbing, warehouse maintenance, and property maintenance in Savannah, Tybee Island, and Chatham County, GA. 100% veteran-owned. Free quotes and 24/7 emergency response.' }}">
   <title>{{ title or 'Savannah Property Guardians' }}</title>
 
-  <!-- Google Analytics (GA4) -->
-  {%- if site.google_measurement_id %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_measurement_id }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_measurement_id }}');
-  </script>
+  <!-- Google Tag Manager -->
+  {%- if site.google_tag_manager_id %}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ site.google_tag_manager_id }}');</script>
   {%- endif %}
+  <!-- End Google Tag Manager -->
 
   <!-- HubSpot Tracking Code (for form submissions, analytics, and context) -->
   {%- if site.hubspot_portal_id %}
@@ -166,6 +165,13 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 8 L85 20 V45 C85 68 70 85 50 92 C30 85 15 68 15 45 V20 L50 8Z' fill='%231B4332'/%3E%3Cpath d='M50 8 L85 20 V45 C85 68 70 85 50 92 C30 85 15 68 15 45 V20 L50 8Z' stroke='%23C9A227' stroke-width='4'/%3E%3Crect x='46' y='55' width='8' height='18' rx='2' fill='%23C9A227'/%3E%3Cellipse cx='50' cy='50' rx='18' ry='10' fill='%23C9A227'/%3E%3Cellipse cx='50' cy='38' rx='12' ry='8' fill='%23C9A227'/%3E%3Cellipse cx='50' cy='28' rx='6' ry='4' fill='%23C9A227'/%3E%3C/svg%3E" type="image/svg+xml">
 </head>
 <body class="antialiased">
+  <!-- Google Tag Manager (noscript) -->
+  {%- if site.google_tag_manager_id %}
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  {%- endif %}
+  <!-- End Google Tag Manager (noscript) -->
+
   {% include "header.njk" %}
 
   {{ content | safe }}
