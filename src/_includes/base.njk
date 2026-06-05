@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ description or 'Savannah Property Guardians - Professional handyman, commercial property maintenance, warehouse management, and plumbing services.' }}">
+  <meta name="description" content="{{ description or 'Savannah handyman services, commercial plumbing, warehouse maintenance, and property maintenance in Savannah, Tybee Island, and Chatham County, GA. 100% veteran-owned. Free quotes and 24/7 emergency response.' }}">
   <title>{{ title or 'Savannah Property Guardians' }}</title>
 
   <!-- Google Analytics (GA4) -->
@@ -51,15 +51,18 @@
   <meta name="twitter:image" content="{{ ogImageUrl }}">
   <meta name="twitter:image:alt" content="{{ site.ogImageAlt or ogTitle }}">
 
-  <!-- JSON-LD Schema: LocalBusiness (global for all pages) -->
+  <!-- JSON-LD Schema: LocalBusiness (global for all pages) - Optimized for Savannah local SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "{{ site.url }}#business",
     "name": "{{ site.name }}",
     "url": "{{ site.url }}",
     "logo": "{{ site.url }}{{ site.ogImage }}",
+    "image": "{{ site.url }}{{ site.ogImage }}",
     "description": "{{ site.description }}",
+    "slogan": "Protecting properties across Savannah and coastal Georgia since 2014",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "{{ site.business_address.street1 }}{% if site.business_address.street2 %}, {{ site.business_address.street2 }}{% endif %}",
@@ -67,6 +70,11 @@
       "addressRegion": "{{ site.business_address.state }}",
       "postalCode": "{{ site.business_address.zip }}",
       "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.geo.latitude }},
+      "longitude": {{ site.geo.longitude }}
     },
     "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
@@ -82,10 +90,32 @@
       "opens": "07:00",
       "closes": "18:00"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Savannah",
+        "sameAs": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
+      },
+      {
+        "@type": "City",
+        "name": "Tybee Island"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Chatham County"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Coastal Georgia"
+      }
+    ],
+    "knowsAbout": [
+      "Savannah handyman services",
+      "Chatham County property maintenance",
+      "Tybee Island warehouse management",
+      "Savannah GA plumbing",
+      "Commercial electrician Savannah"
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Property Care Services",

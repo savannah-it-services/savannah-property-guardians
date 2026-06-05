@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Commercial Plumbing | Savannah Property Guardians
-description: Licensed commercial plumbing services including drain cleaning, pipe repair, backflow testing, water heaters, and 24/7 emergency response.
+title: Savannah Plumber & Commercial Plumbing Services | 24/7 Emergency
+description: "Licensed Savannah plumber for commercial and residential plumbing: drain cleaning, leak repair, water heaters, backflow, new construction, and 24/7 emergency plumbing in Chatham County and Tybee Island. Free quotes."
 ogImage: /assets/images/logo/og-plumbing.png
 ---
 
@@ -10,15 +10,18 @@ ogImage: /assets/images/logo/og-plumbing.png
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Commercial Plumbing",
-  "description": "Licensed commercial plumbing services including drain cleaning, pipe repair, backflow testing, water heaters, and 24/7 emergency response.",
+  "name": "Savannah Commercial Plumbing & Plumber Services",
+  "description": "Licensed plumber in Savannah GA providing commercial and residential plumbing services: 24/7 emergency response, drain cleaning, leak repair, water heaters, backflow prevention, new construction plumbing, and waste removal throughout Chatham County.",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "{{ site.name }}",
-    "url": "{{ site.url }}"
+    "@id": "{{ site.url }}#business"
   },
   "serviceType": "Commercial Plumbing",
-  "areaServed": "Southeast United States",
+  "areaServed": [
+    {"@type": "City", "name": "Savannah"},
+    {"@type": "City", "name": "Tybee Island"},
+    {"@type": "AdministrativeArea", "name": "Chatham County"}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Plumbing Services",
@@ -161,6 +164,20 @@ ogImage: /assets/images/logo/og-plumbing.png
           <p class="text-sm text-spg-text-light leading-relaxed flex-1">Sewer line cleaning, septic services, hydro-jetting, and camera inspections for waste systems.</p>
           <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Plumbing Content for Savannah SEO -->
+  <section class="max-w-5xl mx-auto px-6 py-14 border-t border-[#EDE4D4]">
+    <div class="grid md:grid-cols-12 gap-x-12 gap-y-6 items-start">
+      <div class="md:col-span-5">
+        <div class="uppercase tracking-[2px] text-xs font-semibold text-spg-gold mb-2">SAVANNAH PLUMBING EXPERTS</div>
+        <h2 class="text-spg-green text-3xl tracking-tight font-semibold">Fast, licensed plumbing for Savannah homes and businesses.</h2>
+      </div>
+      <div class="md:col-span-7 text-spg-text-light text-[15px] leading-relaxed">
+        <p class="mb-4">Plumbing problems don’t wait for business hours. Our licensed plumbers provide 24/7 emergency service across Savannah, Tybee Island, and Chatham County — from burst pipes in downtown historic districts to main line issues at warehouses and restaurants near the port. We also handle planned work: water heater replacement, backflow testing, new construction rough-ins, and long-term maintenance contracts.</p>
+        <p>Searching for a dependable Savannah plumber who communicates and finishes cleanly? We coordinate with our handyman and maintenance teams so complex jobs stay on one invoice and one timeline.</p>
       </div>
     </div>
   </section>

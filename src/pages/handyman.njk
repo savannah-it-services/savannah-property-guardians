@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Handyman Services | Savannah Property Guardians
-description: Expert handyman services from Savannah Property Guardians. Door and window installation, flooring, painting & waterproofing, fencing, drywall, carpentry, electrical, and home security — all from one trusted team.
+title: Savannah Handyman Services | Home Repairs, Installation & Maintenance
+description: Trusted Savannah handyman services for door & window repair, drywall, painting, fencing, flooring, carpentry, lighting & electrical, and home security. Serving Chatham County, Tybee Island & coastal Georgia. Free quotes.
 ogImage: /assets/images/logo/og-handyman.png
 ---
 
@@ -10,15 +10,18 @@ ogImage: /assets/images/logo/og-handyman.png
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Handyman Services",
-  "description": "Expert handyman services from Savannah Property Guardians. Door and window installation, flooring, painting & waterproofing, fencing, drywall, carpentry, electrical, and home security — all from one trusted team.",
+  "name": "Savannah Handyman Services",
+  "description": "Professional handyman services in Savannah GA including door & window repair, drywall installation, painting, fencing, flooring, carpentry, electrical, and home security for homes and light commercial properties.",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "{{ site.name }}",
-    "url": "{{ site.url }}"
+    "@id": "{{ site.url }}#business"
   },
   "serviceType": "Handyman Services",
-  "areaServed": "Southeast United States",
+  "areaServed": [
+    {"@type": "City", "name": "Savannah"},
+    {"@type": "City", "name": "Tybee Island"},
+    {"@type": "AdministrativeArea", "name": "Chatham County"}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Handyman Services",
@@ -220,6 +223,20 @@ ogImage: /assets/images/logo/og-handyman.png
           <p class="text-sm text-spg-text-light leading-relaxed">Camera systems, smart locks, alarms, video doorbells, and integrated security solutions.</p>
           <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Savannah Handyman Content for SEO depth -->
+  <section class="max-w-5xl mx-auto px-6 py-14 border-t border-[#EDE4D4]">
+    <div class="grid md:grid-cols-12 gap-x-12 gap-y-6 items-start">
+      <div class="md:col-span-5">
+        <div class="uppercase tracking-[2px] text-xs font-semibold text-spg-gold mb-2">SAVANNAH &amp; CHATHAM COUNTY</div>
+        <h2 class="text-spg-green text-3xl tracking-tight font-semibold">Local handyman services you can count on.</h2>
+      </div>
+      <div class="md:col-span-7 text-spg-text-light text-[15px] leading-relaxed">
+        <p class="mb-4">From quick fixes in historic Savannah homes to full renovations on Tybee Island and light commercial work across Chatham County, our handyman team brings the right skills and materials every time. We handle everything in-house where possible so you deal with one reliable crew instead of multiple contractors.</p>
+        <p>When you need a Savannah handyman who shows up on time, communicates clearly, and leaves the job cleaner than we found it, Savannah Property Guardians is the local choice property owners trust.</p>
       </div>
     </div>
   </section>

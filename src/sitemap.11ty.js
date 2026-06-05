@@ -38,9 +38,16 @@ module.exports = {
         // If we can't read the file, use today's date
       }
 
+      // Basic priority for local SEO focus: homepage and main category pages highest
+      let priority = '0.6';
+      if (cleanPath === '/') priority = '1.0';
+      else if (['/handyman', '/plumbing', '/property-maintenance', '/warehouse', '/about', '/contact'].includes(cleanPath)) priority = '0.8';
+
       sitemap += '  <url>\n';
       sitemap += `    <loc>${fullUrl}</loc>\n`;
       sitemap += `    <lastmod>${lastmod}</lastmod>\n`;
+      sitemap += `    <changefreq>weekly</changefreq>\n`;
+      sitemap += `    <priority>${priority}</priority>\n`;
       sitemap += '  </url>\n';
     });
 

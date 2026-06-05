@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Commercial Warehouse Management | Savannah Property Guardians
-description: End-to-end commercial warehouse operations, inventory support, dock maintenance, and facility optimization.
+title: Warehouse Maintenance & Management | Savannah GA & Chatham County
+description: Professional warehouse management and maintenance in Savannah, including dock repair, floor coatings, industrial lighting, racking, HVAC, and security. Serving coastal Georgia facilities. Free quotes.
 ogImage: /assets/images/logo/og-warehouse.png
 ---
 
@@ -10,15 +10,18 @@ ogImage: /assets/images/logo/og-warehouse.png
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Warehouse Management",
-  "description": "End-to-end commercial warehouse operations, inventory support, dock maintenance, and facility optimization.",
+  "name": "Savannah Warehouse Maintenance & Management",
+  "description": "Warehouse management and facility maintenance services in Savannah GA including loading dock repair, floor coatings, industrial lighting & electrical, rack installation, HVAC, and security for commercial warehouses and distribution centers.",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "{{ site.name }}",
-    "url": "{{ site.url }}"
+    "@id": "{{ site.url }}#business"
   },
   "serviceType": "Warehouse Management",
-  "areaServed": "Southeast United States",
+  "areaServed": [
+    {"@type": "City", "name": "Savannah"},
+    {"@type": "AdministrativeArea", "name": "Chatham County"},
+    {"@type": "City", "name": "Tybee Island"}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Warehouse Services",
@@ -187,6 +190,20 @@ ogImage: /assets/images/logo/og-warehouse.png
           <p class="text-sm text-spg-text-light leading-relaxed flex-1">Office cleaning, repairs, painting, flooring, and upkeep for interior spaces in warehouse facilities.</p>
           <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Warehouse Content for Savannah SEO -->
+  <section class="max-w-5xl mx-auto px-6 py-14 border-t border-[#EDE4D4]">
+    <div class="grid md:grid-cols-12 gap-x-12 gap-y-6 items-start">
+      <div class="md:col-span-5">
+        <div class="uppercase tracking-[2px] text-xs font-semibold text-spg-gold mb-2">WAREHOUSE FACILITIES IN SAVANNAH</div>
+        <h2 class="text-spg-green text-3xl tracking-tight font-semibold">Keeping coastal Georgia warehouses running at full capacity.</h2>
+      </div>
+      <div class="md:col-span-7 text-spg-text-light text-[15px] leading-relaxed">
+        <p class="mb-4">Savannah’s port and logistics hub demands reliable warehouse maintenance. Our specialized crews support distribution centers, 3PLs, and manufacturing facilities with dock repairs, heavy floor coatings, high-bay lighting upgrades, racking installs, climate control, and security — all coordinated so operations stay on schedule.</p>
+        <p>Whether you manage a single warehouse near the Garden City terminal or multiple sites across Chatham County, we deliver proactive warehouse management and rapid response that minimizes downtime and protects your bottom line.</p>
       </div>
     </div>
   </section>

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Commercial Property Maintenance | Savannah Property Guardians
-description: Comprehensive commercial property maintenance programs including preventive care, grounds, mechanical systems, and 24/7 emergency response.
+title: Property Maintenance Savannah GA | Commercial Building Care & Grounds
+description: "Complete property maintenance services in Savannah and Chatham County: preventive programs, grounds & landscaping, roof care, exterior building maintenance, mechanical systems, emergency response, and security. Free proposals."
 ogImage: /assets/images/logo/og-maintenance.png
 ---
 
@@ -10,15 +10,18 @@ ogImage: /assets/images/logo/og-maintenance.png
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Property Maintenance",
-  "description": "Comprehensive commercial property maintenance programs including preventive care, grounds, mechanical systems, and 24/7 emergency response.",
+  "name": "Savannah Property Maintenance Services",
+  "description": "Full-service property maintenance in Savannah GA and Chatham County including preventive maintenance programs, grounds and landscaping, roof and gutter care, exterior building maintenance, mechanical systems, 24/7 emergency response, and security for commercial, retail, office, and multi-tenant properties.",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "{{ site.name }}",
-    "url": "{{ site.url }}"
+    "@id": "{{ site.url }}#business"
   },
   "serviceType": "Property Maintenance",
-  "areaServed": "Southeast United States",
+  "areaServed": [
+    {"@type": "City", "name": "Savannah"},
+    {"@type": "City", "name": "Tybee Island"},
+    {"@type": "AdministrativeArea", "name": "Chatham County"}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Property Maintenance Services",
@@ -185,6 +188,20 @@ ogImage: /assets/images/logo/og-maintenance.png
           <p class="text-sm text-spg-text-light leading-relaxed flex-1">Advanced camera systems, alarms, access control, and 24/7 monitoring for homes, offices, and commercial properties.</p>
           <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Property Maintenance Content for Savannah SEO -->
+  <section class="max-w-5xl mx-auto px-6 py-14 border-t border-[#EDE4D4]">
+    <div class="grid md:grid-cols-12 gap-x-12 gap-y-6 items-start">
+      <div class="md:col-span-5">
+        <div class="uppercase tracking-[2px] text-xs font-semibold text-spg-gold mb-2">COMMERCIAL &amp; RESIDENTIAL IN CHATHAM COUNTY</div>
+        <h2 class="text-spg-green text-3xl tracking-tight font-semibold">Protecting the value of Savannah area properties, one visit at a time.</h2>
+      </div>
+      <div class="md:col-span-7 text-spg-text-light text-[15px] leading-relaxed">
+        <p class="mb-4">Savannah’s humid climate, coastal storms, and mix of historic and modern buildings create specific maintenance challenges. Our property maintenance programs are built for local realities: regular roof and gutter inspections before hurricane season, proactive grounds care that stands up to heavy rain, facade sealing that fights salt air, and mechanical systems tuned for year-round performance.</p>
+        <p>From office parks and retail centers to multi-family and industrial sites across Chatham County and Tybee, we act as your eyes and hands on the ground — catching small issues before they become expensive problems and keeping your properties looking sharp and operating smoothly.</p>
       </div>
     </div>
   </section>
