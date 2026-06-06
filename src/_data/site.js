@@ -1,0 +1,33 @@
+const IS_PRODUCTION = process.env.NODE_ENV === "production"
+const URL = IS_PRODUCTION ? 'https://www.savannahpropertyguardians.com' : 'http://localhost:8080'
+
+module.exports = {
+  isProduction: IS_PRODUCTION,
+  name: "Savannah Property Guardians",
+  url: URL,
+  description: "Expert handyman services, warehouse maintenance, property maintenance, and commercial plumbing in Savannah, Tybee Island, and Chatham County, GA. 100% veteran-owned property care professionals.",
+  ogImage: "/assets/images/logo/og-default.png",
+  ogImageAlt: "Savannah Property Guardians - Professional property services in Savannah GA",
+  email: "info@savannahpropertyguardians.com",
+  phone: "(912) 376-9765",
+  phoneHref: "+19123769765",
+  business_address: {
+    street1: "1016 US Highway 80",
+    street2: "Ste B",
+    city: "Tybee Island",
+    state: "GA",
+    zip: "31328"
+  },
+  geo: {
+    latitude: 32.004,
+    longitude: -80.843
+  },
+  service_areas: "Savannah, Tybee Island, Chatham County, and coastal Georgia",
+  business_hours: "Monday – Friday: 7:00 AM – 6:00 PM, Saturday: 9:00 AM – 4:00 PM (Sunday Closed)",
+  google_measurement_id: "G-T3V5MV72X8",
+  google_tag_manager_id: "GTM-KJ83XNGM",
+  google_business_profile: "https://www.google.com/search?q=Savannah+Property+Guardians&stick=H4sIAAAAAAAA_-NgU1I1qLCwSEsyTzM1M0u2SElOMTW3MqhIMrA0MDO1ME0yMk9NS0ozWcQqHZxYlpiXl5ihEFCUX5BaVFKp4F6aWJSSmZhXDACQoYtTRwAAAA&hl=en&mat=CRxjUNTzcjfaElcBTVDHnrElzA3qa66XFAsWIMlAbtJj6TDsyU3iNNyVjm4lCKKuHLNwCpK_8y5QxKDDWQ-qk8AcczbXYAXqd0qQqdx0l4a2ZWEvR-4-2M2RgrF2aKbYXeA&authuser=0",
+  hubspot_portal_id: "246386645",
+  hubspot_quote_form_guid: "4f3637c7-416d-4700-89c0-7eaaf81ba71f",
+  privacy_policy_last_updated: "June 1, 2026"
+}
