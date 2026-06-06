@@ -1,5 +1,7 @@
-const IS_PRODUCTION = process.env.NODE_ENV === "production"
+const IS_PRODUCTION = process.env.ELEVENTY_ENV !== "local"
 const URL = IS_PRODUCTION ? 'https://www.savannahpropertyguardians.com' : 'http://localhost:8080'
+console.log('IS_PRODUCTION ' + IS_PRODUCTION)
+console.log('IS_PRODUCTION ' + IS_PRODUCTION)
 
 module.exports = {
   isProduction: IS_PRODUCTION,
