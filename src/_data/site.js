@@ -8,7 +8,7 @@ module.exports = {
   name: "Savannah Property Guardians",
   url: URL,
   description: "Expert handyman services, warehouse maintenance, property maintenance, and commercial plumbing in Savannah, Tybee Island, and Chatham County, GA. 100% veteran-owned property care professionals.",
-  ogImage: "/assets/images/logo/og-default.png",
+  ogImage: "/assets/images/logo/og-default.webp",
   ogImageAlt: "Savannah Property Guardians - Professional property services in Savannah GA",
   email: "info@savannahpropertyguardians.com",
   phone: "(912) 376-9765",
