@@ -169,7 +169,7 @@ h4 {
 .home-hero {
   background-image: 
     linear-gradient(135deg, rgba(15, 44, 35, 0.72) 0%, rgba(27, 67, 50, 0.58) 100%),
-    url('/assets/images/home/hero-background.jpg');
+    url('/assets/images/home/hero-background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -440,7 +440,7 @@ h4 {
 .warehouse-hero {
   background-image: 
     linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%),
-    url('/assets/images/warehouse/hero-background.png');
+    url('/assets/images/warehouse/hero-background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -460,7 +460,7 @@ h4 {
 .plumbing-hero {
   background-image: 
     linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%),
-    url('/assets/images/plumbing/hero-background.jpg');
+    url('/assets/images/plumbing/hero-background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

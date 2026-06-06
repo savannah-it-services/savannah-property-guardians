@@ -1571,6 +1571,15 @@ h1, h2, h3, h4 {
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-10V8h-2v16h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 6v-4H4v4H0v2h4v4h2V8h4V6H6z' fill='%23C9A227' fill-opacity='0.06'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 65px 65px;
 }
+.home-hero {
+  background-image: linear-gradient(135deg, rgba(15, 44, 35, 0.72) 0%, rgba(27, 67, 50, 0.58) 100%), url('/assets/images/home/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home-hero .hero-pattern {
+  opacity: 0.25;
+}
 .service-card {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
   border: 1px solid #e5e0d5;
@@ -1753,6 +1762,30 @@ h1, h2, h3, h4 {
 }
 .service-hero {
   background: linear-gradient(145deg, var(--spg-green-dark) 0%, var(--spg-green) 100%);
+}
+.handyman-hero {
+  background-image: linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%), url('/assets/images/handyman/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.warehouse-hero {
+  background-image: linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%), url('/assets/images/warehouse/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.property-maintenance-hero {
+  background-image: linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%), url('/assets/images/property-maintenance/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.plumbing-hero {
+  background-image: linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%), url('/assets/images/plumbing/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .stat-number {
   font-variant-numeric: tabular-nums;
