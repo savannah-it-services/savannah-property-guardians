@@ -165,6 +165,20 @@ h4 {
   background-size: 65px 65px;
 }
 
+/* Homepage hero with background image */
+.home-hero {
+  background-image: 
+    linear-gradient(135deg, rgba(15, 44, 35, 0.72) 0%, rgba(27, 67, 50, 0.58) 100%),
+    url('/assets/images/home/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-hero .hero-pattern {
+  opacity: 0.25;
+}
+
 /* Service Cards */
 .service-card {
   transition:
@@ -410,6 +424,46 @@ h4 {
 /* Service Page Hero */
 .service-hero {
   background: linear-gradient(145deg, var(--spg-green-dark) 0%, var(--spg-green) 100%);
+}
+
+/* Handyman page hero with background image (only on main handyman services landing) */
+.handyman-hero {
+  background-image: 
+    linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%),
+    url('/assets/images/handyman/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Warehouse page hero with background image (only on main warehouse services landing) */
+.warehouse-hero {
+  background-image: 
+    linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%),
+    url('/assets/images/warehouse/hero-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Property Maintenance page hero with background image (only on main property-maintenance landing) */
+.property-maintenance-hero {
+  background-image: 
+    linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%),
+    url('/assets/images/property-maintenance/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Plumbing page hero with background image (only on main plumbing landing) */
+.plumbing-hero {
+  background-image: 
+    linear-gradient(145deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%),
+    url('/assets/images/plumbing/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Trust Badges / Stats */
