@@ -108,7 +108,8 @@ h4 {
 }
 
 .nav-link:hover::after,
-.nav-link.active::after {
+.nav-link.active::after,
+a:hover .nav-link::after {
   width: 100%;
 }
 
@@ -142,6 +143,65 @@ h4 {
 .mobile-menu-overlay.open {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* Mobile Menu Collapsible Submenus (using native details) */
+.mobile-menu details {
+  border-bottom: 1px solid #EDE4D4;
+}
+
+.mobile-menu details:last-of-type {
+  border-bottom: none;
+}
+
+.mobile-menu details summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  font-weight: 500;
+  color: var(--spg-text);
+}
+
+.mobile-menu details summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.mobile-menu details summary:hover {
+  color: var(--spg-green);
+}
+
+.mobile-menu details .sub-links {
+  padding-left: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  border-left: 1px solid #EDE4D4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: 0.875rem;
+  color: var(--spg-text-light);
+}
+
+.mobile-menu details .sub-links a {
+  padding: 0.125rem 0;
+  display: block;
+}
+
+.mobile-menu details .sub-links a:hover {
+  color: var(--spg-green);
+}
+
+.mobile-menu details .sub-links .view-all {
+  font-weight: 500;
+  color: var(--spg-green);
+  margin-bottom: 0.125rem;
 }
 
 /* Hero Section */
