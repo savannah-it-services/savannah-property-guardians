@@ -7,7 +7,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'src/apple-touch-icon.png': 'apple-touch-icon.png',
     'src/favicon-16x16.png': 'favicon-16x16.png',
-    'src/favicon-32x32.png': 'favicon-32x32.png'
+    'src/favicon-32x32.png': 'favicon-32x32.png',
+    'src/favicon.ico': 'favicon.ico'
   });
   // robots.txt is now handled as a template in src/robots.txt
 
