@@ -7,7 +7,7 @@
   <title>{{ title or 'Savannah Property Guardians' }}</title>
 
   <!-- Google Tag Manager -->
-  {%- if site.google_tag_manager_id %}
+  {%- if env.isProduction === true %}
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -156,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ '/sitemap.xml' | url }}">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -166,7 +166,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body class="antialiased">
   <!-- Google Tag Manager (noscript) -->
-  {%- if site.google_tag_manager_id %}
+  {%- if env.isProduction === true %}
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {%- endif %}
