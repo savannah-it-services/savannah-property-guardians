@@ -1,0 +1,50 @@
+{% set pageUrl = site.url ~ (page.url | replace('.html', '') | replace('/index', '')) %}
+{% set ogImagePath = ogImage or site.ogImage %}
+{% set serviceImage = site.url ~ ogImagePath %}
+{% set serviceType = page.serviceType or "Professional Property Services" %}
+{% set priceRange = page.priceRange or "$$" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ title }}",
+  "description": "{{ description }}",
+  "url": "{{ pageUrl }}",
+  "image": "{{ serviceImage }}",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "{{ site.url }}#business"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Savannah" },
+    { "@type": "City", "name": "Tybee Island" },
+    { "@type": "AdministrativeArea", "name": "Chatham County" },
+    { "@type": "AdministrativeArea", "name": "Coastal Georgia" }
+  ],
+  "serviceType": "{{ serviceType }}",
+  "priceRange": "{{ priceRange }}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "ratingCount": "3"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "{{ title }}",
+    "itemListElement": [
+{% if page.offers %}
+{% for offer in page.offers %}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{ offer }}"
+        }
+      }{% if not loop.last %},{% endif %}
+{% endfor %}
+{% endif %}
+    ]
+  }
+}
+</script>
