@@ -39,8 +39,8 @@
     "@type": "OfferCatalog",
     "name": "{{ title }}",
     "itemListElement": [
-{% if page.offers %}
-{% for offer in page.offers %}
+{% if offers %}
+{% for offer in offers %}
       {
         "@type": "Offer",
         "itemOffered": {
