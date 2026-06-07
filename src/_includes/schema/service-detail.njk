@@ -13,7 +13,13 @@
   "image": "{{ serviceImage }}",
   "provider": {
     "@type": "LocalBusiness",
-    "@id": "{{ site.url }}#business"
+    "@id": "{{ site.url }}#business",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "ratingCount": "3"
+    }
   },
   "areaServed": [
     { "@type": "City", "name": "Savannah" },
@@ -23,12 +29,6 @@
   ],
   "serviceType": "{{ serviceType }}",
   "priceRange": "{{ priceRange }}",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "bestRating": "5",
-    "ratingCount": "3"
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "{{ title }}",
