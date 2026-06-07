@@ -50,17 +50,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="twitter:image" content="{{ ogImageUrl }}">
   <meta name="twitter:image:alt" content="{{ site.ogImageAlt or ogTitle }}">
 
-  <!-- JSON-LD Schema: ProfessionalService (global for all pages) - Optimized for Savannah local SEO -->
+  <!-- JSON-LD Schema: LocalBusiness (global for all pages) - Optimized for Savannah local SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     "@id": "{{ site.url }}#business",
-    "name": "{{ site.name }}",
+    "name": "{{ site.name | safe }}",
     "url": "{{ site.url }}",
     "logo": "{{ site.url }}{{ site.ogImage }}",
     "image": "{{ site.url }}{{ site.ogImage }}",
-    "description": "{{ site.description }}",
+    "description": "{{ site.description | safe }}",
     "slogan": "Protecting properties across Savannah and coastal Georgia since 2014",
     "address": {
       "@type": "PostalAddress",
@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@context": "https://schema.org",
     "@type": "WebSite",
     "url": "{{ site.url }}",
-    "name": "{{ site.name }}",
+    "name": "{{ site.name | safe }}",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -187,7 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {
         "@type": "ListItem",
         "position": {{ crumb.pos }},
-        "name": "{{ crumb.name }}",
+        "name": "{{ crumb.name | safe }}",
         "item": "{{ crumb.url }}"
       }{% if not loop.last %},{% endif %}
       {% endfor %}

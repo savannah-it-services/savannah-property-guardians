@@ -12,25 +12,25 @@ description: Contact Savannah's trusted handyman, plumber, and property maintena
   "name": "Contact Us",
   "description": "Contact Savannah Property Guardians for handyman, plumbing, warehouse maintenance, and property maintenance quotes or 24/7 emergency service in Savannah, Tybee Island, and Chatham County GA.",
   "mainEntity": {
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     "@id": "{{ site.url }}#business",
-    "name": "{{ site.name }}",
+    "name": "{{ site.name | safe }}",
     "url": "{{ site.url }}",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "{{ site.business_address.street1 }}{% if site.business_address.street2 %}, {{ site.business_address.street2 }}{% endif %}",
-      "addressLocality": "{{ site.business_address.city }}",
-      "addressRegion": "{{ site.business_address.state }}",
-      "postalCode": "{{ site.business_address.zip }}",
+      "streetAddress": "{{ site.business_address.street1 | safe }}{% if site.business_address.street2 %}, {{ site.business_address.street2 | safe }}{% endif %}",
+      "addressLocality": "{{ site.business_address.city | safe }}",
+      "addressRegion": "{{ site.business_address.state | safe }}",
+      "postalCode": "{{ site.business_address.zip | safe }}",
       "addressCountry": "US"
     },
-    "telephone": "{{ site.phone }}",
-    "email": "{{ site.email }}",
+    "telephone": "{{ site.phone | safe }}",
+    "email": "{{ site.email | safe }}",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "telephone": "{{ site.phone }}",
-      "email": "{{ site.email }}",
+      "telephone": "{{ site.phone | safe }}",
+      "email": "{{ site.email | safe }}",
       "availableLanguage": "English"
     }
   }

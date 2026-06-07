@@ -14,11 +14,11 @@ ogImage: /assets/images/logo/og-handyman.webp
   "name": "Savannah Handyman Services",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ pageUrl }}"
+    "@id": "{{ pageUrl | safe }}"
   },
   "description": "Professional handyman services in Savannah GA including door & window repair, drywall installation, painting, fencing, flooring, carpentry, electrical, and home security for homes and light commercial properties.",
   "provider": {
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     "@id": "{{ site.url }}#business"
   },
   "serviceType": "Handyman Services",

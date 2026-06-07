@@ -7,8 +7,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "{{ title }}",
-  "description": "{{ description }}",
+  "name": "{{ title | safe }}",
+  "description": "{{ description | safe }}",
   "url": "{{ pageUrl }}",
   "image": "{{ serviceImage }}",
   "mainEntityOfPage": {
@@ -16,7 +16,7 @@
     "@id": "{{ pageUrl }}"
   },
   "provider": {
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     "@id": "{{ site.url }}#business"
   },
   "areaServed": [
@@ -25,8 +25,8 @@
     { "@type": "AdministrativeArea", "name": "Chatham County" },
     { "@type": "AdministrativeArea", "name": "Coastal Georgia" }
   ],
-  "serviceType": "{{ serviceType }}",
-  "priceRange": "{{ priceRange }}",
+  "serviceType": "{{ serviceType | safe }}",
+  "priceRange": "{{ priceRange | safe }}",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "{{ title }}",
@@ -37,7 +37,7 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "{{ offer }}"
+          "name": "{{ offer | safe }}"
         }
       }{% if not loop.last %},{% endif %}
 {% endfor %}
