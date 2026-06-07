@@ -6,11 +6,16 @@ ogImage: /assets/images/logo/og-handyman.webp
 ---
 
 {% block additional_schema %}
+{% set pageUrl = site.url ~ (page.url | replace('.html', '') | replace('/index', '')) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Savannah Handyman Services",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ pageUrl }}"
+  },
   "description": "Professional handyman services in Savannah GA including door & window repair, drywall installation, painting, fencing, flooring, carpentry, electrical, and home security for homes and light commercial properties.",
   "provider": {
     "@type": "ProfessionalService",

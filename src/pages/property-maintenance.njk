@@ -6,11 +6,16 @@ ogImage: /assets/images/logo/og-maintenance.webp
 ---
 
 {% block additional_schema %}
+{% set pageUrl = site.url ~ (page.url | replace('.html', '') | replace('/index', '')) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Savannah Property Maintenance Services",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ pageUrl }}"
+  },
   "description": "Full-service property maintenance in Savannah GA and Chatham County including preventive maintenance programs, grounds and landscaping, roof and gutter care, exterior building maintenance, mechanical systems, 24/7 emergency response, and security for commercial, retail, office, and multi-tenant properties.",
   "provider": {
     "@type": "ProfessionalService",

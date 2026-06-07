@@ -6,11 +6,16 @@ ogImage: /assets/images/logo/og-warehouse.webp
 ---
 
 {% block additional_schema %}
+{% set pageUrl = site.url ~ (page.url | replace('.html', '') | replace('/index', '')) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Savannah Warehouse Maintenance & Management",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ pageUrl }}"
+  },
   "description": "Warehouse management and facility maintenance services in Savannah GA including loading dock repair, floor coatings, industrial lighting & electrical, rack installation, HVAC, and security for commercial warehouses and distribution centers.",
   "provider": {
     "@type": "ProfessionalService",
