@@ -3,7 +3,13 @@ layout: base.njk
 title: 24/7 Emergency Plumber Savannah | Burst Pipe, Sewer Backup, No Water
 description: 24/7 emergency plumbing response in Savannah, Tybee Island, and Chatham County for burst pipes, major leaks, sewer backups, no water, and urgent issues. Fast local plumber dispatch.
 ogImage: /assets/images/logo/og-plumbing.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

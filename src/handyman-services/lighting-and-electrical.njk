@@ -3,7 +3,22 @@ layout: base.njk
 title: Savannah Electrician & Lighting Installation | LED, Electrical Upgrades
 description: Professional lighting installation, LED upgrades, fixture, outlet, switch, and minor electrical work by licensed Savannah area electricians. Serving homes and light commercial in Chatham County and Tybee Island.
 ogImage: /assets/images/logo/og-handyman.webp
+serviceType: "Lighting Installation and Electrical Upgrades"
+priceRange: "$$"
+offers:
+  - Recessed lighting design & IC-rated installs
+  - Chandeliers, pendants, sconces & ceiling fans
+  - Under-cabinet & task LED lighting
+  - GFCI, USB & smart switch/outlet upgrades
+  - Outdoor flood, pathway & landscape lighting
+  - Whole-home automation & smart controls
+  - Breaker replacement & panel capacity upgrades
+  - Flickering lights, dead outlets & minor troubleshooting
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

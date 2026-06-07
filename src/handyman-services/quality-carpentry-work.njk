@@ -3,7 +3,13 @@ layout: base.njk
 title: Custom Carpentry & Trim Work Savannah | Built-ins, Cabinet Repair
 description: Quality custom carpentry, trim, built-ins, cabinet repairs, and fine woodwork in Savannah, Tybee Island, and Chatham County homes and light commercial. Local handyman craftsmen.
 ogImage: /assets/images/logo/og-handyman.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

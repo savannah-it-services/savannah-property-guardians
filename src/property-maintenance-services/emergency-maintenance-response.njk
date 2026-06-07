@@ -3,7 +3,13 @@ layout: base.njk
 title: 24/7 Emergency Maintenance Savannah | Storm, Leak, HVAC, Power Response
 description: 24/7 emergency maintenance response for commercial and residential properties in Savannah, Tybee Island, and Chatham County. After-hours repairs, leaks, HVAC, power, storm damage. One call.
 ogImage: /assets/images/logo/og-maintenance.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

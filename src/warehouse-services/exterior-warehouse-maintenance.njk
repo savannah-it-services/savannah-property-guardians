@@ -3,7 +3,13 @@ layout: base.njk
 title: Exterior Warehouse Maintenance Savannah | Docks, Levelers, Yard Care
 description: Professional exterior warehouse maintenance including loading dock upkeep, leveler repair, trailer restraints, yard paving, drainage, and traffic management for commercial warehouses in Savannah and Chatham County.
 ogImage: /assets/images/logo/og-warehouse.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

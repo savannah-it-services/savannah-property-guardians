@@ -3,7 +3,22 @@ layout: base.njk
 title: Door & Window Repair & Installation | Savannah Handyman Services
 description: Professional door and window installation, repair, and hardware upgrades in Savannah GA, Tybee Island, and Chatham County. Entry doors, windows, sliding & garage doors by local handyman team. Free quotes.
 ogImage: /assets/images/logo/og-handyman.webp
+serviceType: "Door and Window Installation and Repairs"
+priceRange: "$$"
+offers:
+  - Pre-hung entry, interior, and utility door installations
+  - Pocket, barn-style, and sliding patio door systems
+  - Window installation, replacement, and repair (double-hung, casement, sliding, etc.)
+  - Full garage door and opener service with safety inspections
+  - Complete weatherproofing, flashing, and sealing for doors and windows
+  - Hinge sag, latch, closer, and alignment repairs
+  - Modern deadbolts, lever handles, viewers, and smart locks
+  - Screen repair/replacement, track, roller, and multi-point locking system fixes
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

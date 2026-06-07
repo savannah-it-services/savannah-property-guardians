@@ -3,7 +3,13 @@ layout: base.njk
 title: Warehouse HVAC & Climate Control Savannah | Industrial Ventilation
 description: Industrial HVAC installation, ventilation, dehumidification, heating, and temperature control systems for commercial warehouses and distribution centers in Savannah and Chatham County.
 ogImage: /assets/images/logo/og-warehouse.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

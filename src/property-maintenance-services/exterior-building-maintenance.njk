@@ -3,7 +3,13 @@ layout: base.njk
 title: Exterior Building Maintenance Savannah | Facade, Sealing, Painting
 description: Exterior envelope maintenance including facade cleaning, painting, sealing, caulking, window care, and weatherproofing for commercial and multi-tenant buildings in Savannah and Chatham County.
 ogImage: /assets/images/logo/og-maintenance.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

@@ -3,7 +3,13 @@ layout: base.njk
 title: Low Water Pressure Repair Savannah | Regulators, Pumps, Whole House
 description: Professional diagnosis and repair for low or high water pressure, regulators, pumps, and whole-house solutions in Savannah, Tybee Island, and Chatham County. Licensed local plumbers.
 ogImage: /assets/images/logo/og-plumbing.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">

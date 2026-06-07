@@ -3,7 +3,13 @@ layout: base.njk
 title: Commercial & Residential Security Savannah | Cameras, Alarms, Access
 description: Expert residential and commercial security services including surveillance cameras, alarm systems, access control, smart locks, and monitoring for homes, offices, retail, and industrial properties in Savannah and Chatham County.
 ogImage: /assets/images/logo/og-maintenance.webp
+serviceType: "Professional Property Services"
+priceRange: "$$"
 ---
+
+{% block additional_schema %}
+{% include "schema/service-detail.njk" %}
+{% endblock %}
 
 <header class="service-hero pt-20">
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
