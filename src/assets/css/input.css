@@ -502,6 +502,47 @@ a:hover .nav-link::after {
   color: var(--spg-gold);
 }
 
+/* Footer Services Accordion (hamburger-style, single open) */
+.footer details {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer details:last-of-type {
+  border-bottom: none;
+}
+.footer details summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  font-size: 0.75rem;
+  color: #c5c2b8;
+}
+.footer details summary::-webkit-details-marker {
+  display: none;
+}
+.footer details[open] summary svg {
+  transform: rotate(180deg);
+}
+.footer details .sub-services {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.footer details .sub-services a {
+  display: block;
+  padding: 0.125rem 0;
+  font-size: 0.7rem;
+  color: #c5c2b8;
+  transition: color 0.2s ease;
+}
+.footer details .sub-services a:hover {
+  color: var(--spg-gold);
+}
+
 /* Utility: Gold accent underline */
 .gold-underline {
   position: relative;
