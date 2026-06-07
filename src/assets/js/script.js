@@ -21,6 +21,9 @@ function initMobileNav() {
     document.body.appendChild(mobileMenuOverlay);
   }
 
+  // Collect submenu details once for both animation and coordinated closing
+  const subDetails = mobileMenu.querySelectorAll('details');
+
   let isOpen = false;
 
   function toggleMenu() {
@@ -40,6 +43,11 @@ function initMobileNav() {
       closeIcon.classList.add('hidden');
       menuBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+
+      // Collapse any open submenus so the mobile menu is fresh the next time it opens
+      subDetails.forEach((d) => {
+        if (d.open) d.removeAttribute('open');
+      });
     }
   }
 
@@ -65,6 +73,39 @@ function initMobileNav() {
     if (e.key === 'Escape' && isOpen) {
       toggleMenu();
     }
+  });
+
+  // Smooth grow / close animation for mobile hamburger submenus (the <details> items)
+  // Matches the main mobile menu's max-height + cubic-bezier "grow" behavior.
+  subDetails.forEach((detail) => {
+    const content = detail.querySelector('.sub-links');
+    if (!content) return;
+
+    // Prepare animated container (CSS also sets base max-height:0 + transition)
+    content.style.overflow = 'hidden';
+    content.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+
+    // Set initial collapsed/expanded state based on native details state
+    const applyHeight = () => {
+      content.style.maxHeight = detail.open ? content.scrollHeight + 'px' : '0px';
+    };
+    applyHeight();
+
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        // Grow: animate from current (0) to the natural content height
+        content.style.maxHeight = '0px';
+        // Force the browser to acknowledge the start value, then expand
+        void content.offsetHeight;
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        // Close: animate from current height down to zero
+        const current = content.scrollHeight;
+        content.style.maxHeight = current + 'px';
+        void content.offsetHeight;
+        content.style.maxHeight = '0px';
+      }
+    });
   });
 }
 

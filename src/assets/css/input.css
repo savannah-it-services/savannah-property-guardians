@@ -179,19 +179,30 @@ a:hover .nav-link::after {
 
 .mobile-menu details .sub-links {
   padding-left: 0.75rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
   border-left: 1px solid #EDE4D4;
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
-  font-size: 0.875rem;
   color: var(--spg-text-light);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              margin-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu details .sub-links a {
   padding: 0.125rem 0;
   display: block;
+}
+
+/* When the details is open, restore the spacing and allow the animated height */
+.mobile-menu details[open] .sub-links {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  /* JS will set the precise max-height for measured grow/shrink animation */
 }
 
 .mobile-menu details .sub-links a:hover {
