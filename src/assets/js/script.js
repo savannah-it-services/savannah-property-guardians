@@ -93,8 +93,34 @@ function getPageNameFromPath(pathname) {
   return nameWithoutExt.toLowerCase();
 }
 
+function getActiveNavKey(pathname) {
+  const normalized = pathname.replace(/\\/g, '/').toLowerCase();
+  const cleanPath = normalized.split('?')[0].split('#')[0].replace(/\/$/, '');
+
+  // Map sub-service paths and main pages to their parent nav key
+  if (cleanPath.includes('/handyman-services') || cleanPath.endsWith('/handyman')) {
+    return 'handyman';
+  }
+  if (cleanPath.includes('/warehouse-services') || cleanPath.endsWith('/warehouse')) {
+    return 'warehouse';
+  }
+  if (cleanPath.includes('/property-maintenance-services') || cleanPath.endsWith('/property-maintenance')) {
+    return 'property-maintenance';
+  }
+  if (cleanPath.includes('/plumbing-services') || cleanPath.endsWith('/plumbing')) {
+    return 'plumbing';
+  }
+
+  // Fallback: last path segment (for about, contact, home, etc.)
+  const segments = cleanPath.split('/').filter(Boolean);
+  let lastSegment = segments.pop() || 'index';
+  lastSegment = lastSegment.replace(/\.[^/.]+$/, '');
+  if (!lastSegment || lastSegment === 'index') return 'index';
+  return lastSegment;
+}
+
 function setActiveNavLink() {
-  const currentPage = getPageNameFromPath(window.location.pathname);
+  const currentNavKey = getActiveNavKey(window.location.pathname);
 
   // Clear previous active states (useful if script runs multiple times)
   document.querySelectorAll('.nav-link[aria-current="page"]').forEach((el) => {
@@ -124,16 +150,16 @@ function setActiveNavLink() {
       const currentHash = window.location.hash;
 
       // Only activate if we're on the matching page AND the hash in the URL exactly matches
-      if (linkPage === currentPage && currentHash === '#' + linkHash) {
+      if (linkPage === getPageNameFromPath(window.location.pathname) && currentHash === '#' + linkHash) {
         link.classList.add('active');
       }
       return;
     }
 
-    // Normal page-to-page comparison
-    const linkPage = getPageNameFromPath(href);
+    // Normal page-to-page comparison (supports parent nav for sub-services)
+    const linkNavKey = getActiveNavKey(href);
 
-    if (linkPage === currentPage) {
+    if (linkNavKey === currentNavKey) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
@@ -159,15 +185,15 @@ function setActiveNavLink() {
       const linkPage = getPageNameFromPath(linkPath);
       const currentHash = window.location.hash;
 
-      if (linkPage === currentPage && currentHash === '#' + linkHash) {
+      if (linkPage === getPageNameFromPath(window.location.pathname) && currentHash === '#' + linkHash) {
         link.classList.add('text-spg-gold', 'font-semibold');
       }
       return;
     }
 
-    const linkPage = getPageNameFromPath(href);
+    const linkNavKey = getActiveNavKey(href);
 
-    if (linkPage === currentPage) {
+    if (linkNavKey === currentNavKey) {
       link.classList.add('text-spg-gold', 'font-semibold');
       link.setAttribute('aria-current', 'page');
     }
