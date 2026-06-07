@@ -1,8 +1,14 @@
 {% set pageUrl = site.url ~ (page.url | replace('.html', '') | replace('/index', '')) %}
 {% set ogImagePath = ogImage or site.ogImage %}
 {% set serviceImage = site.url ~ ogImagePath %}
-{% set serviceType = page.serviceType or "Professional Property Services" %}
+{% set serviceType = page.serviceType or (title | replace('Savannah ', '') | replace(' Installation & Repair', ' Services') | replace(' | ', ' - ') | replace(' Installation', ' Services') | replace(' Repair', ' Repairs') | replace(' & ', ' and ') ) %}
 {% set priceRange = page.priceRange or "$$" %}
+{% set reviewCount = reviews | length %}
+{% set totalStars = 0 %}
+{% for review in reviews %}
+  {% set totalStars = totalStars + review.stars %}
+{% endfor %}
+{% set avgRating = (totalStars / reviewCount) | round(1) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -12,13 +18,13 @@
   "url": "{{ pageUrl }}",
   "image": "{{ serviceImage }}",
   "provider": {
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "@id": "{{ site.url }}#business",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5",
+      "ratingValue": "{{ avgRating }}",
       "bestRating": "5",
-      "ratingCount": "3"
+      "ratingCount": "{{ reviewCount }}"
     }
   },
   "areaServed": [
@@ -45,6 +51,23 @@
 {% endfor %}
 {% endif %}
     ]
-  }
+  },
+  "review": [
+{% for review in reviews %}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review.name }}"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review.stars }}",
+        "bestRating": "5"
+      },
+      "reviewBody": "{{ review.quote | replace('“', '') | replace('”', '') | replace('"', '\\"') }}"
+    }{% if not loop.last %},{% endif %}
+{% endfor %}
+  ]
 }
 </script>

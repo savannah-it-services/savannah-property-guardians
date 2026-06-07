@@ -50,11 +50,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="twitter:image" content="{{ ogImageUrl }}">
   <meta name="twitter:image:alt" content="{{ site.ogImageAlt or ogTitle }}">
 
-  <!-- JSON-LD Schema: LocalBusiness (global for all pages) - Optimized for Savannah local SEO -->
+  <!-- JSON-LD Schema: ProfessionalService (global for all pages) - Optimized for Savannah local SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "@id": "{{ site.url }}#business",
     "name": "{{ site.name }}",
     "url": "{{ site.url }}",
@@ -123,6 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "Savannah GA plumbing",
       "Commercial electrician Savannah"
     ],
+    "sameAs": {{ site.sameAs | dump | safe }},
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Property Care Services",
@@ -149,6 +150,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
       ]
     }
+  }
+  </script>
+
+  <!-- WebSite schema with SearchAction for sitelinks searchbox -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "{{ site.url }}",
+    "name": "{{ site.name }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ site.url }}/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- BreadcrumbList for all pages -->
+  {% set cleanPath = page.url | replace('.html', '') | replace('/index', '') %}
+  {% set crumbs = [{ "pos": 1, "name": "Home", "url": site.url }] %}
+  {% if cleanPath != '/' %}
+    {% set lastName = title | default('Page') %}
+    {% set crumbs = crumbs.concat([{ "pos": 2, "name": lastName, "url": site.url ~ cleanPath }]) %}
+  {% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {% for crumb in crumbs %}
+      {
+        "@type": "ListItem",
+        "position": {{ crumb.pos }},
+        "name": "{{ crumb.name }}",
+        "item": "{{ crumb.url }}"
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
   }
   </script>
 
