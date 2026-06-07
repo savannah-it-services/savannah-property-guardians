@@ -51,23 +51,6 @@
 {% endfor %}
 {% endif %}
     ]
-  },
-  "review": [
-{% for review in reviews %}
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "{{ review.name }}"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "{{ review.stars }}",
-        "bestRating": "5"
-      },
-      "reviewBody": "{{ review.quote | replace('“', '') | replace('”', '') | replace('"', '\\"') }}"
-    }{% if not loop.last %},{% endif %}
-{% endfor %}
-  ]
+  }
 }
 </script>

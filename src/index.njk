@@ -19,24 +19,6 @@ description: 100% veteran-owned handyman services, commercial plumbing, warehous
         "reviewCount": "{{ reviews | length }}"
       }
     }
-    {% for review in reviews %},
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "{{ review.name }}"
-      },
-      "reviewBody": "{{ review.quote | replace('"', '\\"') }}",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "itemReviewed": {
-        "@type": "ProfessionalService",
-        "name": "{{ site.name }}"
-      }
-    }
-    {% endfor %}
   ]
 }
 </script>
