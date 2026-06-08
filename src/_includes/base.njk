@@ -50,6 +50,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="twitter:image" content="{{ ogImageUrl }}">
   <meta name="twitter:image:alt" content="{{ site.ogImageAlt or ogTitle }}">
 
+  <!-- Self-referencing canonical URL -->
+  <link rel="canonical" href="{{ ogUrl }}">
+
   <!-- JSON-LD Schema: LocalBusiness (global for all pages) - Optimized for Savannah local SEO -->
   <script type="application/ld+json">
   {
