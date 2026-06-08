@@ -15,7 +15,7 @@ offers:
   - Full system testing, cleaning, and written reports
   - Color-matched installation for new builds and remodels
 ---
-
+{% set pageData = handyman.gutterInstallationAndRepair %}
 {% block additional_schema %}
 {% include "schema/service-detail.njk" %}
 {% endblock %}
@@ -25,7 +25,7 @@ offers:
     <div class="inline-block px-4 py-1 rounded-full bg-white/10 text-spg-gold text-xs tracking-[2px] font-semibold mb-4">HANDYMAN SERVICES</div>
     <h1 class="text-white text-5xl md:text-6xl tracking-[-2.2px] font-semibold">Gutter Installation &amp; Repair</h1>
     <p class="max-w-xl mx-auto mt-5 text-xl text-white/75">Keep water moving away from your home — with properly installed and repaired gutters.</p>
-    
+
     <div class="flex justify-center gap-3 mt-8">
       <button data-open-quote class="btn-gold px-8 py-3.5 rounded-2xl font-semibold">Get a Quote</button>
       <a href="{{ '/handyman' | url | cleanUrl }}" class="inline-flex items-center px-8 py-3.5 rounded-2xl text-white border-2 border-white/40 hover:bg-white/10 transition">All Handyman Services</a>
@@ -108,4 +108,7 @@ offers:
       </div>
     </div>
   </section>
+  <!-- FAQ -->
+  {% set faq = pageData.faq %}
+  {% include "faq.njk" %}
 </main>

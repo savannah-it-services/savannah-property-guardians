@@ -390,32 +390,7 @@ a:hover .nav-link::after {
   transition: all 0.2s ease;
 }
 
-.faq-question:hover {
-  color: var(--spg-green);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition:
-    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.3s ease;
-  opacity: 0;
-}
-
-.faq-answer.open {
-  max-height: 300px;
-  opacity: 1;
-}
-
-.faq-icon {
-  transition: transform 0.3s ease;
-}
-
-.faq-answer.open + .faq-question .faq-icon,
-.faq-question[aria-expanded='true'] .faq-icon {
-  transform: rotate(180deg);
-}
+/* (Legacy div-based FAQ accordion styles removed on revert to native <details> version) */
 
 /* Buttons */
 .btn-primary {
@@ -540,6 +515,26 @@ a:hover .nav-link::after {
   transition: color 0.2s ease;
 }
 .footer details .sub-services a:hover {
+  color: var(--spg-gold);
+}
+
+/* FAQ Accordion (reusable, native <details name="faq"> hamburger style) */
+.faq details {
+  border-bottom: 1px solid #EDE4D4;
+}
+.faq details:last-of-type {
+  border-bottom: none;
+}
+.faq details summary {
+  list-style: none;
+}
+.faq details summary::-webkit-details-marker {
+  display: none;
+}
+.faq details[open] summary svg {
+  transform: rotate(180deg);
+}
+.faq details summary:hover {
   color: var(--spg-gold);
 }
 

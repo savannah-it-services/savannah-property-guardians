@@ -236,6 +236,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .collapse {
+    visibility: collapse;
+  }
   .invisible {
     visibility: hidden;
   }
@@ -656,6 +659,9 @@
   .resize-y {
     resize: vertical;
   }
+  .list-none {
+    list-style-type: none;
+  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1017,8 +1023,14 @@
   .pr-4 {
     padding-right: calc(var(--spacing) * 4);
   }
+  .pr-10 {
+    padding-right: calc(var(--spacing) * 10);
+  }
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
+  }
+  .pb-6 {
+    padding-bottom: calc(var(--spacing) * 6);
   }
   .pb-9 {
     padding-bottom: calc(var(--spacing) * 9);
@@ -1083,6 +1095,9 @@
   }
   .text-\[15px\] {
     font-size: 15px;
+  }
+  .text-\[17px\] {
+    font-size: 17px;
   }
   .text-\[21px\] {
     font-size: 21px;
@@ -1310,6 +1325,11 @@
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
   }
+  .group-open\:rotate-180 {
+    &:is(:where(.group):is([open], :popover-open, :open) *) {
+      rotate: 180deg;
+    }
+  }
   .group-focus-within\:pointer-events-auto {
     &:is(:where(.group):focus-within *) {
       pointer-events: auto;
@@ -1391,6 +1411,12 @@
       @media (hover: hover) {
         opacity: 100%;
       }
+    }
+  }
+  .last\:border-b-0 {
+    &:last-child {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 0px;
     }
   }
   .hover\:bg-spg-sand {
@@ -1872,25 +1898,6 @@ h1, h2, h3, h4 {
 .faq-question {
   transition: all 0.2s ease;
 }
-.faq-question:hover {
-  color: var(--spg-green);
-}
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-  opacity: 0;
-}
-.faq-answer.open {
-  max-height: 300px;
-  opacity: 1;
-}
-.faq-icon {
-  transition: transform 0.3s ease;
-}
-.faq-answer.open + .faq-question .faq-icon, .faq-question[aria-expanded='true'] .faq-icon {
-  transform: rotate(180deg);
-}
 .btn-primary {
   background: linear-gradient(135deg, var(--spg-green), var(--spg-green-light));
   transition: all 0.3s ease;
@@ -1992,6 +1999,24 @@ h1, h2, h3, h4 {
   transition: color 0.2s ease;
 }
 .footer details .sub-services a:hover {
+  color: var(--spg-gold);
+}
+.faq details {
+  border-bottom: 1px solid #EDE4D4;
+}
+.faq details:last-of-type {
+  border-bottom: none;
+}
+.faq details summary {
+  list-style: none;
+}
+.faq details summary::-webkit-details-marker {
+  display: none;
+}
+.faq details[open] summary svg {
+  transform: rotate(180deg);
+}
+.faq details summary:hover {
   color: var(--spg-gold);
 }
 .gold-underline {

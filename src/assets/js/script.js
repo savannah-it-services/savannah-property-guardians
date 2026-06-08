@@ -417,7 +417,7 @@ async function submitToHubSpot(form) {
 }
 
 // ============================================
-// FAQ Accordion
+// FAQ Accordion (legacy .faq-item structure)
 // ============================================
 function initFAQ() {
   const faqItems = document.querySelectorAll('.faq-item');
