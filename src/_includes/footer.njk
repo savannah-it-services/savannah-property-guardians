@@ -24,7 +24,7 @@
                 </svg>
               </summary>
               <div class="sub-services">
-                <a href="{{ '/handyman' | url }}">View all Handyman Services</a>
+                <a href="{{ '/handyman' | url | cleanUrl }}">View all Handyman Services</a>
                 <a href="/handyman-services/door-and-window-installation-and-repairs">Door &amp; Window Installation &amp; Repairs</a>
                 <a href="/handyman-services/flooring-and-tile-installation-and-repairs">Flooring &amp; Tile Installation &amp; Repairs</a>
                 <a href="/handyman-services/gutter-installation-and-repair">Gutter Installation &amp; Repair</a>
@@ -46,7 +46,7 @@
                 </svg>
               </summary>
               <div class="sub-services">
-                <a href="{{ '/warehouse' | url }}">View all Warehouse Services</a>
+                <a href="{{ '/warehouse' | url | cleanUrl }}">View all Warehouse Services</a>
                 <a href="/warehouse-services/exterior-warehouse-maintenance">Exterior Warehouse Maintenance</a>
                 <a href="/warehouse-services/rack-and-shelving-installation">Rack &amp; Shelving Installation</a>
                 <a href="/warehouse-services/industrial-lighting-and-electrical">Industrial Lighting and Electrical</a>
@@ -66,7 +66,7 @@
                 </svg>
               </summary>
               <div class="sub-services">
-                <a href="{{ '/property-maintenance' | url }}">View all Property Maintenance</a>
+                <a href="{{ '/property-maintenance' | url | cleanUrl }}">View all Property Maintenance</a>
                 <a href="/property-maintenance-services/preventive-maintenance-programs">Preventive Maintenance Programs</a>
                 <a href="/property-maintenance-services/grounds-and-landscaping-maintenance">Grounds and Landscaping Maintenance</a>
                 <a href="/property-maintenance-services/roof-and-gutter-maintenance">Roof and Gutter Maintenance</a>
@@ -86,7 +86,7 @@
                 </svg>
               </summary>
               <div class="sub-services">
-                <a href="{{ '/plumbing' | url }}">View all Commercial Plumbing</a>
+                <a href="{{ '/plumbing' | url | cleanUrl }}">View all Commercial Plumbing</a>
                 <a href="/plumbing-services/plumbing-emergencies">Plumbing Emergencies</a>
                 <a href="/plumbing-services/leaks-and-drains">Leaks and Drains</a>
                 <a href="/plumbing-services/new-construction">New Construction</a>
@@ -96,8 +96,8 @@
               </div>
             </details>
 
-            <a href="{{ '/about' | url }}" class="block py-1 font-medium hover:text-white">About</a>
-            <a href="{{ '/contact' | url }}" class="block py-1 font-medium hover:text-white">Contact</a>
+            <a href="{{ '/about' | url | cleanUrl }}" class="block py-1 font-medium hover:text-white">About</a>
+            <a href="{{ '/contact' | url | cleanUrl }}" class="block py-1 font-medium hover:text-white">Contact</a>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@
               {{ site.business_address.city }}, {{ site.business_address.state }} {{ site.business_address.zip }}
             </div>
 
-            <a href="/privacy-policy/" class="block text-sm text-[#C5C2B8] hover:text-white mt-2">Privacy Policy</a>
+            <a href="/privacy-policy" class="block text-sm text-[#C5C2B8] hover:text-white mt-2">Privacy Policy</a>
 
             <a href="{{ site.google_business_profile }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-x-2 text-sm text-[#C5C2B8] hover:text-white mt-1" aria-label="View our Google Business Profile and reviews">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" viewBox="0 0 48 48" aria-hidden="true">
@@ -143,7 +143,7 @@
     <div class="text-center">
       © <span id="current-year"></span> Savannah Property Guardians, LLC. All rights reserved.
       <span class="mx-1">|</span>
-      <a href="/privacy-policy/" class="hover:text-white">Privacy Policy</a>
+      <a href="/privacy-policy" class="hover:text-white">Privacy Policy</a>
     </div>
   </div>
 </footer>

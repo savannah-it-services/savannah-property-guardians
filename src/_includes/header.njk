@@ -2,7 +2,7 @@
   <nav class="max-w-7xl mx-auto px-6">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="{{ '/' | url }}" class="flex items-center gap-x-3 group">
+      <a href="{{ '/' | url | cleanUrl }}" class="flex items-center gap-x-3 group">
         <img src="{{ '/assets/images/logo/logo-icon.webp' | url }}" alt="Savannah Property Guardians logo" class="nav-logo logo-svg" width="44" height="44">
         <div class="leading-none">
           <div class="font-semibold text-2xl tracking-tighter text-spg-green">Savannah</div>
@@ -14,7 +14,7 @@
       <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
         <!-- Handyman Dropdown -->
         <div class="relative group">
-          <a href="{{ '/handyman' | url }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
+          <a href="{{ '/handyman' | url | cleanUrl }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
             Handyman
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -24,7 +24,7 @@
           <div class="mega-menu absolute left-0 top-full pt-2 w-[min(680px,92vw)] z-50 opacity-0 pointer-events-none -translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 transition-all duration-200 ease-out">
             <div class="bg-white border border-[#EDE4D4] shadow-xl rounded-3xl p-5">
               <div class="mb-3 px-1">
-                <a href="{{ '/handyman' | url }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Handyman Services →</a>
+                <a href="{{ '/handyman' | url | cleanUrl }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Handyman Services →</a>
               </div>
               <div class="grid grid-cols-3 gap-x-3 gap-y-1.5">
               <a href="/handyman-services/door-and-window-installation-and-repairs" class="flex items-start gap-2.5 p-1.5 -mx-1 rounded-lg transition-colors text-spg-text hover:text-spg-green">
@@ -109,7 +109,7 @@
 
         <!-- Warehouse Dropdown -->
         <div class="relative group">
-          <a href="{{ '/warehouse' | url }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
+          <a href="{{ '/warehouse' | url | cleanUrl }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
             Warehouse
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -118,7 +118,7 @@
           <div class="mega-menu absolute left-0 top-full pt-2 w-[min(680px,92vw)] z-50 opacity-0 pointer-events-none -translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 transition-all duration-200 ease-out">
             <div class="bg-white border border-[#EDE4D4] shadow-xl rounded-3xl p-5">
               <div class="mb-3 px-1">
-                <a href="{{ '/warehouse' | url }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Warehouse Management →</a>
+                <a href="{{ '/warehouse' | url | cleanUrl }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Warehouse Management →</a>
               </div>
               <div class="grid grid-cols-3 gap-x-3 gap-y-1.5">
               <a href="/warehouse-services/exterior-warehouse-maintenance" class="flex items-start gap-2.5 p-1.5 -mx-1 rounded-lg transition-colors text-spg-text hover:text-spg-green">
@@ -186,7 +186,7 @@
 
         <!-- Property Maintenance Dropdown -->
         <div class="relative group">
-          <a href="{{ '/property-maintenance' | url }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
+          <a href="{{ '/property-maintenance' | url | cleanUrl }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
             Property Maintenance
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -195,7 +195,7 @@
           <div class="mega-menu absolute left-0 top-full pt-2 w-[min(680px,92vw)] z-50 opacity-0 pointer-events-none -translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 transition-all duration-200 ease-out">
             <div class="bg-white border border-[#EDE4D4] shadow-xl rounded-3xl p-5">
               <div class="mb-3 px-1">
-                <a href="{{ '/property-maintenance' | url }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Property Maintenance →</a>
+                <a href="{{ '/property-maintenance' | url | cleanUrl }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Property Maintenance →</a>
               </div>
               <div class="grid grid-cols-3 gap-x-3 gap-y-1.5">
               <a href="/property-maintenance-services/preventive-maintenance-programs" class="flex items-start gap-2.5 p-1.5 -mx-1 rounded-lg transition-colors text-spg-text hover:text-spg-green">
@@ -261,7 +261,7 @@
 
         <!-- Plumbing Dropdown -->
         <div class="relative group">
-          <a href="{{ '/plumbing' | url }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
+          <a href="{{ '/plumbing' | url | cleanUrl }}" class="nav-link text-spg-text hover:text-spg-green flex items-center gap-1">
             Plumbing
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -270,7 +270,7 @@
           <div class="mega-menu absolute left-0 top-full pt-2 w-[min(680px,92vw)] z-50 opacity-0 pointer-events-none -translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 transition-all duration-200 ease-out">
             <div class="bg-white border border-[#EDE4D4] shadow-xl rounded-3xl p-5">
               <div class="mb-3 px-1">
-                <a href="{{ '/plumbing' | url }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Commercial Plumbing →</a>
+                <a href="{{ '/plumbing' | url | cleanUrl }}" class="font-semibold text-spg-green hover:text-spg-gold text-sm tracking-tight">Commercial Plumbing →</a>
               </div>
               <div class="grid grid-cols-3 gap-x-3 gap-y-1.5">
               <a href="/plumbing-services/plumbing-emergencies" class="flex items-start gap-2.5 p-1.5 -mx-1 rounded-lg transition-colors text-spg-text hover:text-spg-green">
@@ -327,8 +327,8 @@
           </div>
         </div>
 
-        <a href="{{ '/about' | url }}" class="nav-link text-spg-text hover:text-spg-green">About</a>
-        <a href="{{ '/contact' | url }}" class="nav-link text-spg-text hover:text-spg-green">Contact</a>
+        <a href="{{ '/about' | url | cleanUrl }}" class="nav-link text-spg-text hover:text-spg-green">About</a>
+        <a href="{{ '/contact' | url | cleanUrl }}" class="nav-link text-spg-text hover:text-spg-green">Contact</a>
       </div>
 
       <div class="hidden md:flex items-center gap-x-4">
@@ -373,7 +373,7 @@
           </svg>
         </summary>
         <div class="sub-links">
-          <a href="{{ '/handyman' | url }}" class="view-all">View all Handyman Services</a>
+          <a href="{{ '/handyman' | url | cleanUrl }}" class="view-all">View all Handyman Services</a>
           <a href="/handyman-services/door-and-window-installation-and-repairs">Door &amp; Window Installation &amp; Repairs</a>
           <a href="/handyman-services/flooring-and-tile-installation-and-repairs">Flooring &amp; Tile Installation &amp; Repairs</a>
           <a href="/handyman-services/gutter-installation-and-repair">Gutter Installation &amp; Repair</a>
@@ -395,7 +395,7 @@
           </svg>
         </summary>
         <div class="sub-links">
-          <a href="{{ '/warehouse' | url }}" class="view-all">View all Warehouse Services</a>
+          <a href="{{ '/warehouse' | url | cleanUrl }}" class="view-all">View all Warehouse Services</a>
           <a href="/warehouse-services/exterior-warehouse-maintenance">Exterior Warehouse Maintenance</a>
           <a href="/warehouse-services/rack-and-shelving-installation">Rack &amp; Shelving Installation</a>
           <a href="/warehouse-services/industrial-lighting-and-electrical">Industrial Lighting and Electrical</a>
@@ -415,7 +415,7 @@
           </svg>
         </summary>
         <div class="sub-links">
-          <a href="{{ '/property-maintenance' | url }}" class="view-all">View all Property Maintenance</a>
+          <a href="{{ '/property-maintenance' | url | cleanUrl }}" class="view-all">View all Property Maintenance</a>
           <a href="/property-maintenance-services/preventive-maintenance-programs">Preventive Maintenance Programs</a>
           <a href="/property-maintenance-services/grounds-and-landscaping-maintenance">Grounds and Landscaping Maintenance</a>
           <a href="/property-maintenance-services/roof-and-gutter-maintenance">Roof and Gutter Maintenance</a>
@@ -435,7 +435,7 @@
           </svg>
         </summary>
         <div class="sub-links">
-          <a href="{{ '/plumbing' | url }}" class="view-all">View all Commercial Plumbing</a>
+          <a href="{{ '/plumbing' | url | cleanUrl }}" class="view-all">View all Commercial Plumbing</a>
           <a href="/plumbing-services/plumbing-emergencies">Plumbing Emergencies</a>
           <a href="/plumbing-services/leaks-and-drains">Leaks and Drains</a>
           <a href="/plumbing-services/new-construction">New Construction</a>
@@ -445,8 +445,8 @@
         </div>
       </details>
 
-      <a href="{{ '/about' | url }}" class="nav-link text-spg-text py-2 mt-1">About Us</a>
-      <a href="{{ '/contact' | url }}" class="nav-link text-spg-text py-2">Contact Us</a>
+      <a href="{{ '/about' | url | cleanUrl }}" class="nav-link text-spg-text py-2 mt-1">About Us</a>
+      <a href="{{ '/contact' | url | cleanUrl }}" class="nav-link text-spg-text py-2">Contact Us</a>
       
       <div class="pt-4 border-t border-[#EDE4D4] flex flex-col gap-y-3 mt-2">
         <div class="flex items-center justify-between text-base">
