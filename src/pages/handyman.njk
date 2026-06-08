@@ -6,7 +6,7 @@ ogImage: /assets/images/logo/og-handyman.webp
 ---
 
 {% block additional_schema %}
-{% set pageUrl = site.url ~ (page.url | replace('.html', '') | replace('/index', '')) %}
+{% set pageUrl = site.url ~ (page.url | cleanUrl) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

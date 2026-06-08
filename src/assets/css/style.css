@@ -76,9 +76,17 @@
       --font-mono--font-variation-settings
     );
     --color-spg-green: #1b4332;
+    --color-spg-green-dark: #0f2c23;
+    --color-spg-green-light: #2d5a3d;
     --color-spg-gold: #c9a227;
+    --color-spg-gold-light: #d4b46b;
+    --color-spg-gold-dark: #a67c00;
+    --color-spg-terra: #9c6644;
+    --color-spg-terra-light: #b87d5b;
     --color-spg-sand: #f8f4e9;
     --color-spg-sand-dark: #ede4d4;
+    --color-spg-brown: #3d2914;
+    --color-spg-brown-light: #5c4033;
     --color-spg-text: #1a2421;
     --color-spg-text-light: #4a554f;
   }
