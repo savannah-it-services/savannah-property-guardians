@@ -199,13 +199,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   </script>
 
-  <!-- BreadcrumbList for all pages -->
+  <!-- BreadcrumbList for all pages - hierarchical -->
   {% set cleanPath = page.url | cleanUrl %}
   {% set crumbs = [{ "pos": 1, "name": "Home", "url": site.url }] %}
+  {% set pos = 2 %}
+
   {% if cleanPath != '/' %}
-    {% set lastName = title | default('Page') %}
-    {% set crumbs = crumbs.concat([{ "pos": 2, "name": lastName, "url": site.url ~ cleanPath }]) %}
+    {# Add parent level for service detail sections #}
+    {% set segments = cleanPath.split('/') %}
+    {% set firstSegment = segments[1] | default('') %}
+    {% set isServiceDetail = false %}
+
+    {% if firstSegment == 'handyman-services' %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Handyman Services", "url": site.url ~ "/handyman" }]) %}
+      {% set pos = pos + 1 %}
+      {% set isServiceDetail = true %}
+    {% elif firstSegment == 'plumbing-services' %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Commercial Plumbing", "url": site.url ~ "/plumbing" }]) %}
+      {% set pos = pos + 1 %}
+      {% set isServiceDetail = true %}
+    {% elif firstSegment == 'property-maintenance-services' %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Property Maintenance", "url": site.url ~ "/property-maintenance" }]) %}
+      {% set pos = pos + 1 %}
+      {% set isServiceDetail = true %}
+    {% elif firstSegment == 'warehouse-services' %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Warehouse Management", "url": site.url ~ "/warehouse" }]) %}
+      {% set pos = pos + 1 %}
+      {% set isServiceDetail = true %}
+    {% endif %}
+
+    {# Determine best name for the current page #}
+    {% set currentName = title | default('Page') %}
+
+    {# Prefer short serviceType for detail pages when available (use bare var to match how title works) #}
+    {% if serviceType %}
+      {% set currentName = serviceType %}
+    {% endif %}
+
+    {# Provide clean short names for top-level category and other pages #}
+    {% if cleanPath == '/handyman' %}
+      {% set currentName = "Handyman Services" %}
+    {% elif cleanPath == '/plumbing' %}
+      {% set currentName = "Commercial Plumbing" %}
+    {% elif cleanPath == '/property-maintenance' %}
+      {% set currentName = "Property Maintenance" %}
+    {% elif cleanPath == '/warehouse' %}
+      {% set currentName = "Warehouse Management" %}
+    {% elif cleanPath == '/about' %}
+      {% set currentName = "About" %}
+    {% elif cleanPath == '/contact' %}
+      {% set currentName = "Contact" %}
+    {% elif cleanPath == '/privacy-policy' %}
+      {% set currentName = "Privacy Policy" %}
+    {% endif %}
+
+    {# For service detail pages, ensure we have a clean leaf name #}
+    {% if isServiceDetail %}
+      {% if serviceType %}
+        {% set currentName = serviceType %}
+      {% else %}
+        {# Light cleanup of the page title #}
+        {% set currentName = currentName | replace('Savannah ', '') | replace(' |.*', '') %}
+      {% endif %}
+    {% endif %}
+
+    {% set crumbs = crumbs.concat([{ "pos": pos, "name": currentName, "url": site.url ~ cleanPath }]) %}
   {% endif %}
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
