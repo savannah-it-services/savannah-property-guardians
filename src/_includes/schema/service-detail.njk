@@ -46,3 +46,27 @@
   }
 }
 </script>
+{% if pageData and pageData.faq and (pageData.faq | length) > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ pageUrl | safe }}"
+  },
+  "mainEntity": [
+{% for item in pageData.faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | safe }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | safe }}"
+      }
+    }{% if not loop.last %},{% endif %}
+{% endfor %}
+  ]
+}
+</script>
+{% endif %}
