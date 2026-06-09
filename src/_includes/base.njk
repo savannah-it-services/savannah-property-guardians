@@ -100,6 +100,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "{{ site.phone }}",
+        "contactType": "customer service",
+        "email": "{{ site.email }}",
+        "areaServed": "{{ site.service_areas }}",
+        "availableLanguage": "English"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "{{ site.phone }}",
+        "contactType": "emergency",
+        "email": "{{ site.email }}",
+        "areaServed": "{{ site.service_areas }}",
+        "availableLanguage": "English",
+        "hoursAvailable": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ]
+      }
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
