@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Silence a harmless Chrome DevTools internal error that some analytics scripts (like HubSpot) can trigger in local dev.
+       Using defineProperty with a getter ensures it always returns a function even if later code tries to overwrite it. -->
+  <script>
+    try {
+      Object.defineProperty(window, '__chromium_devtools_metrics_reporter', {
+        configurable: true,
+        enumerable: true,
+        get: function() { return function() {}; },
+        set: function() {}
+      });
+    } catch (e) {}
+  </script>
   <meta name="description" content="{{ description or 'Savannah handyman services, commercial plumbing, warehouse maintenance, and property maintenance in Savannah, Tybee Island, and Chatham County, GA. 100% veteran-owned. Free quotes and 24/7 emergency response.' }}">
   <title>{{ title or 'Savannah Property Guardians' }}</title>
 
@@ -18,6 +31,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- HubSpot Tracking Code (for form submissions, analytics, and context) -->
   {%- if site.hubspot_portal_id %}
+  <!-- Extra guard right before HubSpot in case of async timing issues -->
+  <script>
+    try {
+      Object.defineProperty(window, '__chromium_devtools_metrics_reporter', {
+        configurable: true,
+        enumerable: true,
+        get: function() { return function() {}; },
+        set: function() {}
+      });
+    } catch (e) {}
+  </script>
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/{{ site.hubspot_portal_id }}.js"></script>
   {%- endif %}
 
@@ -122,7 +146,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "Savannah GA plumbing",
       "Commercial electrician Savannah"
     ],
-    "sameAs": {{ site.sameAs | dump | safe }},
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Property Care Services",

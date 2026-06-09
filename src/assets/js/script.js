@@ -3,6 +3,16 @@
  * Main JavaScript - All interactive functionality
  */
 
+// Silence the same Chromium DevTools reporter error from client-side code too
+try {
+  Object.defineProperty(window, '__chromium_devtools_metrics_reporter', {
+    configurable: true,
+    enumerable: true,
+    get: function() { return function() {}; },
+    set: function() {}
+  });
+} catch (e) {}
+
 // ============================================
 // Mobile Navigation
 // ============================================
