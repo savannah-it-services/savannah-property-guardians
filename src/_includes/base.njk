@@ -302,6 +302,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "@id": "{{ breadcrumbId | safe }}",
+    "name": "Breadcrumbs",
     "itemListElement": [
       {% for crumb in crumbs %}
       {
