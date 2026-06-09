@@ -229,6 +229,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% set cleanPath = page.url | cleanUrl %}
   {% set crumbs = [{ "pos": 1, "name": "Home", "url": site.url }] %}
   {% set pos = 2 %}
+  {% if cleanPath == '/' %}
+    {% set breadcrumbId = site.url ~ '#breadcrumb' %}
+  {% else %}
+    {% set breadcrumbId = site.url ~ cleanPath ~ '#breadcrumb' %}
+  {% endif %}
 
   {% if cleanPath != '/' %}
     {# Add parent level for service detail sections #}
@@ -296,6 +301,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "{{ breadcrumbId | safe }}",
     "itemListElement": [
       {% for crumb in crumbs %}
       {
