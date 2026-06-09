@@ -8,4 +8,12 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  safelist: [
+    // Homepage hero arbitrary values to ensure they are always included
+    'text-[52px]',
+    'sm:text-[64px]',
+    'leading-[1.05]',
+    'tracking-[-2.4px]',
+    'min-h-[100dvh]',
+  ],
 }

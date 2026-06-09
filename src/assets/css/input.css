@@ -2,6 +2,13 @@
 
 /* Tailwind content scanning is handled via tailwind.config.js for reliability */
 
+/* Force include arbitrary values used on homepage hero (for cases where scanner misses them) */
+@layer utilities {
+  .force-homepage-hero {
+    @apply text-[52px] sm:text-[64px] leading-[1.05] tracking-[-2.4px] min-h-[100dvh];
+  }
+}
+
 /* ============================================
    Custom Theme (Tailwind v4)
    ============================================ */
@@ -219,6 +226,20 @@ a:hover .nav-link::after {
   background: linear-gradient(135deg, var(--spg-green-dark) 0%, var(--spg-green) 45%, #2d5a3d 100%);
   position: relative;
   overflow: hidden;
+  min-height: 100dvh;
+}
+
+/* Force hero text sizes for cases where Tailwind arbitrary values are not generated */
+.hero-bg h1 {
+  font-size: 52px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -2.4px;
+}
+@media (min-width: 640px) {
+  .hero-bg h1 {
+    font-size: 64px;
+  }
 }
 
 .hero-bg::before {
