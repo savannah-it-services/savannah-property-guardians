@@ -231,6 +231,7 @@ a:hover .nav-link::after {
 
 /* Force hero text sizes for cases where Tailwind arbitrary values are not generated */
 .hero-bg h1 {
+  color: #fff;
   font-size: 52px;
   line-height: 1.05;
   font-weight: 600;
@@ -240,6 +241,21 @@ a:hover .nav-link::after {
   .hero-bg h1 {
     font-size: 64px;
   }
+}
+
+.hero-bg p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-bg .btn-gold {
+  background-color: #c9a227;
+  color: #1b4332;
+  font-weight: 600;
+}
+
+.hero-bg a.border-2 {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
 }
 
 .hero-bg::before {
