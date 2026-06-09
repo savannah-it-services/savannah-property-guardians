@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
-/* Tell Tailwind where to look for class usage (Nunjucks templates + JS) */
-@source "../../../src/**/*.{njk,html,js}";
+/* Tailwind content scanning is handled via tailwind.config.js for reliability */
 
 /* ============================================
    Custom Theme (Tailwind v4)
