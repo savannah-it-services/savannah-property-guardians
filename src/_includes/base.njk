@@ -192,6 +192,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "{{ site.social.x }}",
       "{{ site.social.google_business }}"
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.97",
+      "bestRating": "5",
+      "reviewCount": "{{ reviews.length | default(3) }}"
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Property Care Services",
