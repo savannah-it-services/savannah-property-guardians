@@ -28,7 +28,7 @@ module.exports = {
   google_tag_manager_id: "GTM-KJ83XNGM",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61590811495577",
-    google_business: "https://share.google/WCpgw4O9jq8bhYRFM",
+    google_business: "https://www.google.com/search?q=Savannah+Property+Guardians+Tybee+Island+GA",
     instagram: "https://www.instagram.com/savannah.property.guardians",
     x: "https://x.com/sav_prop_guards"
   },
