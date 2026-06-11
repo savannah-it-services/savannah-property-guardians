@@ -15,8 +15,46 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --include=optional
+
+      - name: Install platform-specific native binaries
+        run: |
+          npm install --no-save \
+            @tailwindcss/oxide-linux-x64-gnu \
+            lightningcss-linux-x64-gnu \
+            @parcel/watcher-linux-x64-glibc
+
+      - name: Build site (once for all tests)
+        run: npm run build:gh-pages
+
+      - name: Test 1 - All HTML URLs end with slash
+        run: npm run test:html-urls
+
+      - name: Test 2 - All ld+json URLs end with slash
+        run: npm run test:ldjson-urls
+
+      - name: Test 3 - sitemap.xml URLs end with slash
+        run: npm run test:sitemap-urls
+
+      - name: Test 4 - Sitemap entries resolve to built files
+        run: npm run test:sitemap-resolves
+
   build:
     runs-on: ubuntu-latest
+    needs: verify
     steps:
       - name: Checkout
         uses: actions/checkout@v4
