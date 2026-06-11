@@ -114,121 +114,21 @@ ogImage: /assets/images/logo/og-handyman.webp
 </header>
 
 <main>
-  <!-- Services Grid -->
+  <!-- Services Grid (data-driven via service-grid include to eliminate duplication) -->
   <section id="services" class="bg-spg-sand py-16">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Door & Window -->
-        <a href="/handyman-services/door-and-window-installation-and-repairs/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Door &amp; Window Installation &amp; Repairs</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Expert installation, repair, and hardware upgrades for interior, exterior, garage doors, and windows.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Flooring & Tile -->
-        <a href="/handyman-services/flooring-and-tile-installation-and-repairs/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3.75v16.5m10.5-16.5v16.5" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Flooring &amp; Tile Installation &amp; Repairs</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Hardwood, laminate, tile, vinyl, and subfloor repairs installed with precision and care.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Gutter -->
-        <a href="/handyman-services/gutter-installation-and-repair/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2.25-2.25M3 12l2.25 2.25M3 12h18M3 12v6a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18v-6" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Gutter Installation &amp; Repair</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Installation, repair, realignment, and gutter guard systems to prevent water damage.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Painting & Waterproofing -->
-        <a href="/handyman-services/professional-painting-and-waterproofing/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Professional Painting &amp; Waterproofing</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Interior and exterior painting with premium paints, flawless finishes, and protective waterproofing.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Fencing -->
-        <a href="/handyman-services/expert-fencing/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v18M20.25 3v18M3.75 7.5h16.5M3.75 12h16.5M3.75 16.5h16.5" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Expert Fencing</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Wood, vinyl, and metal fence installation, repair, gates, and full perimeter solutions.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Drywall -->
-        <a href="/handyman-services/drywall-repair-and-installation/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Drywall Repair &amp; Installation</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Patching, hanging, taping, and finishing drywall for smooth, ready-to-paint walls and ceilings.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Carpentry -->
-        <a href="/handyman-services/quality-carpentry-work/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25m0-3.75L12 3.75 14.25 6M12 20.25l2.25-2.25m-4.5 0L7.5 18" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18.75h12" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Quality Carpentry Work</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Custom trim, built-ins, cabinetry repairs, and fine woodwork executed with true craftsmanship.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Lighting & Electrical -->
-        <a href="/handyman-services/lighting-and-electrical/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.08-1.945.24-2.869M14.25 18v.192c0 .983-.08 1.945-.24 2.869M10.5 18v-.192c0-.983.08-1.945.24-2.869M10.5 18v.192c0 .983-.08 1.945-.24 2.869" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Lighting &amp; Electrical</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Fixture installation, LED upgrades, outlet and switch work, and minor electrical repairs by licensed pros.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Home Security -->
-        <a href="/handyman-services/home-security/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Home Security</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed">Camera systems, smart locks, alarms, video doorbells, and integrated security solutions.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-      </div>
+      {% set gridItems = [
+        { href: "/handyman-services/door-and-window-installation-and-repairs/", key: "door", title: "Door & Window Installation & Repairs", desc: "Expert installation, repair, and hardware upgrades for interior, exterior, garage doors, and windows." },
+        { href: "/handyman-services/flooring-and-tile-installation-and-repairs/", key: "floor", title: "Flooring & Tile Installation & Repairs", desc: "Hardwood, laminate, tile, vinyl, and subfloor repairs installed with precision and care." },
+        { href: "/handyman-services/gutter-installation-and-repair/", key: "gutter", title: "Gutter Installation & Repair", desc: "Installation, repair, realignment, and gutter guard systems to prevent water damage." },
+        { href: "/handyman-services/professional-painting-and-waterproofing/", key: "paint", title: "Professional Painting & Waterproofing", desc: "Interior and exterior painting with premium paints, flawless finishes, and protective waterproofing." },
+        { href: "/handyman-services/expert-fencing/", key: "fence", title: "Expert Fencing", desc: "Wood, vinyl, and metal fence installation, repair, gates, and full perimeter solutions." },
+        { href: "/handyman-services/drywall-repair-and-installation/", key: "drywall", title: "Drywall Repair & Installation", desc: "Patching, hanging, taping, and finishing drywall for smooth, ready-to-paint walls and ceilings." },
+        { href: "/handyman-services/quality-carpentry-work/", key: "carpentry", title: "Quality Carpentry Work", desc: "Custom trim, built-ins, cabinetry repairs, and fine woodwork executed with true craftsmanship." },
+        { href: "/handyman-services/lighting-and-electrical/", key: "lighting", title: "Lighting & Electrical", desc: "Fixture installation, LED upgrades, outlet and switch work, and minor electrical repairs by licensed pros." },
+        { href: "/handyman-services/home-security/", key: "security", title: "Home Security", desc: "Camera systems, smart locks, alarms, video doorbells, and integrated security solutions." }
+      ] %}
+      {% include "service-grid.njk" %}
     </div>
   </section>
 
