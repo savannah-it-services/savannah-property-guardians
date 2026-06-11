@@ -20,5 +20,15 @@ module.exports = {
       "question": "Do you serve both homeowners and commercial clients in the Savannah area?",
       "answer": "Absolutely. We proudly serve Savannah homeowners, property owners on Tybee Island, and commercial tenants throughout Chatham County with professional drywall repair and installation services tailored to each project’s needs."
     }
+  ],
+  offers: [
+    "Small & large hole patching (doorknobs, fixtures, etc.)",
+    "Water damage removal & moisture-resistant replacement",
+    "Crack repair, seam retaping & control joints",
+    "Full new construction hanging & finishing",
+    "Texture matching (orange peel, knockdown, swirl)",
+    "Popcorn ceiling removal & skim coating",
+    "Corner bead installation & outside corner repairs",
+    "Prime-ready surfaces for painters"
   ]
 }

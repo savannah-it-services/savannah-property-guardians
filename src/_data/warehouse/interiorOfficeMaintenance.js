@@ -20,6 +20,9 @@ module.exports = {
       "question": "How can I request service or get a quote for Interior Office Maintenance?",
       "answer": "Quotes are always free. You can submit a request through the form on our website, call us at (912) 376-9765, or email info@savannahpropertyguardians.com. We serve warehouse offices in Savannah, Garden City, and across Chatham County and offer 24/7 emergency response for urgent needs."
     }
+  ],
+  offers: [
+
   ]
 }
 

@@ -1,0 +1,18 @@
+{% if offers %}
+<div class="grid md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl mx-auto text-spg-text-light">
+  <ul class="space-y-3">
+    {% for offer in offers %}
+      {% if loop.index0 < 4 %}
+      <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> {{ offer }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <ul class="space-y-3">
+    {% for offer in offers %}
+      {% if loop.index0 >= 4 %}
+      <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> {{ offer }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

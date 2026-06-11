@@ -20,5 +20,15 @@ module.exports = {
       "question": "How do I get a quote for lighting or electrical services in the Savannah area?",
       "answer": "Quotes are always free. Simply contact us through our website or submit a project request, and we’ll get back to you promptly. We proudly serve Savannah homes, Tybee properties, Chatham County residences, and light commercial spaces with safe, code-compliant, and beautiful results."
     }
+  ],
+  offers: [
+    "Recessed lighting design & IC-rated installs",
+    "Chandeliers, pendants, sconces & ceiling fans",
+    "Under-cabinet & task LED lighting",
+    "GFCI, USB & smart switch/outlet upgrades",
+    "Outdoor flood, pathway & landscape lighting",
+    "Whole-home automation & smart controls",
+    "Breaker replacement & panel capacity upgrades",
+    "Flickering lights, dead outlets & minor troubleshooting"
   ]
 }

@@ -20,5 +20,15 @@ module.exports = {
       "question": "How can I get a free quote for my fencing project?",
       "answer": "Getting a quote is easy and completely free. You can submit your project details using the form on our website or give us a call at (912) 376-9765. We also offer 24/7 emergency service for urgent fencing or property maintenance needs."
     }
+  ],
+  offers: [
+    "Wood privacy & picket fence design & install",
+    "Vinyl & composite low-maintenance fencing",
+    "Aluminum & ornamental steel security fences",
+    "Custom gates (pedestrian & driveway) + openers",
+    "Post replacement, panel repairs & straightening",
+    "Full color matching & seamless blending on repairs",
+    "Code research, permitting & neighbor coordination",
+    "Annual inspections, tightening & maintenance plans"
   ]
 }

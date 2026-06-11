@@ -20,5 +20,8 @@ module.exports = {
       "question": "Do you provide water heater services for commercial properties?",
       "answer": "Yes, we offer expert commercial water heater sizing, installation, and ongoing service. Our team ensures your business has a properly sized, efficient system that meets demand while maintaining safety and code compliance throughout Chatham County and the Savannah area."
     }
+  ],
+  offers: [
+
   ]
 }

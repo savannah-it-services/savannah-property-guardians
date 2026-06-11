@@ -20,6 +20,9 @@ module.exports = {
       "question": "Which areas do you serve and how do I request a quote?",
       "answer": "We serve warehouse clients throughout Savannah, Tybee Island, Chatham County, and the greater Savannah logistics area. Quotes are always free—contact us via our online form or phone for a site assessment and customized proposal with no obligation."
     }
+  ],
+  offers: [
+
   ]
 }
 

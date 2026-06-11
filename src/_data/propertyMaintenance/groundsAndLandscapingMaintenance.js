@@ -20,5 +20,8 @@ module.exports = {
       "question": "How can I get a quote for grounds and landscaping maintenance?",
       "answer": "Requesting a quote is simple and free. You can call us at (912) 376-9765, fill out the service request form on our website, or submit a request through our property maintenance services page. We provide prompt, customized quotes tailored to your commercial property’s specific needs."
     }
+  ],
+  offers: [
+
   ]
 }

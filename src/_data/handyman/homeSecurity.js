@@ -20,5 +20,15 @@ module.exports = {
       "question": "How do I get a free quote or start a home security project?",
       "answer": "Contact us today for a free quote! Call (912) 376-9765, email info@savannahpropertyguardians.com, or submit a project request on our website. We'll discuss your specific concerns, design a practical and privacy-respecting system, handle the professional installation, and provide full training and documentation."
     }
+  ],
+  offers: [
+    "Video doorbells & entry cameras (Wi-Fi & PoE)",
+    "Full perimeter & interior camera systems",
+    "Smart locks with key codes & app control",
+    "Window/door sensors & motion detectors",
+    "Glass-break & professional alarm monitoring options",
+    "Exterior flood, pathway & integrated lighting",
+    "Existing system upgrades & troubleshooting",
+    "Training, documentation & ongoing maintenance"
   ]
 }

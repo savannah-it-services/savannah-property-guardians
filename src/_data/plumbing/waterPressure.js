@@ -20,5 +20,8 @@ module.exports = {
       "question": "Do you offer emergency water pressure repair services in the Savannah area?",
       "answer": "Absolutely. As a licensed and insured plumbing company, we provide 24/7 emergency service for water pressure issues across Savannah, Tybee Island, and Chatham County. Call (912) 376-9765 anytime for fast, reliable help or request a free quote online."
     }
+  ],
+  offers: [
+
   ]
 }

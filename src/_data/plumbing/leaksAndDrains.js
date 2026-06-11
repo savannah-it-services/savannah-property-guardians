@@ -20,5 +20,8 @@ module.exports = {
       "question": "What is the typical process for a leaks and drains service call?",
       "answer": "Every service begins with a detailed camera inspection to diagnose the issue visually. We then perform targeted repairs or cleaning using hydro-jetting, snaking, or trenchless methods when appropriate. Upon completion, we deliver a recorded inspection report along with prevention recommendations to help you avoid future problems. Free quotes are always available."
     }
+  ],
+  offers: [
+
   ]
 }

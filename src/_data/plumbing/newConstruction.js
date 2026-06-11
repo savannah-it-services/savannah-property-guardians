@@ -20,5 +20,8 @@ module.exports = {
       "question": "What makes your new construction plumbing built to last?",
       "answer": "We focus on professional plumbing from the ground up — done right the first time. Using durable materials and proper installation techniques, we create reliable infrastructure for new builds and major renovations that performs for decades and reduces callbacks and future problems."
     }
+  ],
+  offers: [
+
   ]
 }

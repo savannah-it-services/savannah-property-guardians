@@ -5,17 +5,9 @@ description: Professional door and window installation, repair, and hardware upg
 ogImage: /assets/images/logo/og-handyman.webp
 serviceType: "Door and Window Installation and Repairs"
 priceRange: "$$"
-offers:
-  - Pre-hung entry, interior, and utility door installations
-  - Pocket, barn-style, and sliding patio door systems
-  - Window installation, replacement, and repair (double-hung, casement, sliding, etc.)
-  - Full garage door and opener service with safety inspections
-  - Complete weatherproofing, flashing, and sealing for doors and windows
-  - Hinge sag, latch, closer, and alignment repairs
-  - Modern deadbolts, lever handles, viewers, and smart locks
-  - Screen repair/replacement, track, roller, and multi-point locking system fixes
 ---
 {% set pageData = handyman.doorAndWindowInstallationAndRepair %}
+{% set offers = pageData.offers %}
 {% block additional_schema %}
 {% include "schema/service-detail.njk" %}
 {% endblock %}
@@ -48,26 +40,13 @@ offers:
     </div>
   </section>
 
-  <!-- What We Offer - Bulleted Services -->
+  <!-- Offers grid (from offers-grid.njk) -->
   <section class="max-w-5xl mx-auto px-6 py-14">
     <div class="text-center mb-10">
       <div class="uppercase tracking-[2px] text-xs font-semibold text-spg-gold mb-3">COMPREHENSIVE SOLUTIONS</div>
       <h2 class="text-spg-green text-3xl tracking-tight font-semibold">What We Handle</h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl mx-auto text-spg-text-light">
-      <ul class="space-y-3">
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Pre-hung entry, interior, and utility door installations</li>
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Pocket, barn-style, and sliding patio door systems</li>
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Window installation, replacement, and repair (double-hung, casement, sliding, etc.)</li>
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Full garage door and opener service with safety inspections</li>
-      </ul>
-      <ul class="space-y-3">
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Complete weatherproofing, flashing, and sealing for doors and windows</li>
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Hinge sag, latch, closer, and alignment repairs</li>
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Modern deadbolts, lever handles, viewers, and smart locks</li>
-        <li class="flex items-center gap-3"><span class="text-spg-gold shrink-0">●</span> Screen repair/replacement, track, roller, and multi-point locking system fixes</li>
-      </ul>
-    </div>
+    {% include "offers-grid.njk" %}
   </section>
 
   <!-- Approach + Second Photo -->

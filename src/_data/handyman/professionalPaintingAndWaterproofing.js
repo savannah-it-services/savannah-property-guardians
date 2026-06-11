@@ -20,5 +20,15 @@ module.exports = {
       "question": "What areas do you serve and how do I request a quote for painting or waterproofing services?",
       "answer": "We proudly serve Savannah, Tybee Island, and the greater Chatham County area in Georgia. Quotes are always free—simply submit a request through our website form, call us at (912) 376-9765, or email info@savannahpropertyguardians.com for a prompt response."
     }
+  ],
+  offers: [
+    "Full interior wall, ceiling, trim & door painting",
+    "Cabinet & millwork refinishing (kitchen & bath)",
+    "Complete exterior siding, trim & deck painting",
+    "Accent walls, textures & decorative finishes",
+    "Thorough prep: sanding, patching, masking & priming",
+    "Premium low-VOC paints from major brands",
+    "Waterproof coatings, sealants, and elastomeric membranes for exteriors",
+    "Color consultation & on-wall testing"
   ]
 }

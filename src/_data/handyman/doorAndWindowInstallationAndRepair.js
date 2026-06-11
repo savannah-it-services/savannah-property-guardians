@@ -20,5 +20,15 @@ module.exports = {
       "question": "Can you upgrade my doors and windows for better security and efficiency?",
       "answer": "Absolutely. We install modern deadbolts, smart locks, reinforced strike plates, lever handles, and door viewers for enhanced security. Paired with energy-efficient windows, proper sealing, and weatherproofing, these upgrades improve home comfort, reduce utility bills, and increase property value. We also provide 24/7 emergency service for urgent security or storm-related needs."
     }
-  ]
+  ],
+  offers: [
+    "Pre-hung entry, interior, and utility door installations",
+    "Pocket, barn-style, and sliding patio door systems",
+    "Window installation, replacement, and repair (double-hung, casement, sliding, etc.)",
+    "Full garage door and opener service with safety inspections",
+    "Complete weatherproofing, flashing, and sealing for doors and windows",
+    "Hinge sag, latch, closer, and alignment repairs",
+    "Modern deadbolts, lever handles, viewers, and smart locks",
+    "Screen repair/replacement, track, roller, and multi-point locking system fixes"
+  ],
 }

@@ -20,5 +20,15 @@ module.exports = {
       "question": "What is your process for gutter installation or repair projects?",
       "answer": "We begin with a thorough inspection from the ground up (using ladders or lifts when needed) and evaluate the entire drainage system, including pitch, capacity, extensions, and water flow. Our trained technicians perform precise, safety-focused work, then test the full system and provide before-and-after photos along with a clear written report and recommendations."
     }
+  ],
+  offers: [
+    "New seamless gutter fabrication and professional installation",
+    "Targeted section repairs & full system replacements",
+    "Hanger, pitch, and joint corrections for proper flow",
+    "Downspout extensions, pop-ups & French drains",
+    "Gutter guard installation (multiple styles)",
+    "Fascia, soffit, and ice-damage repairs",
+    "Full system testing, cleaning, and written reports",
+    "Color-matched installation for new builds and remodels"
   ]
 }

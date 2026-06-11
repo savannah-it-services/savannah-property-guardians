@@ -20,5 +20,8 @@ module.exports = {
       "question": "What areas do you serve for waste removal and septic services?",
       "answer": "We proudly serve residential and commercial properties throughout Savannah, Tybee Island, Chatham County, and the surrounding coastal Georgia area. Whether you need routine maintenance or emergency waste line service, our team is ready to respond promptly."
     }
+  ],
+  offers: [
+
   ]
 }

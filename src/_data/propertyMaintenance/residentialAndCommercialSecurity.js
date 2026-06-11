@@ -20,5 +20,8 @@ module.exports = {
       "question": "Can your security systems integrate with other smart devices or property maintenance services?",
       "answer": "Absolutely. Our systems integrate with lighting, gates, HVAC, and other smart features, with full mobile app control for remote viewing and management. We also coordinate seamlessly with our property maintenance, plumbing, and handyman teams to provide complete, unified guardianship for your property."
     }
+  ],
+  offers: [
+
   ]
 }

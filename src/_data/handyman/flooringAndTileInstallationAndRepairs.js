@@ -20,5 +20,15 @@ module.exports = {
       "question": "How do I get a free quote for my flooring or tile project?",
       "answer": "We provide free, no-obligation quotes for all flooring and tile installation and repair projects. You can call us at (912) 376-9765 or submit your project details through the form on our website for a prompt response."
     }
+  ],
+  offers: [
+    "Solid hardwood & engineered wood installation",
+    "Luxury vinyl plank (LVP) & waterproof flooring",
+    "Ceramic, porcelain & large-format tile work",
+    "Full subfloor repair, leveling & sistering",
+    "Hardwood refinishing & spot repairs",
+    "Carpet removal & adhesive cleanup",
+    "Baseboard, shoe molding & transition installs",
+    "Dust-controlled work & daily site cleanup"
   ]
 }

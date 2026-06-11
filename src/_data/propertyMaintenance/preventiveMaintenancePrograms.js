@@ -20,5 +20,8 @@ module.exports = {
       "question": "How do I get started with a Preventive Maintenance Program?",
       "answer": "Simply request a free quote through our website or call (912) 376-9765. We’ll assess your commercial property and design a customized program that fits your building’s needs and budget. All quotes are free and we respond promptly."
     }
+  ],
+  offers: [
+
   ]
 }

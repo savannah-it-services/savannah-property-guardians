@@ -20,5 +20,8 @@ module.exports = {
       "question": "Do you provide documentation for insurance, warranties, or property records?",
       "answer": "Yes. Every semi-annual inspection includes detailed photo documentation that serves as valuable records for warranty compliance, insurance claims, and property management. We also coordinate with roofing contractors for larger restorations and offer 24/7 emergency response for urgent issues."
     }
+  ],
+  offers: [
+
   ]
 }

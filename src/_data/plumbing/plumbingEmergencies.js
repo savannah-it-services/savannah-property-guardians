@@ -20,5 +20,8 @@ module.exports = {
       "question": "Are your plumbers licensed and insured?",
       "answer": "Yes, all of our emergency plumbers are licensed and insured. We bring the tools, experience, and expertise needed to stop damage fast and provide professional service."
     }
+  ],
+  offers: [
+
   ]
 }

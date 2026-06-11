@@ -20,5 +20,8 @@ module.exports = {
       "question": "What are the main benefits of choosing your emergency maintenance response service?",
       "answer": "You get minimized downtime through fast action that prevents secondary damage, a single accountable team for both routine maintenance and true emergencies (no more calling around at 2 a.m.), and better outcomes from experienced responders who make the right decisions the first time. Maintenance program clients also receive preferred rates and priority response."
     }
+  ],
+  offers: [
+
   ]
 }

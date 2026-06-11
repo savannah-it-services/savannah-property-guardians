@@ -20,5 +20,8 @@ module.exports = {
       "question": "Do you install EV charging stations and backup power for warehouses?",
       "answer": "Yes, we design and install EV charging stations suitable for warehouse fleets as well as generator integration and backup power systems. These services help ensure operational continuity during power outages and support the transition to electric vehicles while keeping your facility efficient and future-ready."
     }
+  ],
+  offers: [
+
   ]
 }

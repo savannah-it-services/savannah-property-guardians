@@ -20,5 +20,8 @@ module.exports = {
       "question": "How can I get a free quote for warehouse HVAC and climate control services?",
       "answer": "Quotes are always free. You can request service directly on our website, call us at (912) 376-9765, or email info@savannahpropertyguardians.com. Our team will respond promptly to discuss your project and deliver a customized proposal."
     }
+  ],
+  offers: [
+
   ]
 }

@@ -20,5 +20,8 @@ module.exports = {
       "question": "Who is this exterior warehouse maintenance service for and where do you operate?",
       "answer": "This service is designed for warehouse owners, operators, and property managers of port-area warehouses and distribution centers throughout Chatham County and the greater Savannah, Georgia area. We specialize in supporting the unique needs of logistics and distribution facilities near the Savannah port."
     }
+  ],
+  offers: [
+
   ]
 }

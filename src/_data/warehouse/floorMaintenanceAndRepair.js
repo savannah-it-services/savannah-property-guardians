@@ -20,6 +20,9 @@ module.exports = {
       "question": "Do you offer ongoing maintenance programs for warehouse floors?",
       "answer": "Yes. In addition to one-time repairs and coatings, we provide comprehensive floor restoration and maintenance programs. These programs help extend floor life, reduce future repair costs, simplify daily cleaning, and keep your facility operating safely and efficiently."
     }
+  ],
+  offers: [
+
   ]
 }
 

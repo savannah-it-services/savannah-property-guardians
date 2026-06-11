@@ -20,5 +20,8 @@ module.exports = {
       "question": "How do I get started with exterior building maintenance services?",
       "answer": "Getting started is easy—quotes are always free! Contact us by phone at (912) 376-9765, email info@savannahpropertyguardians.com, or submit a request through our website. We'll discuss your project needs and get back to you promptly. We also offer 24/7 emergency services for urgent exterior issues."
     }
+  ],
+  offers: [
+
   ]
 }

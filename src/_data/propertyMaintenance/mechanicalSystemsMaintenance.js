@@ -20,5 +20,8 @@ module.exports = {
       "question": "How do I get started with a free quote for mechanical systems maintenance?",
       "answer": "Quotes are always free and easy to obtain. Simply contact us by phone at (912) 376-9765, email info@savannahpropertyguardians.com, or submit a request through our website. Our team will assess your commercial property's needs in the Savannah metro or Chatham County area and provide a customized maintenance proposal promptly."
     }
+  ],
+  offers: [
+
   ]
 }

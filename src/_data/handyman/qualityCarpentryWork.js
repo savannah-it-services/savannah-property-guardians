@@ -20,5 +20,15 @@ module.exports = {
       "question": "How do I get started with a carpentry project?",
       "answer": "Getting started is easy. Contact us for a free, no-obligation quote. We’ll discuss your project, assess the scope, and provide clear recommendations. Quotes are always free, and we respond promptly. Reach us at (912) 376-9765 or info@savannahpropertyguardians.com."
     }
+  ],
+  offers: [
+    "Baseboard, casing, crown, chair rail & wainscoting",
+    "Custom built-ins, bookcases & window seats",
+    "Cabinet repairs, door rehanging & hardware upgrades",
+    "Porch, deck, fascia & exterior trim repairs",
+    "Historic millwork matching & restoration",
+    "Structural repairs (joists, stairs, blocking)",
+    "Custom solutions for awkward spaces & nooks",
+    "Progressive sanding & professional finishing"
   ]
 }

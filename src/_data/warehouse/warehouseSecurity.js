@@ -20,5 +20,8 @@ module.exports = {
       "question": "What areas in Georgia do you serve for warehouse security?",
       "answer": "We serve warehouse facilities in Savannah’s port district and throughout Chatham County, Georgia, including the greater Savannah and Tybee Island areas."
     }
+  ],
+  offers: [
+
   ]
 }
