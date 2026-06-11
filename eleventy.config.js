@@ -2,8 +2,33 @@ require('dotenv').config();
 
 const path = require('path');
 const fs = require('fs');
+const htmlmin = require("html-minifier-terser");
 
 module.exports = function (eleventyConfig) {
+  // Minify HTML output for production builds.
+  // This significantly reduces the size of the generated .html files (addresses "extremely large HTML" concerns)
+  // while keeping source templates readable. Savings typically 15-30%+ from whitespace, comments, and redundant attributes.
+  // Applied only for production (ELEVENTY_ENV=production or unset in the build script).
+  const isProd = process.env.ELEVENTY_ENV === 'production' || !process.env.ELEVENTY_ENV;
+  if (isProd) {
+    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+      if (outputPath && outputPath.endsWith(".html")) {
+        return htmlmin.minify(content, {
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          minifyCSS: false,   // Tailwind is already minified separately
+          minifyJS: true,     // Safe for inline JSON-LD and any small scripts
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          keepClosingSlash: false
+        });
+      }
+      return content;
+    });
+  }
   // Copy static assets
   eleventyConfig.addPassthroughCopy('src/assets');
   // Copy favicon assets to output root (for /favicon-*.png etc.)
