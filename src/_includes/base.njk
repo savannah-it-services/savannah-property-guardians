@@ -50,8 +50,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% set ogDescription = description or site.description %}
   {% set ogImagePath = ogImage or site.ogImage %}
   {% set ogImageUrl = site.url ~ ogImagePath %}
-  {% set cleanPath = page.url | cleanUrl %}
-  {% set ogUrl = site.url ~ cleanPath %}
+  {% set pagePath = page.url %}
+  {% set ogUrl = site.url ~ pagePath %}
   <meta property="og:title" content="{{ ogTitle }}">
   <meta property="og:description" content="{{ ogDescription }}">
   <meta property="og:url" content="{{ ogUrl }}">
@@ -78,9 +78,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "{{ site.url }}#business",
+    "@id": "{{ site.url }}/#business",
     "name": "{{ site.name | safe }}",
-    "url": "{{ site.url }}",
+    "url": "{{ site.url }}/",
     "logo": "{{ site.url }}{{ site.ogImage }}",
     "image": "{{ site.url }}{{ site.ogImage }}",
     "description": "{{ site.description | safe }}",
@@ -193,22 +193,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {
           "@type": "OfferCatalog",
           "name": "Handyman Services",
-          "url": "{{ site.url }}/handyman"
+          "url": "{{ site.url }}/handyman/"
         },
         {
           "@type": "OfferCatalog",
           "name": "Warehouse Management",
-          "url": "{{ site.url }}/warehouse"
+          "url": "{{ site.url }}/warehouse/"
         },
         {
           "@type": "OfferCatalog",
           "name": "Property Maintenance",
-          "url": "{{ site.url }}/property-maintenance"
+          "url": "{{ site.url }}/property-maintenance/"
         },
         {
           "@type": "OfferCatalog",
           "name": "Commercial Plumbing",
-          "url": "{{ site.url }}/plumbing"
+          "url": "{{ site.url }}/plumbing/"
         }
       ]
     }
@@ -220,41 +220,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "{{ site.url }}",
+    "url": "{{ site.url }}/",
     "name": "{{ site.name | safe }}"
   }
   </script>
 
   <!-- BreadcrumbList for all pages - hierarchical -->
-  {% set cleanPath = page.url | cleanUrl %}
-  {% set crumbs = [{ "pos": 1, "name": "Home", "url": site.url }] %}
+  {% set pagePath = page.url %}
+  {% set crumbs = [{ "pos": 1, "name": "Home", "url": site.url ~ "/" }] %}
   {% set pos = 2 %}
-  {% if cleanPath == '/' %}
-    {% set breadcrumbId = site.url ~ '#breadcrumb' %}
+  {% if pagePath == '/' %}
+    {% set breadcrumbId = site.url ~ '/#breadcrumb' %}
   {% else %}
-    {% set breadcrumbId = site.url ~ cleanPath ~ '#breadcrumb' %}
+    {% set breadcrumbId = site.url ~ pagePath ~ '#breadcrumb' %}
   {% endif %}
 
-  {% if cleanPath != '/' %}
+  {% if pagePath != '/' %}
     {# Add parent level for service detail sections #}
-    {% set segments = cleanPath.split('/') %}
+    {% set segments = pagePath.split('/') %}
     {% set firstSegment = segments[1] | default('') %}
     {% set isServiceDetail = false %}
 
     {% if firstSegment == 'handyman-services' %}
-      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Handyman Services", "url": site.url ~ "/handyman" }]) %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Handyman Services", "url": site.url ~ "/handyman/" }]) %}
       {% set pos = pos + 1 %}
       {% set isServiceDetail = true %}
     {% elif firstSegment == 'plumbing-services' %}
-      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Commercial Plumbing", "url": site.url ~ "/plumbing" }]) %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Commercial Plumbing", "url": site.url ~ "/plumbing/" }]) %}
       {% set pos = pos + 1 %}
       {% set isServiceDetail = true %}
     {% elif firstSegment == 'property-maintenance-services' %}
-      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Property Maintenance", "url": site.url ~ "/property-maintenance" }]) %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Property Maintenance", "url": site.url ~ "/property-maintenance/" }]) %}
       {% set pos = pos + 1 %}
       {% set isServiceDetail = true %}
     {% elif firstSegment == 'warehouse-services' %}
-      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Warehouse Management", "url": site.url ~ "/warehouse" }]) %}
+      {% set crumbs = crumbs.concat([{ "pos": pos, "name": "Warehouse Management", "url": site.url ~ "/warehouse/" }]) %}
       {% set pos = pos + 1 %}
       {% set isServiceDetail = true %}
     {% endif %}
@@ -268,19 +268,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% endif %}
 
     {# Provide clean short names for top-level category and other pages #}
-    {% if cleanPath == '/handyman' %}
+    {% if pagePath == '/handyman/' %}
       {% set currentName = "Handyman Services" %}
-    {% elif cleanPath == '/plumbing' %}
+    {% elif pagePath == '/plumbing/' %}
       {% set currentName = "Commercial Plumbing" %}
-    {% elif cleanPath == '/property-maintenance' %}
+    {% elif pagePath == '/property-maintenance/' %}
       {% set currentName = "Property Maintenance" %}
-    {% elif cleanPath == '/warehouse' %}
+    {% elif pagePath == '/warehouse/' %}
       {% set currentName = "Warehouse Management" %}
-    {% elif cleanPath == '/about' %}
+    {% elif pagePath == '/about/' %}
       {% set currentName = "About" %}
-    {% elif cleanPath == '/contact' %}
+    {% elif pagePath == '/contact/' %}
       {% set currentName = "Contact" %}
-    {% elif cleanPath == '/privacy-policy' %}
+    {% elif pagePath == '/privacy-policy/' %}
       {% set currentName = "Privacy Policy" %}
     {% endif %}
 
@@ -294,7 +294,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {% endif %}
     {% endif %}
 
-    {% set crumbs = crumbs.concat([{ "pos": pos, "name": currentName, "url": site.url ~ cleanPath }]) %}
+    {% set crumbs = crumbs.concat([{ "pos": pos, "name": currentName, "url": site.url ~ pagePath }]) %}
   {% endif %}
 
   <script type="application/ld+json">

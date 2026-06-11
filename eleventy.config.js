@@ -17,25 +17,22 @@ module.exports = function (eleventyConfig) {
 
   // Sitemap is now generated via src/sitemap.11ty.js (with proper file modification dates)
 
-  // Custom filter to produce URLs without trailing slashes (for uniform links/canonicals)
-  eleventyConfig.addFilter("cleanUrl", (url) => {
-    if (typeof url !== 'string') return url;
-    let cleaned = url.replace(/\.html$/, '').replace(/\/$/, '');
-    if (!cleaned || cleaned === '') return '/';
-    return cleaned;
-  });
+  // No cleanUrl filter: we now embrace trailing slashes everywhere to match GitHub Pages
+  // default behavior for directory-style permalinks (dir/index.html). All generated links,
+  // canonicals, sitemaps, and schema now use the slashed form that page.url provides.
 
-  // Configure the dev server (BrowserSync) for clean URLs (no trailing slashes in the address bar).
+  // Configure the dev server (BrowserSync) to use trailing-slash URLs, matching production
+  // (GitHub Pages forces /dir/ for any directory containing index.html).
   //
   // Strategy:
-  // - permalinks use a trailing slash internally so Eleventy outputs proper dir/index.html structures.
-  // - All links, canonicals, sitemap, schema etc. are emitted clean (via cleanUrl filter and stripping).
+  // - Permalinks for pages end with / so Eleventy outputs dir/index.html and page.url includes the trailing slash.
+  // - All links, canonicals, sitemap, schema etc. emit the slashed form directly via page.url | url.
   // - This middleware:
-  //   1. 301s any incoming slashed URL to the clean version (cleans the bar for bookmarks/external links).
-  //   2. For clean extensionless paths (pretty URLs), if a matching dist/.../index.html exists,
-  //      we internally rewrite the request so the static server delivers the page content while
-  //      the browser URL stays clean (no redirect, no trailing slash added).
-  // - serveStaticOptions.redirect: false disables BrowserSync's default "add slash for directories" behavior.
+  //   1. 301s any incoming non-slashed pretty URL (no trailing /, no extension) to the slashed version.
+  //      This makes local dev match production and ensures bookmarks/external links converge on the canonical slashed URLs.
+  //   2. For slashed directory-style paths, if a matching dist/.../index.html exists, we internally
+  //      rewrite the request so the static server delivers the content while the browser URL bar keeps the trailing slash.
+  // - serveStaticOptions.redirect: false prevents BrowserSync from adding its own slash behavior on top of ours.
   eleventyConfig.setServerOptions({
     serveStaticOptions: {
       redirect: false
@@ -46,28 +43,29 @@ module.exports = function (eleventyConfig) {
         const [pathname, queryPart] = req.url.split('?');
         const q = queryPart ? '?' + queryPart : '';
 
-        let cleanPath = pathname;
-        if (cleanPath.length > 1 && cleanPath.endsWith('/')) {
-          cleanPath = cleanPath.slice(0, -1);
-        }
+        // Enforce trailing slash for pretty (extensionless, non-root) paths.
+        // If no trailing slash and it looks like a page path, 301 to the slashed form.
+        const needsSlash = pathname.length > 1 &&
+                           !pathname.endsWith('/') &&
+                           !pathname.includes('.');
 
-        // If the original request had a trailing slash (and wasn't root), 301 to the clean form.
-        // This updates the browser address bar and the client will follow up with a clean request.
-        if (pathname !== cleanPath) {
-          res.writeHead(301, { Location: cleanPath + q });
+        if (needsSlash) {
+          const slashed = pathname + '/' + q;
+          res.writeHead(301, { Location: slashed });
           return res.end();
         }
 
-        // Now handle clean (no trailing slash) pretty URLs.
-        // If it has no extension (typical for our pages) and isn't root,
-        // check whether dist/<path>/index.html exists. If so, rewrite the request internally
-        // to serve that index.html content for the clean URL (browser bar stays clean).
-        if (!cleanPath.includes('.') && cleanPath !== '/') {
+        // For slashed pretty paths (e.g. /handyman-services/foo/), internally rewrite
+        // to serve the index.html so the static file server delivers content while
+        // the visible URL retains the trailing slash.
+        if (pathname.length > 1 && pathname.endsWith('/') && !pathname.includes('.')) {
           const distDir = path.join(__dirname, 'dist');
-          const indexCandidate = path.join(distDir, cleanPath, 'index.html');
+          // Remove trailing slash for the directory part when building the candidate path
+          const dirPart = pathname.replace(/\/$/, '');
+          const indexCandidate = path.join(distDir, dirPart, 'index.html');
 
           if (fs.existsSync(indexCandidate)) {
-            req.url = cleanPath + '/index.html' + q;
+            req.url = pathname + 'index.html' + q;
           }
         }
 
