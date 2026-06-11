@@ -77,12 +77,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Self-referencing canonical URL -->
   <link rel="canonical" href="{{ ogUrl }}">
 
-  <!-- JSON-LD Schema: LocalBusiness (global for all pages) - Optimized for Savannah local SEO -->
+  <!-- JSON-LD Schema: LocalBusiness - full authoritative definition only on homepage to avoid duplication across the site.
+       Other pages reference it via @id (e.g. Service provider, AboutPage mainEntity). -->
+  {% if page.url == '/' %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "{{ site.url }}/#business",
+    "@id": "{{ site.localBusinessId }}",
     "name": "{{ site.name | safe }}",
     "url": "{{ site.url }}/",
     "logo": "{{ site.url }}{{ site.ogImage }}",
@@ -218,6 +220,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   }
   </script>
+  {% endif %}
 
   <!-- WebSite schema -->
   <script type="application/ld+json">

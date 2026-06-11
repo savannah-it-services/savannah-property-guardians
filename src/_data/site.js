@@ -5,6 +5,7 @@ module.exports = {
   isProduction: IS_PRODUCTION,
   name: "Savannah Property Guardians",
   url: URL,
+  localBusinessId: URL + '/#business',
   description: "Expert handyman services, warehouse maintenance, property maintenance, and commercial plumbing in Savannah, Tybee Island, and Chatham County, GA. 100% veteran-owned property care professionals.",
   ogImage: "/assets/images/logo/og-default.webp",
   ogImageAlt: "Savannah Property Guardians - Professional property services in Savannah GA",
