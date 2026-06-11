@@ -109,134 +109,18 @@ ogImage: /assets/images/logo/og-maintenance.webp
         <p class="mt-3 max-w-lg mx-auto text-spg-text-light">Click any service to learn more and request a quote for your specific property.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Preventive Maintenance Programs -->
-        <a href="/property-maintenance-services/preventive-maintenance-programs/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Preventive Maintenance Programs</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Scheduled inspections, tune-ups, and reporting that catch small issues before they become expensive problems.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
+      {% set gridItems = [
+        { href: "/property-maintenance-services/preventive-maintenance-programs/", key: "preventive", title: "Preventive Maintenance Programs", desc: "Scheduled inspections, tune-ups, and reporting that catch small issues before they become expensive problems." },
+        { href: "/property-maintenance-services/grounds-and-landscaping-maintenance/", key: "grounds", title: "Grounds and Landscaping Maintenance", desc: "Mowing, landscaping, irrigation, tree care, and seasonal grounds upkeep for commercial properties." },
+        { href: "/property-maintenance-services/roof-and-gutter-maintenance/", key: "roof", title: "Roof and Gutter Maintenance", desc: "Inspections, cleaning, repairs, coatings, and drainage maintenance that prevent leaks and extend roof life." },
+        { href: "/property-maintenance-services/exterior-building-maintenance/", key: "exterior", title: "Exterior Building Maintenance", desc: "Facade cleaning, painting, sealing, caulking, and weatherproofing for the full building envelope." },
+        { href: "/property-maintenance-services/mechanical-systems-maintenance/", key: "mechanical", title: "Mechanical Systems Maintenance", desc: "Ongoing care for HVAC, plumbing, electrical, and other building systems to ensure reliability and efficiency." },
+        { href: "/property-maintenance-services/emergency-maintenance-response/", key: "emergency", title: "Emergency Maintenance Response", desc: "24/7 rapid response for urgent repairs, leaks, HVAC failures, storm damage, and after-hours issues." },
+        { href: "/property-maintenance-services/residential-and-commercial-security/", key: "security2", title: "Residential & Commercial Security", desc: "Surveillance cameras, alarm systems, access control, smart locks, and monitoring for homes, offices, retail, and industrial properties." }
+      ] %}
+      {% include "service-grid.njk" %}
 
-        <!-- Grounds and Landscaping -->
-        <a href="/property-maintenance-services/grounds-and-landscaping-maintenance/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Grounds and Landscaping Maintenance</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Mowing, landscaping, irrigation, tree care, and seasonal grounds upkeep for commercial properties.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Roof and Gutter -->
-        <a href="/property-maintenance-services/roof-and-gutter-maintenance/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5M3.75 6.75v10.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V6.75" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Roof and Gutter Maintenance</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Inspections, cleaning, repairs, coatings, and drainage maintenance that prevent leaks and extend roof life.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Exterior Building -->
-        <a href="/property-maintenance-services/exterior-building-maintenance/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Exterior Building Maintenance</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Facade cleaning, painting, sealing, caulking, and weatherproofing for the full building envelope.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Mechanical Systems -->
-        <a href="/property-maintenance-services/mechanical-systems-maintenance/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Mechanical Systems Maintenance</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Ongoing care for HVAC, plumbing, electrical, and other building systems to ensure reliability and efficiency.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Emergency Response -->
-        <a href="/property-maintenance-services/emergency-maintenance-response/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Emergency Maintenance Response</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">24/7 rapid response for urgent repairs, leaks, HVAC failures, storm damage, and after-hours issues.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Residential & Commercial Security -->
-        <a href="/property-maintenance-services/residential-and-commercial-security/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Residential & Commercial Security</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Advanced camera systems, alarms, access control, and 24/7 monitoring for homes, offices, and commercial properties.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Local Property Maintenance Content for Savannah SEO -->
-  <section class="max-w-5xl mx-auto px-6 py-14 border-t border-[#EDE4D4]">
-    <div class="grid md:grid-cols-12 gap-x-12 gap-y-6 items-start">
-      <div class="md:col-span-5">
-        <div class="uppercase tracking-[2px] text-xs font-semibold text-spg-gold mb-2">COMMERCIAL &amp; RESIDENTIAL IN CHATHAM COUNTY</div>
-        <h2 class="text-spg-green text-3xl tracking-tight font-semibold">Protecting the value of Savannah area properties, one visit at a time.</h2>
-      </div>
-      <div class="md:col-span-7 text-spg-text-light text-[15px] leading-relaxed">
-        <p class="mb-4">Savannah’s humid climate, coastal storms, and mix of historic and modern buildings create specific maintenance challenges. Our property maintenance programs are built for local realities: regular roof and gutter inspections before hurricane season, proactive grounds care that stands up to heavy rain, facade sealing that fights salt air, and mechanical systems tuned for year-round performance.</p>
-        <p>From office parks and retail centers to multi-family and industrial sites across Chatham County and Tybee, we act as your eyes and hands on the ground — catching small issues before they become expensive problems and keeping your properties looking sharp and operating smoothly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Clients Choose Us -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
-    <div class="grid md:grid-cols-2 gap-x-12 gap-y-10 items-start">
-      <div>
-        <div class="uppercase text-xs tracking-[3px] font-semibold text-spg-gold mb-3">WHY PROPERTIES CHOOSE US</div>
-        <h3 class="text-3xl font-semibold tracking-tight text-spg-green mb-4">Reliable care. One partner.</h3>
-        <p class="text-spg-text-light">We understand that maintenance is about more than fixing things—it’s about protecting value, keeping occupants happy, and avoiding surprises. Our teams deliver consistent, documented work across every trade.</p>
-      </div>
-      <div class="space-y-4 text-sm">
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Dedicated account managers</span> — one point of contact who knows your properties and priorities.</div>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Flexible programs</span> — from quarterly inspections to full-time embedded crews.</div>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Transparent reporting</span> — photos, work orders, and recommendations after every visit.</div>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Integrated response</span> — seamless coordination with our handyman, plumbing, and warehouse teams when needed.</div>
-        </div>
-      </div>
+      {% include "service-grid.njk" %}
     </div>
   </section>
 </main>

@@ -109,136 +109,18 @@ ogImage: /assets/images/logo/og-warehouse.webp
         <p class="mt-3 max-w-lg mx-auto text-spg-text-light">Click any service to learn more and request a quote for your specific project.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Exterior Warehouse Maintenance -->
-        <a href="/warehouse-services/exterior-warehouse-maintenance/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.75a1.5 1.5 0 01-1.5-1.5V9a1.5 1.5 0 011.5-1.5h16.5a1.5 1.5 0 011.5 1.5v8.25a1.5 1.5 0 01-1.5 1.5h-3.75m-6 0v-3m-3 3v-3m3 3h3" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Exterior Warehouse Maintenance</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Loading dock maintenance, dock levelers, trailer restraints, yard paving, drainage, and exterior traffic management.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
+      {% set gridItems = [
+        { href: "/warehouse-services/exterior-warehouse-maintenance/", key: "exterior", title: "Exterior Warehouse Maintenance", desc: "Loading dock maintenance, dock levelers, trailer restraints, yard paving, drainage, and exterior traffic management." },
+        { href: "/warehouse-services/rack-and-shelving-installation/", key: "rack", title: "Rack & Shelving Installation", desc: "Pallet racking and shelving system installation, seismic retrofits, and layout optimization." },
+        { href: "/warehouse-services/industrial-lighting-and-electrical/", key: "lighting", title: "Industrial Lighting and Electrical", desc: "High-bay LED upgrades, emergency lighting, electrical distribution, and machinery power systems." },
+        { href: "/warehouse-services/floor-maintenance-and-repair/", key: "floorcoat", title: "Floor Maintenance and Repair", desc: "Concrete repair, joint sealing, epoxy coatings, polishing, and heavy-duty floor protection." },
+        { href: "/warehouse-services/hvac-and-climate-control/", key: "hvac", title: "HVAC and Climate Control", desc: "Industrial HVAC installation, ventilation, dehumidification, and temperature control systems." },
+        { href: "/warehouse-services/warehouse-security/", key: "security2", title: "Warehouse Security", desc: "Surveillance systems, access control, perimeter protection, 24/7 monitoring, and integrated security solutions." },
+        { href: "/warehouse-services/interior-office-maintenance/", key: "interior", title: "Interior Office Maintenance", desc: "Professional interior office maintenance services including cleaning, repairs, painting, flooring, and facility upkeep for office spaces within commercial warehouses and distribution centers." }
+      ] %}
+      {% include "service-grid.njk" %}
 
-        <!-- Rack & Shelving Installation -->
-        <a href="/warehouse-services/rack-and-shelving-installation/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5M3.75 6.75v10.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V6.75" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Rack &amp; Shelving Installation</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Pallet racking and shelving system installation, seismic retrofits, and layout optimization.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Industrial Lighting and Electrical -->
-        <a href="/warehouse-services/industrial-lighting-and-electrical/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.08-1.945.24-2.869M14.25 18v.192c0 .983-.08 1.945-.24 2.869M10.5 18v-.192c0-.983.08-1.945.24-2.869M10.5 18v.192c0 .983-.08 1.945-.24 2.869" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Industrial Lighting and Electrical</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">High-bay LED upgrades, emergency lighting, electrical distribution, and machinery power systems.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Floor Maintenance and Repair -->
-        <a href="/warehouse-services/floor-maintenance-and-repair/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3.75v16.5m10.5-16.5v16.5" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Floor Maintenance and Repair</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Concrete repair, joint sealing, epoxy coatings, polishing, and heavy-duty floor protection.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- HVAC and Climate Control -->
-        <a href="/warehouse-services/hvac-and-climate-control/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5M3.75 6.75v10.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V6.75" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">HVAC and Climate Control</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Industrial HVAC installation, ventilation, dehumidification, and temperature control systems.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Warehouse Security -->
-        <a href="/warehouse-services/warehouse-security/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Warehouse Security</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Surveillance systems, access control, perimeter protection, 24/7 monitoring, and integrated security solutions.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-
-        <!-- Interior Office Maintenance -->
-        <a href="/warehouse-services/interior-office-maintenance/" class="service-card group bg-white rounded-3xl p-7 flex flex-col">
-          <div class="service-icon w-12 h-12 rounded-2xl bg-[#F1EDE3] flex items-center justify-center text-spg-green mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5M3.75 6.75v10.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V6.75" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold tracking-tight mb-2 text-spg-green group-hover:text-spg-gold transition-colors">Interior Office Maintenance</h3>
-          <p class="text-sm text-spg-text-light leading-relaxed flex-1">Office cleaning, repairs, painting, flooring, and upkeep for interior spaces in warehouse facilities.</p>
-          <div class="mt-5 text-xs font-semibold tracking-widest text-spg-gold flex items-center gap-1 group-hover:gap-1.5 transition-all">LEARN MORE <span>→</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Local Warehouse Content for Savannah SEO -->
-  <section class="max-w-5xl mx-auto px-6 py-14 border-t border-[#EDE4D4]">
-    <div class="grid md:grid-cols-12 gap-x-12 gap-y-6 items-start">
-      <div class="md:col-span-5">
-        <div class="uppercase tracking-[2px] text-xs font-semibold text-spg-gold mb-2">WAREHOUSE FACILITIES IN SAVANNAH</div>
-        <h2 class="text-spg-green text-3xl tracking-tight font-semibold">Keeping coastal Georgia warehouses running at full capacity.</h2>
-      </div>
-      <div class="md:col-span-7 text-spg-text-light text-[15px] leading-relaxed">
-        <p class="mb-4">Savannah’s port and logistics hub demands reliable warehouse maintenance. Our specialized crews support distribution centers, 3PLs, and manufacturing facilities with dock repairs, heavy floor coatings, high-bay lighting upgrades, racking installs, climate control, and security — all coordinated so operations stay on schedule.</p>
-        <p>Whether you manage a single warehouse near the Garden City terminal or multiple sites across Chatham County, we deliver proactive warehouse management and rapid response that minimizes downtime and protects your bottom line.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Clients Choose Us -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
-    <div class="grid md:grid-cols-2 gap-x-12 gap-y-10 items-start">
-      <div>
-        <div class="uppercase text-xs tracking-[3px] font-semibold text-spg-gold mb-3">WHY WAREHOUSES CHOOSE US</div>
-        <h3 class="text-3xl font-semibold tracking-tight text-spg-green mb-4">Reliable. Efficient. Always on.</h3>
-        <p class="text-spg-text-light">We understand the 24/7 demands of modern logistics. Our teams keep your facility running with minimal downtime and maximum compliance.</p>
-      </div>
-      <div class="space-y-4 text-sm">
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Trained warehouse specialists</span> — crews experienced in high-traffic, heavy-equipment environments.</div>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Planned and emergency response</span> — scheduled maintenance plus 24/7 on-call for critical issues.</div>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Compliance documentation</span> — full reports, certifications, and audit support included.</div>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-6 h-6 mt-0.5 flex-shrink-0 text-spg-gold">●</div>
-          <div><span class="font-semibold text-spg-green">Integrated services</span> — seamless coordination with our handyman, plumbing, and maintenance divisions.</div>
-        </div>
-      </div>
+      {% include "service-grid.njk" %}
     </div>
   </section>
 </main>
