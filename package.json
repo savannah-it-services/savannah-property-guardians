@@ -21,7 +21,8 @@
     "test:ldjson-urls": "node tests/test-ldjson-urls.js",
     "test:sitemap-urls": "node tests/test-sitemap-urls.js",
     "test:sitemap-resolves": "node tests/test-sitemap-resolves.js",
-    "test": "npm run verify:build && npm run test:html-urls && npm run test:ldjson-urls && npm run test:sitemap-urls && npm run test:sitemap-resolves"
+    "test:seo-frontmatter": "node tests/test-seo-frontmatter.js",
+    "test": "npm run verify:build && npm run test:html-urls && npm run test:ldjson-urls && npm run test:sitemap-urls && npm run test:sitemap-resolves && npm run test:seo-frontmatter"
   },
   "keywords": [],
   "author": "",
