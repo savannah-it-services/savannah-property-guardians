@@ -372,7 +372,6 @@ async function submitToHubSpot(form) {
   const email = getVal('#email');
   const phone = getVal('#phone');
   const company = getVal('#company');
-  const service = getVal('#service');
   const details = getVal('#details');
 
   // Build HubSpot fields array (use internal property names)
@@ -382,7 +381,6 @@ async function submitToHubSpot(form) {
     { name: 'lastname', value: lastname },
     { name: 'phone', value: phone },
     { name: 'company', value: company },
-    { name: 'service_needed', value: service },
     { name: 'project_details', value: details },
     // Optional: add a source
     { name: 'lead_source', value: 'Website Quote Request' }
