@@ -22,7 +22,8 @@
     "test:sitemap-urls": "node tests/test-sitemap-urls.js",
     "test:sitemap-resolves": "node tests/test-sitemap-resolves.js",
     "test:seo-frontmatter": "node tests/test-seo-frontmatter.js",
-    "test": "npm run verify:build && npm run test:html-urls && npm run test:ldjson-urls && npm run test:sitemap-urls && npm run test:sitemap-resolves && npm run test:seo-frontmatter"
+    "test:seo-images": "node tests/test-seo-images.js",
+    "test": "npm run verify:build && npm run test:html-urls && npm run test:ldjson-urls && npm run test:sitemap-urls && npm run test:sitemap-resolves && npm run test:seo-frontmatter && npm run test:seo-images"
   },
   "keywords": [],
   "author": "",
