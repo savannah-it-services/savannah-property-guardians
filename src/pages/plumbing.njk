@@ -19,7 +19,146 @@ ogImage: /assets/images/logo/og-plumbing.webp
   "description": "Licensed plumber in Savannah GA providing commercial and residential plumbing services: 24/7 emergency response, drain cleaning, leak repair, water heaters, backflow prevention, new construction plumbing, and waste removal throughout Chatham County.",
   "provider": {
     "@type": "LocalBusiness",
-    "@id": "{{ site.localBusinessId }}"
+    "@id": "{{ site.localBusinessId }}",
+     "name": "{{ site.name | safe }}",
+     "url": "{{ site.url }}/",
+     "logo": "{{ site.url }}{{ site.ogImage }}",
+     "image": "{{ site.url }}{{ site.ogImage }}",
+     "description": "{{ site.description | safe }}",
+     "slogan": "Protecting properties across Savannah and coastal Georgia since 2014",
+     "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "{{ site.business_address.street1 }}{% if site.business_address.street2 %}, {{ site.business_address.street2 }}{% endif %}",
+       "addressLocality": "{{ site.business_address.city }}",
+       "addressRegion": "{{ site.business_address.state }}",
+       "postalCode": "{{ site.business_address.zip }}",
+       "addressCountry": "US"
+     },
+     "geo": {
+       "@type": "GeoCoordinates",
+       "latitude": {{ site.geo.latitude }},
+       "longitude": {{ site.geo.longitude }}
+     },
+     "telephone": "{{ site.phone }}",
+     "email": "{{ site.email }}",
+     "contactPoint": [
+       {
+         "@type": "ContactPoint",
+         "telephone": "{{ site.phone }}",
+         "contactType": "customer service",
+         "email": "{{ site.email }}",
+         "areaServed": "{{ site.service_areas }}",
+         "availableLanguage": "English"
+       },
+       {
+         "@type": "ContactPoint",
+         "telephone": "{{ site.phone }}",
+         "contactType": "emergency",
+         "email": "{{ site.email }}",
+         "areaServed": "{{ site.service_areas }}",
+         "availableLanguage": "English",
+         "hoursAvailable": [
+           {
+             "@type": "OpeningHoursSpecification",
+             "dayOfWeek": [
+               "Monday",
+               "Tuesday",
+               "Wednesday",
+               "Thursday",
+               "Friday",
+               "Saturday",
+               "Sunday"
+             ],
+             "opens": "00:00",
+             "closes": "23:59"
+           }
+         ]
+       }
+     ],
+     "openingHoursSpecification": [
+       {
+         "@type": "OpeningHoursSpecification",
+         "dayOfWeek": [
+           "Monday",
+           "Tuesday",
+           "Wednesday",
+           "Thursday",
+           "Friday"
+         ],
+         "opens": "07:00",
+         "closes": "18:00"
+       },
+       {
+         "@type": "OpeningHoursSpecification",
+         "dayOfWeek": "Saturday",
+         "opens": "09:00",
+         "closes": "16:00"
+       }
+     ],
+     "areaServed": [
+       {
+         "@type": "City",
+         "name": "Savannah",
+         "sameAs": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
+       },
+       {
+         "@type": "City",
+         "name": "Tybee Island"
+       },
+       {
+         "@type": "AdministrativeArea",
+         "name": "Chatham County"
+       },
+       {
+         "@type": "AdministrativeArea",
+         "name": "Coastal Georgia"
+       }
+     ],
+     "knowsAbout": [
+       "Savannah handyman services",
+       "Chatham County property maintenance",
+       "Tybee Island warehouse management",
+       "Savannah GA plumbing",
+       "Commercial electrician Savannah"
+     ],
+     "sameAs": [
+       "{{ site.social.facebook }}",
+       "{{ site.social.instagram }}",
+       "{{ site.social.x }}",
+       "{{ site.social.google_business }}"
+     ],
+     "aggregateRating": {
+       "@type": "AggregateRating",
+       "ratingValue": "4.97",
+       "bestRating": "5",
+       "reviewCount": "{{ reviews.length | default(3) }}"
+     },
+     "hasOfferCatalog": {
+       "@type": "OfferCatalog",
+       "name": "Property Care Services",
+       "itemListElement": [
+         {
+           "@type": "OfferCatalog",
+           "name": "Handyman Services",
+           "url": "{{ site.url }}/handyman/"
+         },
+         {
+           "@type": "OfferCatalog",
+           "name": "Warehouse Management",
+           "url": "{{ site.url }}/warehouse/"
+         },
+         {
+           "@type": "OfferCatalog",
+           "name": "Property Maintenance",
+           "url": "{{ site.url }}/property-maintenance/"
+         },
+         {
+           "@type": "OfferCatalog",
+           "name": "Commercial Plumbing",
+           "url": "{{ site.url }}/plumbing/"
+         }
+       ]
+     }
   },
   "serviceType": "Commercial Plumbing",
   "areaServed": [
