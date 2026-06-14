@@ -4,7 +4,7 @@ title: "Warehouse Maintenance & Management in Savannah, GA"
 description: "Professional warehouse maintenance in Savannah: dock repair, floor coatings, lighting, racking, HVAC and security. Fast local experts. Free quotes."
 ogImage: /assets/images/logo/og-warehouse.webp
 ---
-
+{% set pageData = warehouse %}
 {% block additional_schema %}
 {% set pageUrl = site.url ~ page.url %}
 <script type="application/ld+json">
@@ -84,6 +84,7 @@ ogImage: /assets/images/logo/og-warehouse.webp
   }
 }
 </script>
+{% include "schema/faq-ld-json.njk" %}
 {% endblock %}
 
 <header class="service-hero pt-20">
@@ -122,4 +123,8 @@ ogImage: /assets/images/logo/og-warehouse.webp
       {% include "service-grid.njk" %}
     </div>
   </section>
+
+  <!-- FAQ -->
+  {% set faq = pageData.faq %}
+  {% include "faq.njk" %}
 </main>

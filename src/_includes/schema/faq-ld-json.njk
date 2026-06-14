@@ -1,0 +1,28 @@
+{% set pageUrl = site.url ~ page.url %}
+
+{% if pageData and pageData.faq and (pageData.faq | length) > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ pageUrl | safe }}#faq",
+  "name": "Frequently Asked Questions",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ pageUrl | safe }}"
+  },
+  "mainEntity": [
+{% for item in pageData.faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | safe }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | safe }}"
+      }
+    }{% if not loop.last %},{% endif %}
+{% endfor %}
+  ]
+}
+</script>
+{% endif %}

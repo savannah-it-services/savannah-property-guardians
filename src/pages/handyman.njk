@@ -4,7 +4,7 @@ title: Savannah Handyman Services | Repairs & Installation Experts
 description: "Trusted handyman services in Savannah for door and window repair, drywall, painting, fencing, flooring and electrical. Fast local response. Free quotes."
 ogImage: /assets/images/logo/og-handyman.webp
 ---
-
+{% set pageData = handyman %}
 {% block additional_schema %}
 {% set pageUrl = site.url ~ page.url %}
 <script type="application/ld+json">
@@ -98,6 +98,7 @@ ogImage: /assets/images/logo/og-handyman.webp
   }
 }
 </script>
+{% include "schema/faq-ld-json.njk" %}
 {% endblock %}
 
 <header class="service-hero pt-20">
@@ -175,4 +176,8 @@ ogImage: /assets/images/logo/og-handyman.webp
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  {% set faq = pageData.faq %}
+  {% include "faq.njk" %}
 </main>

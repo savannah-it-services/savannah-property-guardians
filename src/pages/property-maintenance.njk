@@ -4,7 +4,7 @@ title: Property Maintenance Savannah | Commercial Care & Grounds
 description: "Complete property maintenance in Savannah and Chatham County: preventive programs, grounds, landscaping, roof care and mechanical systems. Free proposals."
 ogImage: /assets/images/logo/og-maintenance.webp
 ---
-
+{% set pageData = propertyMaintenance %}
 {% block additional_schema %}
 {% set pageUrl = site.url ~ page.url %}
 <script type="application/ld+json">
@@ -84,6 +84,7 @@ ogImage: /assets/images/logo/og-maintenance.webp
   }
 }
 </script>
+{% include "schema/faq-ld-json.njk" %}
 {% endblock %}
 
 <header class="service-hero pt-20">
@@ -122,4 +123,8 @@ ogImage: /assets/images/logo/og-maintenance.webp
       {% include "service-grid.njk" %}
     </div>
   </section>
+
+  <!-- FAQ -->
+  {% set faq = pageData.faq %}
+  {% include "faq.njk" %}
 </main>

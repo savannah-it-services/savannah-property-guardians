@@ -4,7 +4,7 @@ title: Savannah Plumber | Commercial & Residential 24/7 Emergency
 description: "Licensed plumber in Savannah for commercial and residential: drain cleaning, leak repair, water heaters, backflow and 24/7 emergency. Free quotes."
 ogImage: /assets/images/logo/og-plumbing.webp
 ---
-
+{% set pageData = plumbing %}
 {% block additional_schema %}
 {% set pageUrl = site.url ~ page.url %}
 <script type="application/ld+json">
@@ -77,6 +77,7 @@ ogImage: /assets/images/logo/og-plumbing.webp
   }
 }
 </script>
+{% include "schema/faq-ld-json.njk" %}
 {% endblock %}
 
 <header class="service-hero pt-20">
@@ -151,4 +152,8 @@ ogImage: /assets/images/logo/og-plumbing.webp
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  {% set faq = pageData.faq %}
+  {% include "faq.njk" %}
 </main>
